@@ -14,7 +14,7 @@ Repositório central para hospedagem e publicação de landing pages e sites ins
 ad-sites.github.io/
 ├── index.html                   # Portal principal com índice dos sites ativos
 ├── .nojekyll                    # Impede que o Jekyll ignore arquivos com underline
-├── daniela-psicologa/           # Cliente: Daniela Wernhart (Psicologia)
+├── daniela-wernhart/            # Cliente: Daniela Wernhart (Psicologia)
 │   ├── index.html               # Página principal do site
 │   └── assets/                  # Imagens, CSS, fontes e ícones
 └── <novo-cliente>/              # Próximos clientes
