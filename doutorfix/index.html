@@ -54,31 +54,47 @@
     }
   </script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Plus Jakarta Sans (UI moderna de alta precisão) + Outfit (Headings nobres e marcantes) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&family=Roboto+Slab:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
+      /* Identidade Visual Refinada */
       --primary: #1778EE;
-      --primary-hover: #1263c9;
-      --dark-navy: #323D49;
-      --dark-navy-deep: #252e37;
-      --text-dark: #2E445E;
-      --text-body: #4A5568;
-      --text-muted: #718096;
-      --bg-light: #F8F8F8;
-      --card-blue: #E6F1FF;
-      --white: #FFFFFF;
+      --primary-light: #3b8cf7;
+      --primary-dark: #0f62c9;
+      --primary-glow: rgba(23, 120, 238, 0.35);
+      
+      --dark-navy: #1E2631;
+      --dark-navy-deep: #161D26;
+      --dark-surface: #27313F;
+      --dark-border: rgba(255, 255, 255, 0.1);
+      
+      --text-main: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --text-light: #F8FAFC;
+      
+      --bg-white: #FFFFFF;
+      --bg-subtle: #F8FAFC;
+      --bg-card-blue: #F0F7FF;
+      --border-subtle: #E2E8F0;
+      
       --green-wpp: #25D366;
-      --green-wpp-hover: #1ebc59;
+      --green-wpp-dark: #1EBE5D;
+      --star-gold: #F59E0B;
+      
       --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
-      --shadow-md: 0 6px 18px rgba(0,0,0,0.08);
-      --shadow-lg: 0 12px 30px rgba(0,0,0,0.12);
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --shadow-subtle: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-card: 0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+      --shadow-hover: 0 20px 35px -8px rgba(15, 23, 42, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.05);
+      --shadow-btn: 0 8px 24px -4px rgba(23, 120, 238, 0.45), 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -89,21 +105,25 @@
 
     html {
       scroll-behavior: smooth;
+      text-size-adjust: 100%;
     }
 
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-body);
-      background-color: var(--white);
-      line-height: 1.6;
+      background-color: var(--bg-white);
+      line-height: 1.65;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    h1, h2, h3, h4, h5 {
-      font-family: 'Roboto Slab', serif;
-      color: var(--text-dark);
-      line-height: 1.25;
+    h1, h2, h3, h4 {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-main);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
     }
 
     a {
@@ -111,120 +131,220 @@
       color: inherit;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .container {
-      max-width: 1140px;
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
       width: 100%;
     }
 
-    /* Botão Neon com Pulso */
-    .btn-neon {
+    /* Kicker Badge (Tag de Contexto) */
+    .kicker-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .kicker-tag-blue {
+      background: rgba(23, 120, 238, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(23, 120, 238, 0.2);
+    }
+
+    .kicker-tag-dark {
+      background: rgba(255, 255, 255, 0.08);
+      color: #93C5FD;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Botão Primário de Conversão (Design Moderno & Elegante) */
+    .btn-action {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      background-color: var(--primary);
-      color: var(--white) !important;
-      font-family: 'Roboto', sans-serif;
+      gap: 12px;
+      background: linear-gradient(135deg, #1A80F8 0%, #1066D6 100%);
+      color: var(--bg-white) !important;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 1.05rem;
       font-weight: 700;
-      padding: 16px 32px;
-      border-radius: var(--radius-sm);
-      border: none;
+      padding: 16px 36px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       cursor: pointer;
-      box-shadow: 0 0 12px rgba(23, 120, 238, 0.45), 0 4px 15px rgba(23, 120, 238, 0.35);
-      transition: all 0.3s ease-in-out;
-      animation: neonPulseFix 2s infinite ease-in-out;
+      box-shadow: var(--shadow-btn);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
       text-align: center;
     }
 
-    .btn-neon:hover {
-      background-color: var(--primary-hover);
-      transform: scale(1.04);
-      box-shadow: 0 0 20px rgba(23, 120, 238, 0.7), 0 0 35px rgba(23, 120, 238, 0.4);
+    .btn-action::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transform: skewX(-20deg);
+      transition: 0.75s;
     }
 
-    @keyframes neonPulseFix {
-      0% {
-        box-shadow: 0 0 8px rgba(23, 120, 238, 0.4), 0 0 16px rgba(23, 120, 238, 0.2);
-        transform: scale(1);
-      }
-      50% {
-        box-shadow: 0 0 18px rgba(23, 120, 238, 0.65), 0 0 32px rgba(23, 120, 238, 0.35);
-        transform: scale(1.02);
-      }
-      100% {
-        box-shadow: 0 0 8px rgba(23, 120, 238, 0.4), 0 0 16px rgba(23, 120, 238, 0.2);
-        transform: scale(1);
-      }
+    .btn-action:hover {
+      transform: translateY(-2px) scale(1.01);
+      background: linear-gradient(135deg, #2288FF 0%, #1572E8 100%);
+      box-shadow: 0 14px 30px -4px rgba(23, 120, 238, 0.55), 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-action:hover::after {
+      left: 140%;
+    }
+
+    .btn-action:active {
+      transform: translateY(0) scale(0.99);
+    }
+
+    .btn-action-icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      flex-shrink: 0;
     }
 
     /* ----------------------------------------------------
        HERO SECTION (DOBRA 1)
        ---------------------------------------------------- */
     .hero-section {
-      background-color: var(--dark-navy);
-      color: var(--white);
-      padding: 40px 0 0;
+      background: radial-gradient(circle at 75% 25%, rgba(23, 120, 238, 0.2) 0%, transparent 60%),
+                  linear-gradient(180deg, var(--dark-navy) 0%, var(--dark-navy-deep) 100%);
+      color: var(--text-light);
+      padding: 32px 0 0;
       position: relative;
       overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     }
 
     .hero-header-bar {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+    }
+
+    .hero-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
     }
 
     .hero-logo {
-      height: 52px;
+      height: 44px;
       width: auto;
       object-fit: contain;
+    }
+
+    .hero-support-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+
+    .hero-support-badge .live-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--green-wpp);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--green-wpp);
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.6; }
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       align-items: flex-end;
-      gap: 30px;
+      gap: 36px;
     }
 
     .hero-content {
-      padding-bottom: 60px;
+      padding-bottom: 70px;
+      position: relative;
+      z-index: 2;
     }
 
     .hero-title {
-      color: var(--white);
-      font-size: 2.75rem;
-      font-weight: 700;
-      line-height: 1.15;
+      color: #FFFFFF;
+      font-size: 3.1rem;
+      font-weight: 800;
+      line-height: 1.12;
       margin-bottom: 24px;
-      letter-spacing: -0.01em;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
     .hero-checklist {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px 24px;
+      gap: 12px;
       list-style: none;
-      margin-bottom: 36px;
+      margin-bottom: 38px;
     }
 
     .hero-checklist-item {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: #E2E8F0;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #F1F5F9;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .hero-checklist-icon {
-      width: 20px;
-      height: 20px;
-      fill: var(--primary);
+      width: 16px;
+      height: 16px;
+      fill: #38BDF8;
       flex-shrink: 0;
     }
 
@@ -233,312 +353,451 @@
       justify-content: center;
       align-items: flex-end;
       position: relative;
+      z-index: 1;
     }
 
     .hero-image {
       max-width: 100%;
       height: auto;
-      max-height: 480px;
+      max-height: 510px;
       display: block;
-      filter: drop-shadow(0 15px 30px rgba(0,0,0,0.35));
+      filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.5));
+      transform-origin: bottom center;
+      transition: transform 0.4s ease;
     }
 
     /* ----------------------------------------------------
        SEÇÃO: POR QUE O DOUTOR FIX REPARO
        ---------------------------------------------------- */
     .about-section {
-      background-color: var(--white);
-      padding: 85px 0;
+      background-color: var(--bg-white);
+      padding: 100px 0;
+      position: relative;
     }
 
     .about-box {
-      max-width: 960px;
+      max-width: 980px;
       margin: 0 auto;
-      text-align: left;
+      background: var(--bg-subtle);
+      border-radius: var(--radius-lg);
+      padding: 56px 48px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+
+    .about-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 48px;
+      right: 48px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary) 0%, #38BDF8 100%);
+      border-radius: var(--radius-full);
     }
 
     .section-headline {
-      font-size: 2.25rem;
+      font-size: 2.35rem;
       font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 28px;
+      color: var(--text-main);
+      margin-bottom: 24px;
     }
 
     .about-text {
-      font-size: 1.125rem;
+      font-size: 1.1rem;
       color: var(--text-body);
       line-height: 1.8;
       margin-bottom: 20px;
     }
 
     .about-text strong {
-      color: var(--text-dark);
+      color: var(--text-main);
       font-weight: 700;
     }
 
     .about-cta-wrap {
       margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
     }
 
     /* ----------------------------------------------------
        SEÇÃO: COMO FUNCIONA O ATENDIMENTO
        ---------------------------------------------------- */
     .steps-section {
-      background-color: var(--bg-light);
-      padding: 85px 0;
+      background: linear-gradient(180deg, var(--bg-subtle) 0%, #EFF6FF 100%);
+      padding: 100px 0;
       text-align: center;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .steps-header {
-      margin-bottom: 50px;
+      margin-bottom: 56px;
     }
 
     .steps-subtitle {
       font-size: 1.25rem;
       color: var(--text-muted);
       margin-top: 10px;
-      font-weight: 400;
+      font-weight: 500;
     }
 
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
-      margin-bottom: 45px;
+      margin-bottom: 50px;
     }
 
     .step-card {
-      background: var(--card-blue);
+      background: var(--bg-white);
       border-radius: var(--radius-md);
       padding: 36px 24px;
       text-align: left;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(23, 120, 238, 0.1);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: transparent;
+      transition: background 0.3s ease;
     }
 
     .step-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(23, 120, 238, 0.3);
     }
 
-    .step-num {
-      font-family: 'Roboto Slab', serif;
-      font-size: 2.5rem;
-      font-weight: 800;
+    .step-card:hover::before {
+      background: var(--primary);
+    }
+
+    .step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--bg-card-blue);
       color: var(--primary);
-      line-height: 1;
-      margin-bottom: 16px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(23, 120, 238, 0.15);
     }
 
     .step-title {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 12px;
+      color: var(--text-main);
+      margin-bottom: 10px;
     }
 
     .step-desc {
-      font-size: 0.975rem;
+      font-size: 0.95rem;
       color: var(--text-body);
-      line-height: 1.55;
+      line-height: 1.6;
     }
 
     /* ----------------------------------------------------
        SEÇÃO: A ESCOLHA CERTA (DIFERENCIAIS)
        ---------------------------------------------------- */
     .features-section {
-      background-color: var(--dark-navy);
-      color: var(--white);
-      padding: 85px 0;
+      background: radial-gradient(circle at 80% 50%, rgba(23, 120, 238, 0.14) 0%, transparent 60%),
+                  linear-gradient(180deg, var(--dark-navy) 0%, var(--dark-navy-deep) 100%);
+      color: var(--text-light);
+      padding: 100px 0;
     }
 
     .features-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: 60px;
       align-items: center;
     }
 
     .features-content h2 {
-      color: var(--white);
-      font-size: 2.25rem;
+      color: #FFFFFF;
+      font-size: 2.45rem;
       margin-bottom: 24px;
+      line-height: 1.18;
     }
 
     .features-content p {
-      color: #CBD5E0;
+      color: #CBD5E1;
       font-size: 1.1rem;
-      line-height: 1.75;
+      line-height: 1.8;
       margin-bottom: 18px;
     }
 
     .features-content p strong {
-      color: var(--white);
+      color: #FFFFFF;
     }
 
     .features-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 32px;
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      gap: 14px;
     }
 
     .features-item {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       font-size: 1.05rem;
-      color: #F7FAFC;
+      color: #F8FAFC;
       font-weight: 500;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+    }
+
+    .features-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(56, 189, 248, 0.35);
+      transform: translateX(4px);
+    }
+
+    .features-icon-wrap {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
     .features-icon {
-      width: 22px;
-      height: 22px;
-      fill: var(--primary);
-      flex-shrink: 0;
+      width: 15px;
+      height: 15px;
+      fill: #38BDF8;
     }
 
     /* ----------------------------------------------------
        SEÇÃO: DEPOIMENTOS / GOOGLE REVIEWS
        ---------------------------------------------------- */
     .reviews-section {
-      background-color: var(--bg-light);
-      padding: 85px 0;
+      background-color: var(--bg-subtle);
+      padding: 100px 0;
     }
 
     .reviews-section .section-headline {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 12px;
+    }
+
+    .reviews-header-desc {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 50px;
     }
 
     .reviews-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 28px;
-      max-width: 1040px;
+      max-width: 1060px;
       margin: 0 auto;
     }
 
     .review-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 30px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid #E2E8F0;
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-subtle);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .review-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: #CBD5E1;
+    }
+
+    .review-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
     }
 
     .review-badge {
-      height: 28px;
+      height: 26px;
       width: auto;
       object-fit: contain;
-      margin-bottom: 16px;
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 3px;
+      color: var(--star-gold);
+    }
+
+    .review-star-icon {
+      width: 18px;
+      height: 18px;
+      fill: var(--star-gold);
     }
 
     .review-text {
-      font-size: 1rem;
+      font-size: 1.025rem;
       color: var(--text-body);
-      line-height: 1.65;
-      font-style: italic;
-      margin-bottom: 20px;
+      line-height: 1.7;
+      margin-bottom: 24px;
       position: relative;
     }
 
-    .review-author {
-      font-weight: 700;
-      color: var(--text-dark);
-      font-size: 0.95rem;
+    .review-author-wrap {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
     }
 
-    .review-author::before {
-      content: '●';
-      color: var(--primary);
+    .review-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+      color: #FFFFFF;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .review-author-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-author-name {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 0.98rem;
+    }
+
+    .review-verified {
       font-size: 0.8rem;
+      color: #10B981;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 600;
     }
 
     /* ----------------------------------------------------
        SEÇÃO: FINAL CTA
        ---------------------------------------------------- */
     .final-cta-section {
-      background-color: var(--dark-navy-deep);
-      color: var(--white);
-      padding: 75px 0;
+      background: radial-gradient(circle at 50% 0%, rgba(23, 120, 238, 0.22) 0%, transparent 70%),
+                  linear-gradient(180deg, var(--dark-navy-deep) 0%, #0F141C 100%);
+      color: var(--text-light);
+      padding: 90px 0;
       text-align: center;
+      position: relative;
     }
 
     .final-cta-section h2 {
-      color: var(--white);
-      font-size: 2.5rem;
-      margin-bottom: 30px;
+      color: #FFFFFF;
+      font-size: 2.75rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .final-cta-subtitle {
+      font-size: 1.15rem;
+      color: #94A3B8;
+      max-width: 600px;
+      margin: 0 auto 36px;
     }
 
     /* ----------------------------------------------------
        FOOTER
        ---------------------------------------------------- */
     footer {
-      background-color: #1a222a;
-      color: #A0AEC0;
+      background-color: #0A0E14;
+      color: #64748B;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 34px 20px;
+      font-size: 0.88rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     footer p {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     /* ----------------------------------------------------
-       WHATSAPP FLUTUANTE
+       WHATSAPP FLUTUANTE DE ALTA CONVERSÃO
        ---------------------------------------------------- */
     .wpp-float {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 26px;
+      right: 26px;
       z-index: 9999;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 10px;
-      background-color: var(--green-wpp);
-      color: var(--white) !important;
-      padding: 12px 20px;
-      border-radius: 999px;
-      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      background: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+      color: var(--bg-white) !important;
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 28px -4px rgba(37, 211, 102, 0.5), 0 4px 12px rgba(0, 0, 0, 0.2);
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      animation: wppFloatPulse 2.2s infinite ease-in-out;
+      font-size: 0.98rem;
+      letter-spacing: -0.01em;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: wppFloatPulse 2.5s infinite ease-in-out;
     }
 
     .wpp-float:hover {
-      background-color: var(--green-wpp-hover);
-      transform: scale(1.06);
-      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.6);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 35px -2px rgba(37, 211, 102, 0.7);
     }
 
     .wpp-float-icon {
-      width: 28px;
-      height: 28px;
-      fill: var(--white);
+      width: 24px;
+      height: 24px;
+      fill: var(--bg-white);
+      flex-shrink: 0;
     }
 
     @keyframes wppFloatPulse {
@@ -546,7 +805,7 @@
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
       }
       70% {
-        box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
       }
       100% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
@@ -563,7 +822,8 @@
       }
 
       .hero-header-bar {
-        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
       }
 
       .hero-checklist {
@@ -579,7 +839,7 @@
       }
 
       .hero-image {
-        max-height: 380px;
+        max-height: 400px;
       }
 
       .steps-grid {
@@ -588,27 +848,40 @@
 
       .features-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
 
       .reviews-grid {
         grid-template-columns: 1fr;
       }
+
+      .about-box {
+        padding: 40px 24px;
+      }
+
+      .about-cta-wrap {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 640px) {
+      .container {
+        padding: 0 18px;
+      }
+
       .hero-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       .section-headline {
-        font-size: 1.75rem;
+        font-size: 1.85rem;
       }
 
       .steps-grid {
         grid-template-columns: 1fr;
       }
 
-      .btn-neon {
+      .btn-action {
         width: 100%;
         padding: 16px 20px;
       }
@@ -625,8 +898,8 @@
       }
 
       .wpp-float-icon {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
       }
     }
   </style>
@@ -644,11 +917,21 @@
   <section class="hero-section">
     <div class="container">
       <div class="hero-header-bar">
-        <img src="assets/images/logotipo-doutor-fix.png" alt="Doutor Fix - Reparo de Equipamentos" class="hero-logo">
+        <div class="hero-logo-wrap">
+          <img src="assets/images/logotipo-doutor-fix.png" alt="Doutor Fix - Reparo de Equipamentos" class="hero-logo">
+        </div>
+        <div class="hero-support-badge">
+          <span class="live-dot"></span>
+          <span>Atendimento em Domicílio no ABC e SP</span>
+        </div>
       </div>
 
       <div class="hero-grid">
         <div class="hero-content">
+          <div class="kicker-tag kicker-tag-dark">
+            <span>⚡ Especialista em Linha Branca & Eletrônicos</span>
+          </div>
+
           <h1 class="hero-title">Seu eletrodoméstico nas mãos de quem entende</h1>
           
           <ul class="hero-checklist">
@@ -668,8 +951,9 @@
 
           <a href="https://wa.me/5511921958413?text=Ol%C3%A1%20vim%20do%20site%2C%20gostaria%20de%20um%20or%C3%A7amento." 
              onclick="return gtag_report_conversion(this.href);"
-             class="btn-neon">
-            Faça um Orçamento Gratuito
+             class="btn-action">
+            <svg class="btn-action-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            <span>Faça um Orçamento Gratuito</span>
           </a>
         </div>
 
@@ -686,6 +970,7 @@
   <section class="about-section">
     <div class="container">
       <div class="about-box">
+        <div class="kicker-tag kicker-tag-blue">História & Compromisso</div>
         <h2 class="section-headline">Por que o Doutor Fix Reparo de Equipamentos?</h2>
         
         <p class="about-text">
@@ -707,8 +992,9 @@
         <div class="about-cta-wrap">
           <a href="https://wa.me/5511921958413?text=Ol%C3%A1%20vim%20do%20site%2C%20gostaria%20de%20um%20or%C3%A7amento." 
              onclick="return gtag_report_conversion(this.href);"
-             class="btn-neon">
-            Falar com o Doutor Fix
+             class="btn-action">
+            <svg class="btn-action-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+            <span>Falar com o Doutor Fix</span>
           </a>
         </div>
       </div>
@@ -721,6 +1007,7 @@
   <section class="steps-section">
     <div class="container">
       <div class="steps-header">
+        <div class="kicker-tag kicker-tag-blue" style="margin: 0 auto 16px;">Passo a Passo</div>
         <h2 class="section-headline">Como funciona o atendimento</h2>
         <p class="steps-subtitle">Simples, rápido e sem complicação</p>
       </div>
@@ -728,28 +1015,28 @@
       <div class="steps-grid">
         <!-- Passo 1 -->
         <div class="step-card">
-          <div class="step-num">1.</div>
+          <div class="step-badge">1.</div>
           <h3 class="step-title">Você solicita o orçamento</h3>
           <p class="step-desc">Informando o tipo de aparelho e o problema apresentado.</p>
         </div>
 
         <!-- Passo 2 -->
         <div class="step-card">
-          <div class="step-num">2.</div>
+          <div class="step-badge">2.</div>
           <h3 class="step-title">Técnico vai até seu endereço</h3>
           <p class="step-desc">Para diagnóstico completo no local, sem precisar transportar o aparelho.</p>
         </div>
 
         <!-- Passo 3 -->
         <div class="step-card">
-          <div class="step-num">3.</div>
+          <div class="step-badge">3.</div>
           <h3 class="step-title">Orçamento transparente</h3>
           <p class="step-desc">Explicamos o problema e o valor antes de qualquer reparo ser realizado.</p>
         </div>
 
         <!-- Passo 4 -->
         <div class="step-card">
-          <div class="step-num">4.</div>
+          <div class="step-badge">4.</div>
           <h3 class="step-title">Conserto com garantia</h3>
           <p class="step-desc">Serviço seguro, rápido e com peças de alta qualidade.</p>
         </div>
@@ -757,8 +1044,9 @@
 
       <a href="https://wa.me/5511921958413?text=Ol%C3%A1%20vim%20do%20site%2C%20gostaria%20de%20um%20or%C3%A7amento." 
          onclick="return gtag_report_conversion(this.href);"
-         class="btn-neon">
-        Faça um Orçamento Gratuito
+         class="btn-action">
+        <svg class="btn-action-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        <span>Faça um Orçamento Gratuito</span>
       </a>
     </div>
   </section>
@@ -770,6 +1058,7 @@
     <div class="container">
       <div class="features-grid">
         <div class="features-content">
+          <div class="kicker-tag kicker-tag-dark">Economia Inteligente</div>
           <h2>A escolha certa para quem quer consertar — não descartar</h2>
           <p>
             Muitas pessoas acabam trocando seus eletrodomésticos porque não encontram um <strong>serviço de reparo de confiança</strong> que faça um conserto rápido e por um preço justo.
@@ -781,23 +1070,33 @@
 
         <ul class="features-list">
           <li class="features-item">
-            <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
-            <span>Atendimento em domicílio no ABC e Grande SP</span>
+            <div class="features-icon-wrap">
+              <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+            </div>
+            <span>Atendimento em domicílio no ABC</span>
           </li>
           <li class="features-item">
-            <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+            <div class="features-icon-wrap">
+              <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+            </div>
             <span>Técnicos experientes em linha branca</span>
           </li>
           <li class="features-item">
-            <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+            <div class="features-icon-wrap">
+              <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+            </div>
             <span>Diagnóstico preciso no ambiente real</span>
           </li>
           <li class="features-item">
-            <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+            <div class="features-icon-wrap">
+              <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+            </div>
             <span>Sem complicação para transportar aparelhos</span>
           </li>
           <li class="features-item">
-            <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+            <div class="features-icon-wrap">
+              <svg class="features-icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>
+            </div>
             <span>Serviço com garantia e transparência total</span>
           </li>
         </ul>
@@ -810,51 +1109,125 @@
        ==================================================== -->
   <section class="reviews-section">
     <div class="container">
+      <div class="kicker-tag kicker-tag-blue" style="margin: 0 auto 12px; display: table;">Depoimentos Reais</div>
       <h2 class="section-headline">Feedback de nossos clientes</h2>
+      <p class="reviews-header-desc">Veja o que diz quem já chamou o Doutor Fix</p>
 
       <div class="reviews-grid">
         <!-- Depoimento 1 -->
         <div class="review-card">
           <div>
-            <img src="assets/images/google-reviews.png" alt="Avaliação 5 estrelas Google" class="review-badge">
+            <div class="review-top-bar">
+              <img src="assets/images/google-reviews.png" alt="Avaliação 5 estrelas Google" class="review-badge">
+              <div class="review-stars">
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+            </div>
             <p class="review-text">
               “Minha máquina de lavar quebrou de repente e eu não sabia o que fazer. Fui procurando e achei o Doutor Fix. O Diego veio até a minha casa, arrumou rapidinho e ficou tudo funcionando direitinho! Super atencioso e o preço foi bem em conta. Agora sei a quem recorrer se precisar de novo! Recomendo!”
             </p>
           </div>
-          <div class="review-author">Maria C.</div>
+          <div class="review-author-wrap">
+            <div class="review-avatar">MC</div>
+            <div class="review-author-info">
+              <span class="review-author-name">Maria C.</span>
+              <span class="review-verified">
+                <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Cliente Verificado
+              </span>
+            </div>
+          </div>
         </div>
 
         <!-- Depoimento 2 -->
         <div class="review-card">
           <div>
-            <img src="assets/images/google-reviews.png" alt="Avaliação 5 estrelas Google" class="review-badge">
+            <div class="review-top-bar">
+              <img src="assets/images/google-reviews.png" alt="Avaliação 5 estrelas Google" class="review-badge">
+              <div class="review-stars">
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+            </div>
             <p class="review-text">
               “Meu micro-ondas parou de funcionar e eu pensei que ia ter que comprar outro, mas fui no Doutor Fix. Eles me explicaram tudo, consertaram bem rápido e ainda ficou mais barato do que eu imaginava. Fiquei muito feliz, porque não queria gastar mais dinheiro com um aparelho novo. Agora tudo está perfeito!”
             </p>
           </div>
-          <div class="review-author">José A.</div>
+          <div class="review-author-wrap">
+            <div class="review-avatar">JA</div>
+            <div class="review-author-info">
+              <span class="review-author-name">José A.</span>
+              <span class="review-verified">
+                <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Cliente Verificado
+              </span>
+            </div>
+          </div>
         </div>
 
         <!-- Depoimento 3 -->
         <div class="review-card">
           <div>
-            <img src="assets/images/google-reviews.png" alt="Avaliação 5 estrelas Google" class="review-badge">
+            <div class="review-top-bar">
+              <img src="assets/images/google-reviews.png" alt="Avaliação 5 estrelas Google" class="review-badge">
+              <div class="review-stars">
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+            </div>
             <p class="review-text">
               “Minha geladeira não estava gelando direito e eu estava quase jogando fora. O Doutor Fix veio, consertou tudo na hora e ainda me explicou o que aconteceu. Eles foram super rápidos e o serviço foi ótimo. Agora a geladeira está gelando direitinho de novo. Muito obrigada!”
             </p>
           </div>
-          <div class="review-author">Rosângela S.</div>
+          <div class="review-author-wrap">
+            <div class="review-avatar">RS</div>
+            <div class="review-author-info">
+              <span class="review-author-name">Rosângela S.</span>
+              <span class="review-verified">
+                <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Cliente Verificado
+              </span>
+            </div>
+          </div>
         </div>
 
         <!-- Depoimento 4 -->
         <div class="review-card">
           <div>
-            <img src="assets/images/google-reviews.png" alt="Avaliação 5 estrelas Google" class="review-badge">
+            <div class="review-top-bar">
+              <img src="assets/images/google-reviews.png" alt="Avaliação 5 estrelas Google" class="review-badge">
+              <div class="review-stars">
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg class="review-star-icon" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+            </div>
             <p class="review-text">
               “Chamei o Doutor Fix para arrumar minha máquina de lavar e também minha air fryer, que estava com defeito. O atendimento foi excelente! O Diego fez o serviço com muito cuidado e a máquina e a air fryer ficaram como novas. Estou muito satisfeita com o atendimento e o preço. Vou sempre chamar quando precisar!”
             </p>
           </div>
-          <div class="review-author">Luciana P.</div>
+          <div class="review-author-wrap">
+            <div class="review-avatar">LP</div>
+            <div class="review-author-info">
+              <span class="review-author-name">Luciana P.</span>
+              <span class="review-verified">
+                <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Cliente Verificado
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -866,10 +1239,13 @@
   <section class="final-cta-section">
     <div class="container">
       <h2>Economize, conte com o Doutor Fix.</h2>
+      <p class="final-cta-subtitle">Atendimento transparente, diagnóstico no local e garantia em todos os serviços executados.</p>
+      
       <a href="https://wa.me/5511921958413?text=Ol%C3%A1%20vim%20do%20site%2C%20gostaria%20de%20um%20or%C3%A7amento." 
          onclick="return gtag_report_conversion(this.href);"
-         class="btn-neon">
-        Falar com o Doutor Fix
+         class="btn-action">
+        <svg class="btn-action-icon" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        <span>Falar com o Doutor Fix</span>
       </a>
     </div>
   </section>
