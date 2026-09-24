@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estratégia de Marketing (3Ps) — Clínica Odonto Prime</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#0A2540',
+              secondary: '#1E3A8A',
+              accent: '#06B6D4',
+              dark: '#08101E',
+              light: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Cinzel', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @page {
+      size: 16in 9in;
+      margin: 0;
+    }
+    @media print {
+      body {
+        background: #08101E !important;
+        color: #F8FAFC !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .slide {
+        display: flex !important;
+        opacity: 1 !important;
+        position: relative !important;
+        page-break-after: always !important;
+        break-inside: avoid !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        min-height: 100vh !important;
+      }
+      #slide-container {
+        height: auto !important;
+        overflow: visible !important;
+      }
+    }
+    .slide {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .slide.hidden-slide {
+      display: none;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .slide.active-slide {
+      display: flex;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.02);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.15);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="bg-[#08101E] text-slate-100 font-sans h-full overflow-hidden select-none flex flex-col justify-between">
+
+  <!-- Top Bar / Header de Controle -->
+  <header class="no-print w-full px-6 py-3 bg-slate-900/80 backdrop-blur border-b border-slate-800 flex items-center justify-between z-50 text-xs text-slate-400">
+    <div class="flex items-center gap-3">
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-400 font-semibold border border-blue-500/20">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+        ESTRATÉGIA 3Ps
+      </span>
+      <span class="font-medium text-slate-200">Clínica Odonto Prime</span>
+      <span class="text-slate-600">|</span>
+      <span>Odontologia Estética</span>
+    </div>
+
+    <!-- Navegação e Atalhos -->
+    <div class="flex items-center gap-4">
+      <div class="hidden sm:flex items-center gap-2 text-[11px] text-slate-400 bg-slate-800/80 px-2.5 py-1 rounded border border-slate-700">
+        <span>Navegue com <kbd class="px-1 py-0.5 bg-slate-900 rounded text-slate-300 font-mono">←</kbd> <kbd class="px-1 py-0.5 bg-slate-900 rounded text-slate-300 font-mono">→</kbd> ou <kbd class="px-1 py-0.5 bg-slate-900 rounded text-slate-300 font-mono">Espaço</kbd></span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button id="btn-prev" onclick="prevSlide()" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition disabled:opacity-30">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <span id="slide-indicator" class="font-mono text-slate-300 font-bold px-1">1 / 7</span>
+        <button id="btn-next" onclick="nextSlide()" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition disabled:opacity-30">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" title="Imprimir / Exportar como PDF" class="flex items-center gap-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded font-medium transition border border-slate-700">
+          <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          Exportar PDF
+        </button>
+        <button onclick="toggleFullscreen()" title="Modo Tela Cheia (F)" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 transition border border-slate-700">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-5h-4m4 0v4m0 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5h-4m4 0v-4m0 0l-5-5"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Container Principal dos Slides -->
+  <main id="slide-container" class="flex-1 w-full h-full relative overflow-hidden flex items-center justify-center p-4 md:p-8">
+
+    <!-- ========================================== -->
+    <!-- SLIDE 1: CAPA EXECUTIVA                    -->
+    <!-- ========================================== -->
+    <section class="slide active-slide w-full max-w-6xl h-full flex flex-col justify-between p-8 md:p-12 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800/80 shadow-2xl relative overflow-hidden">
+      <!-- Glow Effect Decorativo -->
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-[#06B6D4]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="flex items-center justify-between relative z-10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#06B6D4]/20 border border-[#06B6D4]/30 flex items-center justify-center text-[#06B6D4] font-bold font-display text-lg">
+            3P
+          </div>
+          <div>
+            <p class="text-xs uppercase tracking-widest text-slate-400 font-semibold">DIAGNÓSTICO ESTRATÉGICO</p>
+            <p class="text-sm font-bold text-slate-200">Alavancar no Digital</p>
+          </div>
+        </div>
+        <div class="text-right">
+          <span class="inline-block px-3 py-1 bg-slate-800/90 rounded-full text-xs font-mono text-slate-300 border border-slate-700">
+            Campinas - SP • 01/09/2026
+          </span>
+        </div>
+      </div>
+
+      <div class="my-auto space-y-6 relative z-10 max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold">
+          <span>🚀 Estratégia de Posicionamento, Psicologia do Público & Proposta de Valor</span>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight font-display leading-tight">
+          Plano Estratégico de Marketing & Aquisição
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
+          Como posicionar a marca <strong class="text-white font-semibold">Clínica Odonto Prime</strong> como a escolha indiscutível para clientes de alto valor no segmento de <span class="text-[#06B6D4] font-medium">Odontologia Estética</span>.
+        </p>
+
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
+          <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/50">
+            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider block mb-1">1º P • POSICIONAMENTO</span>
+            <p class="text-sm text-slate-200 font-medium">Pirâmide da Marca & Essência</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/50">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-1">2º P • PÚBLICO</span>
+            <p class="text-sm text-slate-200 font-medium">Mapa da Empatia & Psicologia</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/50">
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider block mb-1">3º P • PROPOSTA</span>
+            <p class="text-sm text-slate-200 font-medium">Canvas de Valor & Fit Perfeito</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-xs text-slate-500 relative z-10 pt-4 border-t border-slate-800/50">
+        <span>Apresentado exclusivamente para <strong>Dr. Rodrigo</strong></span>
+        <span>Aperte <kbd class="px-1.5 py-0.5 bg-slate-800 rounded text-slate-300">Espaço</kbd> para avançar</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 2: DIAGNÓSTICO MULTICANAL (RAIO-X)   -->
+    <!-- ========================================== -->
+    <section class="slide hidden-slide w-full max-w-6xl h-full flex flex-col justify-between p-8 md:p-12 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800/80 shadow-2xl relative overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+        <div>
+          <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">RAIO-X DE PONTOS DE CONTATO</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white font-display">Diagnóstico Multicanal</h2>
+        </div>
+        <span class="text-xs text-slate-400">4 Canais Analisados</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-auto">
+        <!-- Card 1: Instagram -->
+        <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-200 text-sm flex items-center gap-2">
+              <span class="text-base">📱</span> Instagram
+            </span>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 font-mono">Presença ativa (@odontoprime)</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-300">
+            <p class="text-slate-400"><strong class="text-slate-200">Gargalos:</strong> Bio com mais de 110 caracteres (cortando no mobile com botão '...mais')</p>
+            <p class="text-emerald-400 pt-1 font-medium">💡 Transformar o perfil em uma esteira de captação orgânica e qualificação pré-anúncio.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Site / LP -->
+        <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-200 text-sm flex items-center gap-2">
+              <span class="text-base">🌐</span> Site / Landing Page
+            </span>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 font-mono">Página online (https://odontoprime.com.br)</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-300">
+            <p class="text-slate-400"><strong class="text-slate-200">Gargalos:</strong> Dobra 1 (Hero) com proposta de valor pouco assertiva</p>
+            <p class="text-emerald-400 pt-1 font-medium">💡 Criar Landing Page focada 100% em conversão direta para WhatsApp com tempo de carregamento < 1s.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Google Empresa -->
+        <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-200 text-sm flex items-center gap-2">
+              <span class="text-base">📍</span> Google Empresa (GMN)
+            </span>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 font-mono">Ficha local (Google Maps / Busca Local)</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-300">
+            <p class="text-slate-400"><strong class="text-slate-200">Gargalos:</strong> Descrições de serviços genéricas ou com mais de 119 caracteres</p>
+            <p class="text-emerald-400 pt-1 font-medium">💡 Otimizar os 17 pontos de SEO Local para capturar pessoas prontas para comprar na sua cidade.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: WhatsApp Business -->
+        <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/60 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-200 text-sm flex items-center gap-2">
+              <span class="text-base">💬</span> WhatsApp Business
+            </span>
+            <span class="text-[11px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 font-mono">Canal de Atendimento (19999998888)</span>
+          </div>
+          <div class="text-xs space-y-1 text-slate-300">
+            <p class="text-slate-400"><strong class="text-slate-200">Gargalos:</strong> Mensagem de saudação padrão sem triagem rápida de necessidade</p>
+            <p class="text-emerald-400 pt-1 font-medium">💡 Padronizar script de triagem em 2 passos para aumentar a taxa de comparecimento e conversão.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-3 rounded-lg bg-blue-900/20 border border-blue-500/30 text-xs text-blue-200 flex items-center justify-between">
+        <span>🎯 <strong>Conclusão do Raio-X:</strong> O mercado local tem demanda reprimida, mas a fricção no atendimento e a falta de clareza na proposta reduzem a taxa de conversão.</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 3: 1º P - POSICIONAMENTO             -->
+    <!-- ========================================== -->
+    <section class="slide hidden-slide w-full max-w-6xl h-full flex flex-col justify-between p-8 md:p-12 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800/80 shadow-2xl relative overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+        <div>
+          <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">1º PILAR • QUEM É A SUA MARCA?</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white font-display">Pirâmide da Marca & Posicionamento</h2>
+        </div>
+        <span class="text-xs text-slate-400">Da Base Técnica ao Propósito Central</span>
+      </div>
+
+      <!-- Estrutura Hierárquica em Pirâmide -->
+      <div class="space-y-3.5 my-auto max-w-4xl mx-auto w-full">
+        <!-- TOPO -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-blue-950/80 via-blue-900/50 to-indigo-950/80 border border-blue-500/40 text-center relative shadow-lg">
+          <span class="text-[10px] uppercase font-mono tracking-widest text-blue-300 font-bold px-2 py-0.5 rounded bg-blue-500/20 mb-1 inline-block">
+            🔺 TOPO • ESSÊNCIA & PROPÓSITO CENTRAL
+          </span>
+          <h3 class="text-base md:text-lg font-bold text-white mt-1">"Devolver a liberdade e a alegria de sorrir com segurança e confiança."</h3>
+          <p class="text-xs text-blue-200/90 mt-1 max-w-2xl mx-auto">Transformar a saúde e a autoestima das pessoas através de uma odontologia humana, moderna e sem traumas.</p>
+        </div>
+
+        <!-- MEIO -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/60">
+            <span class="text-[10px] uppercase font-mono tracking-widest text-amber-300 font-bold block mb-1">
+              🔶 MEIO • BENEFÍCIOS PRÁTICOS & EMOCIONAIS
+            </span>
+            <ul class="text-xs text-slate-300 space-y-1">
+              <li class="flex items-start gap-1.5"><span class="text-amber-400">•</span><span>Tratamentos previsíveis com menos visitas e sem dor</span></li><li class="flex items-start gap-1.5"><span class="text-amber-400">•</span><span>Planejamento financeiro flexível e transparente</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-emerald-400">•</span><span>Recuperação imediata da autoestima e da vontade de sorrir</span></li><li class="flex items-start gap-1.5"><span class="text-emerald-400">•</span><span>Sensação de segurança e acolhimento (adeus trauma de dentista)</span></li>
+            </ul>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-800/60 border border-slate-700/60">
+            <span class="text-[10px] uppercase font-mono tracking-widest text-cyan-300 font-bold block mb-1">
+              🎭 MEIO • PERSONALIDADE & TOM DE VOZ
+            </span>
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              <span class="px-2.5 py-1 rounded bg-slate-700/70 text-slate-200 text-xs font-medium border border-slate-600/50">Especialista e Acolhedor</span><span class="px-2.5 py-1 rounded bg-slate-700/70 text-slate-200 text-xs font-medium border border-slate-600/50">Sofisticado sem ser inacessível</span><span class="px-2.5 py-1 rounded bg-slate-700/70 text-slate-200 text-xs font-medium border border-slate-600/50">Transparente e Didático</span>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-2">Comunicação clara, empática e firme que constrói confiança imediata.</p>
+          </div>
+        </div>
+
+        <!-- BASE -->
+        <div class="p-3.5 rounded-xl bg-slate-850 bg-slate-900/90 border border-slate-700/50">
+          <span class="text-[10px] uppercase font-mono tracking-widest text-slate-400 font-bold block mb-1">
+            🟦 BASE • ATRIBUTOS FUNCIONAIS & DIFERENCIAIS PRÁTICOS
+          </span>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mt-2">
+            <div class="p-2 rounded bg-slate-800/40 text-[11px] text-slate-300 border border-slate-700/40">✓ Tecnologia de escaneamento digital e tomografia 3D</div><div class="p-2 rounded bg-slate-800/40 text-[11px] text-slate-300 border border-slate-700/40">✓ Equipe especializada em reabilitação e estética</div><div class="p-2 rounded bg-slate-800/40 text-[11px] text-slate-300 border border-slate-700/40">✓ Consultórios privativos com sedação e conforto</div><div class="p-2 rounded bg-slate-800/40 text-[11px] text-slate-300 border border-slate-700/40">✓ Atendimento com hora marcada e pontualidade</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-xs text-slate-500 flex justify-between">
+        <span>Fundamento: Ninguém compra apenas recursos técnicos; as pessoas compram o que esses recursos significam para elas.</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 4: 2º P - PÚBLICO                    -->
+    <!-- ========================================== -->
+    <section class="slide hidden-slide w-full max-w-6xl h-full flex flex-col justify-between p-8 md:p-12 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800/80 shadow-2xl relative overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+        <div>
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">2º PILAR • COM QUEM VOCÊ ESTÁ FALANDO?</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white font-display">Mapa da Empatia & Psicologia</h2>
+        </div>
+        <span class="text-xs text-slate-400">Além de Idade e Gênero</span>
+      </div>
+
+      <div class="my-auto space-y-3">
+        <!-- Grid dos 4 Quadrantes -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/50">
+            <span class="text-xs font-bold text-blue-300 flex items-center gap-1.5 mb-1.5">
+              <span>👁️</span> O QUE ELE VÊ NO AMBIENTE?
+            </span>
+            <ul class="text-xs text-slate-300 space-y-1">
+              <li class="flex items-start gap-1"><span class="text-blue-400">•</span><span>Pessoas no Instagram com sorrisos impecáveis e alinhadores</span></li><li class="flex items-start gap-1"><span class="text-blue-400">•</span><span>Amigos que fizeram tratamentos e elogiam o resultado</span></li>
+            </ul>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/50">
+            <span class="text-xs font-bold text-cyan-300 flex items-center gap-1.5 mb-1.5">
+              <span>👂</span> O QUE ELE OUVE DE INFLUÊNCIAS?
+            </span>
+            <ul class="text-xs text-slate-300 space-y-1">
+              <li class="flex items-start gap-1"><span class="text-cyan-400">•</span><span>Familiares dizendo que 'precisa cuidar dos dentes'</span></li><li class="flex items-start gap-1"><span class="text-cyan-400">•</span><span>Colegas de trabalho comentando sobre dor, medo e experiências ruins em clínicas</span></li>
+            </ul>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/50">
+            <span class="text-xs font-bold text-amber-300 flex items-center gap-1.5 mb-1.5">
+              <span>💭</span> O QUE PENSA E SENTE (SECRETO)?
+            </span>
+            <ul class="text-xs text-slate-300 space-y-1">
+              <li class="flex items-start gap-1"><span class="text-amber-400">•</span><span>Medo silencioso de sentir dor intensa ou ter que fazer cirurgia invasiva</span></li><li class="flex items-start gap-1"><span class="text-amber-400">•</span><span>Vergonha de sorrir em fotos, eventos sociais ou reuniões de negócios</span></li>
+            </ul>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/50">
+            <span class="text-xs font-bold text-emerald-300 flex items-center gap-1.5 mb-1.5">
+              <span>🗣️</span> O QUE FALA E FAZ EM PÚBLICO?
+            </span>
+            <ul class="text-xs text-slate-300 space-y-1">
+              <li class="flex items-start gap-1"><span class="text-emerald-400">•</span><span>Diz que 'não tem tempo para ir ao dentista' (mas no fundo é medo ou insegurança financeira)</span></li><li class="flex items-start gap-1"><span class="text-emerald-400">•</span><span>Evita sorrir abertamente nas fotos em família ou do trabalho</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Faixa de Dores vs Ganhos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+          <div class="p-3.5 rounded-xl bg-rose-950/30 border border-rose-500/30">
+            <span class="text-xs font-bold text-rose-300 flex items-center gap-1.5 mb-1.5">
+              <span>🔴</span> DORES & RISCOS (O QUE TIRA O SONO)
+            </span>
+            <ul class="text-xs text-rose-100/90 space-y-1">
+              <li class="flex items-start gap-1"><span class="text-rose-400">✕</span><span>Trauma e pânico de dor durante o atendimento odontológico</span></li><li class="flex items-start gap-1"><span class="text-rose-400">✕</span><span>Falta de transparência nos orçamentos (preços que mudam a cada consulta)</span></li>
+            </ul>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
+            <span class="text-xs font-bold text-emerald-300 flex items-center gap-1.5 mb-1.5">
+              <span>🟢</span> GANHOS & AMBIÇÕES (VITÓRIA REAL)
+            </span>
+            <ul class="text-xs text-emerald-100/90 space-y-1">
+              <li class="flex items-start gap-1"><span class="text-emerald-400">✓</span><span>Sorriso bonito, natural e harmônico que eleva a autoconfiança instantaneamente</span></li><li class="flex items-start gap-1"><span class="text-emerald-400">✓</span><span>Atendimento acolhedor, rápido, sem dor e com pontualidade rigorosa</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-xs text-slate-500 flex justify-between">
+        <span>Conexão: Anúncios que tocam diretamente nas dores secretas e desejos reais reduzem o CPA em até 60%.</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 5: 3º P - PROPOSTA DE VALOR          -->
+    <!-- ========================================== -->
+    <section class="slide hidden-slide w-full max-w-6xl h-full flex flex-col justify-between p-8 md:p-12 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800/80 shadow-2xl relative overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+        <div>
+          <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">3º PILAR • O QUE VOCÊ RESOLVE DE VERDADE?</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white font-display">Canvas da Proposta de Valor & Fit</h2>
+        </div>
+        <span class="text-xs text-slate-400">Alinhamento Perfeito Demanda ↔ Oferta</span>
+      </div>
+
+      <div class="my-auto space-y-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- LADO DO CLIENTE -->
+          <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/70 space-y-2.5">
+            <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+              <span class="text-xs font-bold text-blue-300 uppercase tracking-wider">👤 LADO DO CLIENTE (DEMANDA)</span>
+              <span class="text-[10px] text-slate-400">O que ele busca</span>
+            </div>
+            <div class="text-xs space-y-2 text-slate-300">
+              <div>
+                <p class="font-bold text-slate-200">Tarefas do Cliente (Jobs):</p>
+                <p class="text-slate-400">Resolver problemas dentários urgentes (dor, dente quebrado, cárie)</p>
+              </div>
+              <div>
+                <p class="font-bold text-rose-300">Dores Principais (Pains):</p>
+                <p class="text-rose-200/80">Medo de dor aguda e desconforto nos procedimentos</p>
+              </div>
+              <div>
+                <p class="font-bold text-emerald-300">Ganhos Almejados (Gains):</p>
+                <p class="text-emerald-200/80">Sentir orgulho e alegria ao sorrir em público</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- LADO DO NEGÓCIO -->
+          <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/70 space-y-2.5">
+            <div class="flex items-center justify-between border-b border-slate-700 pb-2">
+              <span class="text-xs font-bold text-emerald-300 uppercase tracking-wider">🏢 LADO DO NEGÓCIO (OFERTA)</span>
+              <span class="text-[10px] text-slate-400">O que você entrega</span>
+            </div>
+            <div class="text-xs space-y-2 text-slate-300">
+              <div>
+                <p class="font-bold text-slate-200">Produtos / Soluções:</p>
+                <p class="text-slate-400">Consultas de Avaliação Digital Completa com Tomografia e Raio-X</p>
+              </div>
+              <div>
+                <p class="font-bold text-rose-300">Aliviadores de Dor:</p>
+                <p class="text-rose-200/80">Protocolos de sedação consciente e anestesia computadorizada sem agulha visível</p>
+              </div>
+              <div>
+                <p class="font-bold text-emerald-300">Criadores de Ganho:</p>
+                <p class="text-emerald-200/80">Acompanhamento pós-procedimento com suporte dedicado via WhatsApp</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FIT ESTRATÉGICO -->
+        <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/40 space-y-1">
+          <span class="text-xs font-bold text-emerald-300 uppercase tracking-wider flex items-center gap-1.5">
+            <span>🎯</span> O FIT ESTRATÉGICO (CONEXÃO DIRETA)
+          </span>
+          <p class="text-xs text-emerald-100/90">A dor do 'medo de dor' é neutralizada pelo aliviador de 'sedação e anestesia sem dor'.</p>
+        </div>
+      </div>
+
+      <div class="text-xs text-slate-500 flex justify-between">
+        <span>Resultado: A oferta se torna irresistível porque resolve problemas concretos sem ruído.</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 6: BÔNUS - MANUAL DA MARCA           -->
+    <!-- ========================================== -->
+    <section class="slide hidden-slide w-full max-w-6xl h-full flex flex-col justify-between p-8 md:p-12 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800/80 shadow-2xl relative overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+        <div>
+          <span class="text-xs font-bold text-purple-400 uppercase tracking-widest">BÔNUS ESTRATÉGICO</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white font-display">Manual da Marca & Identidade</h2>
+        </div>
+        <span class="text-xs text-slate-400">Coesão Visual & Verbal</span>
+      </div>
+
+      <div class="my-auto space-y-3.5">
+        <!-- Paleta de Cores -->
+        <div class="p-4 rounded-xl bg-slate-800/40 border border-slate-700/50 space-y-2">
+          <span class="text-xs font-bold text-slate-200 uppercase tracking-wider block">PALETA DE CORES OFICIAL RECOMENDADA</span>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
+            <div class="p-2.5 rounded-lg border border-slate-700 flex items-center gap-2.5 bg-slate-900/60">
+              <span class="w-7 h-7 rounded-md shadow" style="background-color: #0A2540;"></span>
+              <div>
+                <p class="text-[11px] font-bold text-slate-200">Primária</p>
+                <p class="text-[10px] font-mono text-slate-400">#0A2540</p>
+              </div>
+            </div>
+            <div class="p-2.5 rounded-lg border border-slate-700 flex items-center gap-2.5 bg-slate-900/60">
+              <span class="w-7 h-7 rounded-md shadow" style="background-color: #1E3A8A;"></span>
+              <div>
+                <p class="text-[11px] font-bold text-slate-200">Secundária</p>
+                <p class="text-[10px] font-mono text-slate-400">#1E3A8A</p>
+              </div>
+            </div>
+            <div class="p-2.5 rounded-lg border border-slate-700 flex items-center gap-2.5 bg-slate-900/60">
+              <span class="w-7 h-7 rounded-md shadow" style="background-color: #06B6D4;"></span>
+              <div>
+                <p class="text-[11px] font-bold text-slate-200">Destaque / CTA</p>
+                <p class="text-[10px] font-mono text-slate-400">#06B6D4</p>
+              </div>
+            </div>
+            <div class="p-2.5 rounded-lg border border-slate-700 flex items-center gap-2.5 bg-slate-900/60">
+              <span class="w-7 h-7 rounded-md shadow" style="background-color: #08101E;"></span>
+              <div>
+                <p class="text-[11px] font-bold text-slate-200">Fundo Dark</p>
+                <p class="text-[10px] font-mono text-slate-400">#08101E</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tom de Voz & Diretrizes -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="p-3.5 rounded-xl bg-emerald-950/20 border border-emerald-500/30 space-y-1.5">
+            <span class="text-xs font-bold text-emerald-300 block">✅ DO'S (DIRETRIZES DE SUCESSO)</span>
+            <ul class="text-xs text-slate-300 space-y-1">
+              <li class="flex items-start gap-1"><span class="text-emerald-400">✓</span><span>Utilizar imagens reais da clínica, da equipe e de pacientes satisfeitos (com autorização)</span></li><li class="flex items-start gap-1"><span class="text-emerald-400">✓</span><span>Explicar tratamentos focando nos benefícios da rotina e na estética do sorriso</span></li>
+            </ul>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-rose-950/20 border border-rose-500/30 space-y-1.5">
+            <span class="text-xs font-bold text-rose-300 block">❌ DON'TS (O QUE EVITAR)</span>
+            <ul class="text-xs text-slate-300 space-y-1">
+              <li class="flex items-start gap-1"><span class="text-rose-400">✕</span><span>Nunca postar fotos explícitas de cirurgias, sangue ou agulhas em anúncios abertos</span></li><li class="flex items-start gap-1"><span class="text-rose-400">✕</span><span>Evitar comunicação baseada em preços populares ou leilão de descontos</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-xs text-slate-500 flex justify-between">
+        <span>Tipografia Oficial: <strong>Plus Jakarta Sans, sans-serif</strong> para Títulos e <strong>Inter, sans-serif</strong> para Textos.</span>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SLIDE 7: PLANO DE AÇÃO & PRÓXIMOS PASSOS   -->
+    <!-- ========================================== -->
+    <section class="slide hidden-slide w-full max-w-6xl h-full flex flex-col justify-between p-8 md:p-12 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800/80 shadow-2xl relative overflow-hidden">
+      <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+        <div>
+          <span class="text-xs font-bold text-blue-400 uppercase tracking-widest">EXECUÇÃO & RESULTADOS</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white font-display">Próximos Passos & Implementação</h2>
+        </div>
+        <span class="text-xs text-slate-400">Roadmap de 4 Etapas</span>
+      </div>
+
+      <div class="space-y-3 my-auto max-w-4xl mx-auto w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="p-3.5 rounded-xl bg-slate-800/50 border border-slate-700/60 flex items-start gap-3">
+            <span class="w-7 h-7 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 font-bold flex items-center justify-center text-xs shrink-0">1</span>
+            <div>
+              <p class="font-bold text-slate-200 text-xs">Alinhamento & Reunião Estratégica</p>
+              <p class="text-[11px] text-slate-400">Aprovação do posicionamento, definição de metas de CAC e validação das ofertas.</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-800/50 border border-slate-700/60 flex items-start gap-3">
+            <span class="w-7 h-7 rounded-lg bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 font-bold flex items-center justify-center text-xs shrink-0">2</span>
+            <div>
+              <p class="font-bold text-slate-200 text-xs">Otimização dos 4 Canais Digitais</p>
+              <p class="text-[11px] text-slate-400">Ajuste da Bio do IG (<110c), Landing Page rápida focada em WhatsApp e SEO no GMN.</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-800/50 border border-slate-700/60 flex items-start gap-3">
+            <span class="w-7 h-7 rounded-lg bg-amber-500/20 border border-amber-500/30 text-amber-400 font-bold flex items-center justify-center text-xs shrink-0">3</span>
+            <div>
+              <p class="font-bold text-slate-200 text-xs">Lançamento de Tráfego Pago</p>
+              <p class="text-[11px] text-slate-400">Meta Ads geolocalizado (Raio 10km) + Google Ads com Blindagem de 3 camadas de negativas.</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-800/50 border border-slate-700/60 flex items-start gap-3">
+            <span class="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 font-bold flex items-center justify-center text-xs shrink-0">4</span>
+            <div>
+              <p class="font-bold text-slate-200 text-xs">Otimização Contínua & Escala</p>
+              <p class="text-[11px] text-slate-400">Monitoramento diário de conversões, corte de desperdício e escala de ROAS.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Final -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-blue-900/40 via-blue-800/30 to-indigo-900/40 border border-blue-500/40 text-center space-y-1">
+          <p class="text-sm font-bold text-white">Pronto para transformar sua presença digital em um canal previsível de aquisição?</p>
+          <p class="text-xs text-blue-200">Vamos agendar a reunião de implementação e iniciar a operação.</p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-800/50">
+        <span>Alavancar no Digital • Gestão Estratégica de Tráfego & Posicionamento</span>
+        <span class="text-blue-400 font-medium">contato@alavancarnodigital.com.br</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script de Navegação Interativa -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const indicator = document.getElementById('slide-indicator');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+
+    function updateSlides() {
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.remove('hidden-slide');
+          slide.classList.add('active-slide');
+        } else {
+          slide.classList.remove('active-slide');
+          slide.classList.add('hidden-slide');
+        }
+      });
+
+      if (indicator) {
+        indicator.textContent = `${currentSlide + 1} / ${totalSlides}`;
+      }
+      if (btnPrev) btnPrev.disabled = currentSlide === 0;
+      if (btnNext) btnNext.disabled = currentSlide === totalSlides - 1;
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlides();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+
+    function goToSlide(index) {
+      if (index >= 0 && index < totalSlides) {
+        currentSlide = index;
+        updateSlides();
+      }
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    // Atalhos do Teclado
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        goToSlide(0);
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        goToSlide(totalSlides - 1);
+      } else if (e.key.toLowerCase() === 'f') {
+        e.preventDefault();
+        toggleFullscreen();
+      }
+    });
+
+    // Inicialização
+    updateSlides();
+  </script>
+</body>
+</html>
