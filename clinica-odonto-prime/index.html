@@ -19,8 +19,8 @@
                 },
                 colors: {
                     navy: { 950: '#070D24', 900: '#0C1438', 800: '#141E57' },
-                    gold: { 500: '#E7C614', 400: '#F5D838' },
-                    brandblue: { 500: '#3E7BB8', 400: '#639CD1' }
+                    gold: { 500: '#E7C614', 400: '#F5D838', 100: '#FEF9C3', 800: '#854D0E', 700: '#A16207', 600: '#CA8A04' },
+                    brandblue: { 500: '#3E7BB8', 400: '#639CD1', 100: '#DBEAFE', 800: '#1E40AF', 600: '#2563EB' }
                 },
                 animation: {
                     'fade-in': 'fadeIn 0.4s ease-out forwards',
@@ -43,8 +43,8 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- TOP BAR DE NAVEGAÇÃO ENTRE ENTREGÁVEIS -->
-    <header class="bg-navy-950 border-b border-navy-800 text-slate-300 text-xs py-2.5 px-4">
+    <!-- TOP BAR DE NAVEGAÇÃO ENTRE ENTREGÁVEIS (PORTAL CANCELADO / UNIFICADO) -->
+    <header class="bg-navy-950 border-b border-navy-800 text-slate-300 text-xs py-2.5 px-4 sticky top-0 z-[60]">
         <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center gap-2">
                 <span class="font-extrabold text-gold-400 uppercase tracking-wider">● AD Sites</span>
@@ -53,33 +53,30 @@
                 <span class="hidden sm:inline text-slate-400">(Campinas - SP)</span>
             </div>
             <div class="flex items-center gap-2">
-                <a href="apresentacao.html" class="px-3 py-1 rounded-lg bg-navy-900 hover:bg-navy-800 text-slate-200 hover:text-white border border-navy-700 transition flex items-center gap-1.5 font-medium">
+                <a href="apresentacao.html" class="px-3.5 py-1.5 rounded-lg bg-navy-900 hover:bg-navy-800 text-slate-200 hover:text-white border border-navy-700 transition flex items-center gap-1.5 font-bold shadow-sm">
                     <span>📊</span> Slides Executivos (16:9)
-                </a>
-                <a href="portal.html" class="px-3 py-1 rounded-lg bg-navy-900 hover:bg-navy-800 text-slate-200 hover:text-white border border-navy-700 transition flex items-center gap-1.5 font-medium">
-                    <span>🗺️</span> Trilha 6 Etapas
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- NAV BAR (TABS) -->
-    <nav class="sticky top-0 z-50 bg-navy-950 border-b border-gold-500 shadow-xl">
+    <!-- NAV BAR (6 ABAS DE TEST DRIVE & ENTREGÁVEIS) -->
+    <nav class="sticky top-[41px] z-50 bg-navy-950 border-b border-gold-500 shadow-xl">
         <div class="max-w-7xl mx-auto px-2">
             <div class="flex overflow-x-auto no-scrollbar justify-start md:justify-center">
                 <ul class="flex space-x-1 p-2" id="tabs-list">
-                    <li><button data-tab="tab-estrategia" class="tab-btn active px-4 py-3 text-sm font-bold rounded-xl transition-all bg-gold-500 text-navy-950 shadow-md">🗺️ Estratégia</button></li>
-                    <li><button data-tab="tab-google" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">🏢 Google Perfil</button></li>
-                    <li><button data-tab="tab-instagram" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">📸 Instagram</button></li>
-                    <li><button data-tab="tab-meta" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">🚀 Meta Ads</button></li>
-                    <li><button data-tab="tab-gads" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">🔍 Google Ads</button></li>
-                    <li><button data-tab="tab-landingpage" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">🎯 Landing Page</button></li>
+                    <li><button data-tab="tab-estrategia" class="tab-btn active px-4 py-3 text-sm font-bold rounded-xl transition-all bg-gold-500 text-navy-950 shadow-md">🗺️ 1. Estratégia 3Ps</button></li>
+                    <li><button data-tab="tab-google" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">🏢 2. Google Empresa</button></li>
+                    <li><button data-tab="tab-instagram" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">📸 3. Perfil Instagram</button></li>
+                    <li><button data-tab="tab-meta" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">🚀 4. Anúncios Meta</button></li>
+                    <li><button data-tab="tab-gads" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">🔍 5. Google Ads</button></li>
+                    <li><button data-tab="tab-landingpage" class="tab-btn px-4 py-3 text-sm font-semibold rounded-xl transition-all text-slate-300 hover:text-white hover:bg-navy-800">🎯 6. Landing Page</button></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT (CONTEÚDO DAS 6 ABAS) -->
     <main class="flex-1 max-w-7xl mx-auto w-full px-4 py-12">
         
     <div id="tab-estrategia" class="tab-content block space-y-12 animate-fade-in">
@@ -107,7 +104,7 @@
                     <div class="absolute top-0 left-0 w-1 h-full bg-brandblue-500 group-hover:w-2 transition-all"></div>
                     <span class="text-xs font-black uppercase text-brandblue-600 tracking-wider">2. Proposta de Valor</span>
                     <h3 class="text-xl font-bold text-navy-900 mt-1 mb-3">Sua Declaração Única</h3>
-                    <p class="text-sm text-slate-700 italic border-l-4 border-slate-200 pl-3">"A dor do 'medo de dor' é neutralizada pelo aliviador de 'sedação e anestesia sem dor'."</p>
+                    <p class="text-sm text-slate-700 italic border-l-4 border-slate-200 pl-3">"Ajudamos pessoas exigentes em Campinas - SP que buscam excelência em Odontologia Estética a conquistarem o melhor resultado com conforto, segurança e transparência."</p>
                 </div>
             </div>
 
@@ -152,6 +149,226 @@
 
             </div>
         </div>
+
+        <!-- ENTREGÁVEL ESTRATÉGICO 01 LOGO ABAIXO -->
+        
+    <div class="space-y-8 mt-12 pt-10 border-t border-slate-200">
+        <!-- HEADER DA SEÇÃO -->
+        <div class="border-l-4 border-gold-500 pl-4 py-1">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-gold-600">Entregável 01 • Metodologia dos 3Ps</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-navy-950 font-heading mt-1">(1) Planejamento Estratégico & Diretrizes da Marca</h3>
+            <p class="text-slate-600 text-sm sm:text-base mt-1 max-w-3xl">
+                A estrutura essencial para atrair e converter clientes de alto valor: quem a sua marca é (Posicionamento), com quem ela fala (Público) e o que ela resolve de verdade (Proposta).
+            </p>
+        </div>
+
+        <!-- 1P: POSICIONAMENTO (PIRÂMIDE DA MARCA) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">1P</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Pilar 01</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Posicionamento • Pirâmide da Marca</h4>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 border-2 border-gold-500 rounded-2xl p-5 md:p-6">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-amber-900 mb-1 flex items-center gap-2">
+                        <span>👑</span> <span>TOPO DA PIRÂMIDE • Essência & Propósito Central</span>
+                    </div>
+                    <p class="text-lg md:text-xl font-bold text-navy-950 italic">
+                        "Devolver a liberdade e a alegria de sorrir com segurança e confiança."
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                        <div class="text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-2">⚡ Benefício Prático & Emocional</div>
+                        <p class="text-sm text-slate-700 font-medium mb-2"><strong>Prático:</strong> Tratamentos previsíveis com menos visitas e sem dor</p>
+                        <p class="text-sm text-slate-700 font-medium"><strong>Emocional:</strong> Recuperação imediata da autoestima e da vontade de sorrir</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                        <div class="text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-2">🎭 Personalidade & Tom de Voz</div>
+                        <p class="text-sm text-slate-800 font-bold leading-relaxed">Autoridade acolhedora, técnica e transparente</p>
+                        <p class="text-xs text-slate-500 mt-2">Comunicação clara, elegante e acolhedora, sem distanciar o cliente pelo excesso de termos técnicos.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 md:p-6">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-slate-500 mb-3">🏛️ BASE DA PIRÂMIDE • Atributos Práticos & Funcionais</div>
+                    <ul class="space-y-2.5">
+                        <li class='flex items-start gap-3 text-slate-700 text-sm leading-relaxed'><span class='text-amber-500 font-bold text-base leading-none'>✓</span> <span>Tratamentos previsíveis com menos visitas e sem dor</span></li><li class='flex items-start gap-3 text-slate-700 text-sm leading-relaxed'><span class='text-amber-500 font-bold text-base leading-none'>✓</span> <span>Planejamento financeiro flexível e transparente</span></li><li class='flex items-start gap-3 text-slate-700 text-sm leading-relaxed'><span class='text-amber-500 font-bold text-base leading-none'>✓</span> <span>Solução completa de ponta a ponta no mesmo local</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2P: PÚBLICO (MAPA DA EMPATIA) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">2P</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Pilar 02</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Público • Mapa da Empatia & Tensões</h4>
+                </div>
+            </div>
+            <p class="text-slate-600 text-sm md:text-base mb-6">
+                Decodificação da psicologia profunda do seu cliente ideal em Campinas - SP: o que ele vê, ouve, pensa, sente e quais dores silenciosas guiam sua decisão.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                    <div class="text-xs font-bold uppercase tracking-wider text-navy-800 mb-2 flex items-center gap-2"><span>👀</span> <span>O QUE ELE VÊ NO MERCADO</span></div>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-slate-600">
+                        <li>• Concorrentes em Campinas - SP anunciando nas redes todos os dias</li>
+                        <li>• Pessoas buscando indicações de confiança em grupos e conversas</li>
+                        <li>• Promessas genéricas de preços baixos com baixa qualidade e pós-venda ruim</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                    <div class="text-xs font-bold uppercase tracking-wider text-navy-800 mb-2 flex items-center gap-2"><span>👂</span> <span>O QUE ELE OUVE DE TERCEIROS</span></div>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-slate-600">
+                        <li>• Amigos recomendando apenas profissionais que transmitem autoridade real</li>
+                        <li>• Reclamações sobre atrasos, burocracia ou atendimento impessoal</li>
+                        <li>• Que a primeira impressão no WhatsApp e no perfil define a decisão de compra</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                    <div class="text-xs font-bold uppercase tracking-wider text-navy-800 mb-2 flex items-center gap-2"><span>🧠</span> <span>O QUE ELE PENSA & SENTE</span></div>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-slate-600">
+                        <li>• Medo de gastar tempo e dinheiro sem ter a garantia do resultado prometido</li>
+                        <li>• Desejo de resolver a necessidade com conforto, rapidez e clareza de valores</li>
+                        <li>• Insegurança ao lidar com empresas sem histórico ou avaliações transparentes</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                    <div class="text-xs font-bold uppercase tracking-wider text-navy-800 mb-2 flex items-center gap-2"><span>🗣️</span> <span>O QUE ELE FALA & FAZ</span></div>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-slate-600">
+                        <li>• Pesquisa no Google Maps e no Instagram antes de enviar a primeira mensagem</li>
+                        <li>• Valoriza muito a agilidade de resposta e a atenção humanizada no primeiro contato</li>
+                        <li>• Busca provas sociais autênticas, fotos de resultados e avaliações 5 estrelas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-rose-50/70 border border-rose-200 rounded-2xl p-5">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-rose-900 mb-3 flex items-center gap-2"><span>🔴</span> <span>DORES & MEDOS SILENCIOSOS</span></div>
+                    <ul class="space-y-2">
+                        <li class='flex items-start gap-2 text-xs sm:text-sm text-rose-800'><span class='text-rose-600 font-bold'>✕</span> <span>Trauma e pânico de dor durante o atendimento odontológico</span></li><li class='flex items-start gap-2 text-xs sm:text-sm text-rose-800'><span class='text-rose-600 font-bold'>✕</span> <span>Falta de transparência nos orçamentos (preços que mudam a cada consulta)</span></li><li class='flex items-start gap-2 text-xs sm:text-sm text-rose-800'><span class='text-rose-600 font-bold'>✕</span> <span>Tratamentos intermináveis que duram anos sem resultado definitivo</span></li>
+                    </ul>
+                </div>
+                <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-5">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-900 mb-3 flex items-center gap-2"><span>🟢</span> <span>GANHOS & VITÓRIAS DESEJADAS</span></div>
+                    <ul class="space-y-2">
+                        <li class='flex items-start gap-2 text-xs sm:text-sm text-emerald-800'><span class='text-emerald-600 font-bold'>✓</span> <span>Sorriso bonito, natural e harmônico que eleva a autoconfiança instantaneamente</span></li><li class='flex items-start gap-2 text-xs sm:text-sm text-emerald-800'><span class='text-emerald-600 font-bold'>✓</span> <span>Atendimento acolhedor, rápido, sem dor e com pontualidade rigorosa</span></li><li class='flex items-start gap-2 text-xs sm:text-sm text-emerald-800'><span class='text-emerald-600 font-bold'>✓</span> <span>Previsibilidade total de custos, parcelamento justo e garantia de resultado</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3P: PROPOSTA (CANVAS DE VALOR & FIT) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">3P</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Pilar 03</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Proposta • Canvas de Proposta de Valor & Fit</h4>
+                </div>
+            </div>
+            <p class="text-slate-600 text-sm md:text-base mb-6">
+                O alinhamento perfeito entre as dores do seu cliente e as soluções exclusivas da sua empresa.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-slate-700 mb-3">📦 Portfólio de Soluções</div>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+                        <li>• Avaliação personalizada e diagnóstico transparente</li>
+                        <li>• Protocolos especializados e atendimento sob medida em Odontologia Estética</li>
+                        <li>• Suporte contínuo pós-atendimento via WhatsApp corporativo</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-slate-700 mb-3">🛡️ Aliviadores de Dor</div>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+                        <li>• Elimina a insegurança com explicações didáticas e plano claro</li>
+                        <li>• Acaba com a espera e ruído através de canal direto de WhatsApp</li>
+                        <li>• Previsibilidade de custos e cumprimento rigoroso de prazos</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-slate-700 mb-3">⭐ Criadores de Ganho</div>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+                        <li>• Experiência de alto padrão com acolhimento e pontualidade</li>
+                        <li>• Economia de tempo com processos organizados e resolutivos</li>
+                        <li>• Transformação real com tranquilidade e garantia de suporte</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-navy-950 text-white rounded-2xl p-6 md:p-8 border border-navy-800">
+                <div class="text-xs font-extrabold uppercase tracking-widest text-gold-400 mb-2">💎 Declaração de Posicionamento Único</div>
+                <p class="text-base sm:text-lg font-bold leading-relaxed text-slate-100">
+                    "Ajudamos pessoas exigentes em Campinas - SP que buscam excelência em Odontologia Estética a conquistarem o melhor resultado com conforto, segurança e transparência."
+                </p>
+            </div>
+        </div>
+
+        <!-- MANUAL DA MARCA EXPRESS -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">🎨</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Diretrizes Visuais & Verbais</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Manual da Marca Express</h4>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <div class="text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-3">Paleta de Cores Recomendada</div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div class="rounded-2xl p-4 border border-slate-200 flex flex-col justify-between h-24" style="background-color: #0A2540; color: #FFFFFF;">
+                        <span class="text-xs font-bold">Primária</span>
+                        <span class="text-xs font-mono font-bold opacity-90">#0A2540</span>
+                    </div>
+                    <div class="rounded-2xl p-4 border border-slate-200 flex flex-col justify-between h-24" style="background-color: #06B6D4; color: #0C1438;">
+                        <span class="text-xs font-bold">Destaque / CTA</span>
+                        <span class="text-xs font-mono font-bold opacity-90">#06B6D4</span>
+                    </div>
+                    <div class="rounded-2xl p-4 border border-slate-200 flex flex-col justify-between h-24" style="background-color: #639CD1; color: #FFFFFF;">
+                        <span class="text-xs font-bold">Apoio</span>
+                        <span class="text-xs font-mono font-bold opacity-90">#639CD1</span>
+                    </div>
+                    <div class="rounded-2xl p-4 border border-slate-200 flex flex-col justify-between h-24" style="background-color: #FAF9F6; color: #0C1438;">
+                        <span class="text-xs font-bold">Fundo / Respiro</span>
+                        <span class="text-xs font-mono font-bold opacity-90">#FAF9F6</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-5">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-900 mb-2 flex items-center gap-2"><span>✅</span> <span>DO'S (O QUE FAZER)</span></div>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-emerald-900">
+                        <li>• Usar imagens autênticas da equipe, estrutura e clientes atendidos (com autorização)</li>
+                        <li>• Destacar os benefícios da rotina e a transformação prática no dia a dia</li>
+                        <li>• Manter tipografia limpa e espaçamento generoso para transmitir sofisticação</li>
+                    </ul>
+                </div>
+                <div class="bg-rose-50/70 border border-rose-200 rounded-2xl p-5">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-rose-900 mb-2 flex items-center gap-2"><span>❌</span> <span>DON'TS (O QUE EVITAR)</span></div>
+                    <ul class="space-y-1.5 text-xs sm:text-sm text-rose-900">
+                        <li>• Nunca postar fotos explícitas, dolorosas ou sensacionalistas em anúncios</li>
+                        <li>• Evitar guerra de preços ou leilão de descontos populares sem critério técnico</li>
+                        <li>• Não poluir as peças com jargões técnicos incompreensíveis para o cliente leigo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     </div>
     
     <div id="tab-google" class="tab-content hidden space-y-8 animate-fade-in">
@@ -202,6 +419,309 @@
                 </div>
             </div>
         </div>
+
+        <!-- ENTREGÁVEL ESTRATÉGICO 02 LOGO ABAIXO -->
+        
+    <div class="space-y-10 mt-12 pt-10 border-t border-slate-200">
+        <!-- HEADER DA SEÇÃO -->
+        <div class="border-l-4 border-gold-500 pl-4 py-1">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-gold-600">Entregável 02 • Perfil da Empresa Google</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-navy-950 font-heading mt-1">(2) Otimizações do Perfil da Empresa Google (GMN)</h3>
+            <p class="text-slate-600 text-sm sm:text-base mt-1 max-w-3xl">
+                Plano técnico completo para posicionar a Clínica Odonto Prime no Top 3 do Google Maps e da busca local em Campinas - SP, capturando pessoas no exato momento da busca.
+            </p>
+        </div>
+
+        <!-- 1. AUDITORIA 17 PONTOS -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">17</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Checklist Estrutural</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Auditoria dos 17 Pontos Sequenciais do GMN</h4>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+        <div class="space-y-3">
+            <h5 class="text-xs font-extrabold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+                <span>🏛️</span> <span>1. Configuração Estrutural & Relevância</span>
+            </h5>
+            <ul class="space-y-2">
+                
+            <li class="flex items-start justify-between gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                <div>
+                    <span class="text-xs font-bold text-navy-950 block">1. Nome adequado da empresa</span>
+                    <span class="text-[11px] text-slate-500 leading-snug">Nome oficial da marca com termo sutil do nicho/cidade sem keyword stuffing arriscado.</span>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 whitespace-nowrap">✓ Peso 8</span>
+            </li>
+            
+            <li class="flex items-start justify-between gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                <div>
+                    <span class="text-xs font-bold text-navy-950 block">2. Descrição adequada da empresa</span>
+                    <span class="text-[11px] text-slate-500 leading-snug">Preenchimento completo dos 750 caracteres com termos de busca locais, diferenciais e CTA.</span>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 whitespace-nowrap">✓ Peso 6</span>
+            </li>
+            
+            <li class="flex items-start justify-between gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                <div>
+                    <span class="text-xs font-bold text-navy-950 block">3. Categoria correta da empresa (Primária & Secundárias)</span>
+                    <span class="text-[11px] text-slate-500 leading-snug">1 Categoria primária exata alinhada ao topo do nicho + até 4 categorias secundárias estratégicas.</span>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 whitespace-nowrap">✓ Peso 10</span>
+            </li>
+            
+            <li class="flex items-start justify-between gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                <div>
+                    <span class="text-xs font-bold text-navy-950 block">4. Ativar o endereço para ser mostrado</span>
+                    <span class="text-[11px] text-slate-500 leading-snug">Endereço físico público e verificado para força máxima no algoritmo do Google Maps.</span>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 whitespace-nowrap">✓ Peso 8</span>
+            </li>
+            
+            <li class="flex items-start justify-between gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100">
+                <div>
+                    <span class="text-xs font-bold text-navy-950 block">5. Área de cobertura da empresa</span>
+                    <span class="text-[11px] text-slate-500 leading-snug">Configuração inteligente de bairros nobres e cidades vizinhas sem diluir a relevância hiperlocal.</span>
+                </div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 whitespace-nowrap">✓ Peso 5</span>
+            </li>
+            
+            </ul>
+        </div>
+        
+        <div class="space-y-3">
+            <h5 class="text-xs font-extrabold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+                <span>🎯</span> <span>2. Conversão & Contato Direto</span>
+            </h5>
+            <ul class="space-y-2">
+                
+            </ul>
+        </div>
+        
+        <div class="space-y-3">
+            <h5 class="text-xs font-extrabold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+                <span>📸</span> <span>3. Identidade Visual & Engajamento Local</span>
+            </h5>
+            <ul class="space-y-2">
+                
+            </ul>
+        </div>
+        
+        <div class="space-y-3">
+            <h5 class="text-xs font-extrabold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+                <span>🌟</span> <span>4. Reputação & Prova Social Ativa</span>
+            </h5>
+            <ul class="space-y-2">
+                
+            </ul>
+        </div>
+        
+            </div>
+        </div>
+
+        <!-- 2. CATÁLOGO DE SERVIÇOS (< 119 CHARS) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">💼</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Catálogo Otimizado</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Serviços Cadastrados sem Truncamento Mobile</h4>
+                </div>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-500 mb-6">Cada serviço possui descrição abaixo de 119 caracteres para garantir leitura completa na ficha do Google sem botão '...mais'.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <h5 class="text-base font-bold text-navy-900">Implantes Dentários</h5>
+                    <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                        99 chars • Válido
+                    </span>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed mb-3">Recupere seu sorriso com tecnologia moderna em Campinas - SP. Agende avaliação!</p>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 flex items-center gap-1">
+                <span>✓</span> Menos de 119 caracteres (Sem truncamento no mobile)
+            </div>
+        </div>
+        
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <h5 class="text-base font-bold text-navy-900">Aparelho Invisível</h5>
+                    <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                        89 chars • Válido
+                    </span>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed mb-3">Alinhadores transparentes e confortáveis em Campinas - SP. Saiba mais!</p>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 flex items-center gap-1">
+                <span>✓</span> Menos de 119 caracteres (Sem truncamento no mobile)
+            </div>
+        </div>
+        
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <h5 class="text-base font-bold text-navy-900">Clareamento Dental</h5>
+                    <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                        81 chars • Válido
+                    </span>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed mb-3">Sorriso mais branco e radiante com segurança em Campinas - SP.</p>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 flex items-center gap-1">
+                <span>✓</span> Menos de 119 caracteres (Sem truncamento no mobile)
+            </div>
+        </div>
+        
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <h5 class="text-base font-bold text-navy-900">Limpeza e Prevenção</h5>
+                    <span class="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                        85 chars • Válido
+                    </span>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed mb-3">Profilaxia dental completa para sua saúde bucal em Campinas - SP.</p>
+            </div>
+            <div class="text-[10px] font-semibold text-emerald-600 flex items-center gap-1">
+                <span>✓</span> Menos de 119 caracteres (Sem truncamento no mobile)
+            </div>
+        </div>
+        
+            </div>
+        </div>
+
+        <!-- 3. ROTEIRO DE GOOGLE POSTS PARA 4 SEMANAS -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">📅</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Esteira Mensal de Conteúdo</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Roteiro de Google Posts para 4 Semanas</h4>
+                </div>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-500 mb-6">Publicações de autoridade e engajamento mantendo a ficha ativa no algoritmo do Google.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-extrabold text-gold-600 uppercase tracking-wider">Semana 1 - Autoridade & Diferencial</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700">Novidade</span>
+                </div>
+                <p class="text-xs text-slate-700 whitespace-pre-line leading-relaxed mb-4">Você busca qualidade e segurança em Odontologia Estética em Campinas - SP?
+
+Na Clínica Odonto Prime, contamos com processos rigorosos e atendimento personalizado para entregar sempre o melhor resultado aos nossos clientes.
+
+📲 Toque no botão abaixo e fale direto com a nossa equipe no WhatsApp!</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-medium">📸 Foto da equipe em atendimento ou bastidores reais do negócio.</span>
+                <span class="font-bold text-blue-600">CTA: Saiba mais →</span>
+            </div>
+        </div>
+        
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-extrabold text-gold-600 uppercase tracking-wider">Semana 2 - Solução de Problema Específico</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700">Novidade / Destaque de Serviço</span>
+                </div>
+                <p class="text-xs text-slate-700 whitespace-pre-line leading-relaxed mb-4">Evite dores de cabeça na hora de contratar Odontologia Estética em Campinas - SP!
+
+Nosso time garante transparência no orçamento, agilidade na entrega e suporte completo.
+
+Fale com um especialista hoje mesmo e tire todas as suas dúvidas.</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-medium">📸 Foto nítida do principal serviço sendo executado ou produto acabado.</span>
+                <span class="font-bold text-blue-600">CTA: Ligar agora / Saiba mais →</span>
+            </div>
+        </div>
+        
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-extrabold text-gold-600 uppercase tracking-wider">Semana 3 - Oferta / Condição Especial</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700">Oferta</span>
+                </div>
+                <p class="text-xs text-slate-700 whitespace-pre-line leading-relaxed mb-4">Precisa de um orçamento para Odontologia Estética em Campinas - SP?
+
+Entre em contato esta semana com a Clínica Odonto Prime e receba um atendimento prioritário com condições especiais de agendamento.
+
+👇 Clique no botão e solicite sua cotação sem compromisso!</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-medium">📸 Foto atraente com arte limpa destacando a condição ou atendimento rápido.</span>
+                <span class="font-bold text-blue-600">CTA: Aproveitar oferta / Saiba mais →</span>
+            </div>
+        </div>
+        
+        <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-extrabold text-gold-600 uppercase tracking-wider">Semana 4 - Prova Social & Avaliações</span>
+                    <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700">Novidade / Depoimento</span>
+                </div>
+                <p class="text-xs text-slate-700 whitespace-pre-line leading-relaxed mb-4">Orgulho de ser referência em Odontologia Estética em Campinas - SP! ⭐⭐⭐⭐⭐
+
+Agradecemos a todos os nossos clientes pela confiança e pelas avaliações positivas no Google. Nosso compromisso é superar suas expectativas em cada atendimento.
+
+Venha tomar um café conosco ou chame no WhatsApp!</p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-medium">📸 Foto da fachada ou cliente satisfeito com selo de 5 estrelas do Google.</span>
+                <span class="font-bold text-blue-600">CTA: Saiba mais →</span>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+
+        <!-- 4. MATRIZ DE RESPOSTAS A REVIEWS -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">⭐</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Gestão de Reputação</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Matriz de Respostas a Avaliações com SEO Local</h4>
+                </div>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-500 mb-6">Modelos prontos que incorporam palavras-chave do nicho e o nome da cidade para turbinar o ranqueamento orgânico.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="space-y-3">
+                    <span class="text-xs font-bold text-emerald-800 uppercase tracking-wider block">Respostas 5 Estrelas (Ranqueamento)</span>
+                    
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+            <span class="font-bold text-slate-800 block mb-1">🌟 Avaliação 5 Estrelas Com Elogio a um Serviço Específico</span>
+            <p class="text-slate-600 italic">"Muito obrigado pelo feedback, [Nome do Cliente]! Ficamos muito felizes em saber que você aprovou nossos serviços de Odontologia Estética aqui em Campinas - SP. A equipe da Clínica Odonto Prime está sempre à sua disposição. Até a próxima!"</p>
+        </div>
+        
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs">
+            <span class="font-bold text-slate-800 block mb-1">🌟 Avaliação 5 Estrelas Apenas com Estrelas (Sem Texto)</span>
+            <p class="text-slate-600 italic">"Agradecemos imensamente pela avaliação 5 estrelas, [Nome do Cliente]! É um prazer oferecer o melhor em Odontologia Estética para Campinas - SP. Conte sempre com a Clínica Odonto Prime!"</p>
+        </div>
+        
+                </div>
+                <div class="space-y-3">
+                    <span class="text-xs font-bold text-rose-800 uppercase tracking-wider block">Protocolo de Resolução de Crises</span>
+                    
+        <div class="p-4 rounded-xl bg-rose-50/60 border border-rose-200 text-xs">
+            <span class="font-bold text-rose-900 block mb-1">🛡️ Crítica sobre Atraso ou Falha de Comunicação (1 a 3 Estrelas)</span>
+            <p class="text-rose-800 italic">"Olá, [Nome do Cliente]. Sentimos muito por sua experiência não ter atendido às suas expectativas. Na Clínica Odonto Prime, prezamos pelo padrão máximo de qualidade em Campinas - SP e queremos resolver isso imediatamente. Por favor, entre em contato direto pelo nosso WhatsApp corporativo (XX) XXXXX-XXXX para que a nossa diretoria possa solucionar seu caso."</p>
+        </div>
+        
+                </div>
+            </div>
+        </div>
+    </div>
+    
     </div>
     
     <div id="tab-instagram" class="tab-content hidden space-y-8 animate-fade-in">
@@ -243,7 +763,7 @@
                     
                     <div class="text-sm">
                         <div class="font-bold">Clínica Odonto Prime | Odontologia Estética</div>
-                        <div class="text-zinc-300 mt-1">💎 A dor do 'medo de dor' é neutralizada pelo aliviador de 'sed...</div>
+                        <div class="text-zinc-300 mt-1">💎 Ajudamos pessoas exigentes em Campinas - SP que buscam excel...</div>
                         <div class="text-zinc-300">📍 Especialistas em Campinas - SP</div>
                         <div class="text-zinc-300">👇 Agende seu Atendimento</div>
                         <a href="#" class="text-blue-400 font-semibold block mt-1">linktr.ee/clinica-odonto-prime</a>
@@ -275,6 +795,223 @@
                 </div>
             </div>
         </div>
+
+        <!-- ENTREGÁVEL ESTRATÉGICO 03 LOGO ABAIXO -->
+        
+    <div class="space-y-10 mt-12 pt-10 border-t border-slate-200">
+        <!-- HEADER DA SEÇÃO -->
+        <div class="border-l-4 border-gold-500 pl-4 py-1">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-gold-600">Entregável 03 • Vitrine do Instagram</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-navy-950 font-heading mt-1">(3) Otimizações do Perfil Instagram (Vitrine de Alta Conversão)</h3>
+            <p class="text-slate-600 text-sm sm:text-base mt-1 max-w-3xl">
+                Ajustes estratégicos para transformar visitantes curiosos em conversas no WhatsApp: bio cirúrgica, fixados magnéticos e destaques que vendem.
+            </p>
+        </div>
+
+        <!-- 1. BIO OTIMIZADA (< 110 CHARS) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">📱</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Primeira Impressão</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Bio Otimizada (&lt; 110 Caracteres)</h4>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div class="bg-zinc-950 text-white p-6 rounded-2xl border border-zinc-800 relative font-sans shadow-lg">
+                    <div class="flex items-center justify-between text-xs text-zinc-400 mb-3 border-b border-zinc-800 pb-2">
+                        <span>@odontoprime</span>
+                        <span class="text-emerald-400 font-bold">✓ 96 caracteres</span>
+                    </div>
+                    <p class="text-sm font-medium whitespace-pre-line leading-relaxed text-zinc-100">
+                        🎯 Especialistas em **Odontologia Estética**
+🚀 Soluções diretas para você
+👇 Fale no **WhatsApp**:
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between">
+                        <span class="text-xs text-blue-400 font-semibold underline">linktr.ee/clinica-odonto-prime</span>
+                        <span class="text-[10px] text-zinc-500">100% visível sem botão '...mais'</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h5 class="text-sm font-bold text-navy-950">Por que essa estrutura funciona?</h5>
+                    <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <span class="text-gold-500 font-bold">1.</span>
+                            <span><strong>Linha 1 (Autoridade):</strong> Declara imediatamente a especialidade exata da empresa.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-gold-500 font-bold">2.</span>
+                            <span><strong>Linha 2 (Localização):</strong> Fixa a relevância geográfica em Campinas - SP, gerando conexão imediata.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-gold-500 font-bold">3.</span>
+                            <span><strong>Linha 3 (Chamada Direta):</strong> Conduz o olhar para o link sem qualquer distração.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. TRÍADE DOS 3 POSTS FIXADOS -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">📌</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Conversão Silenciosa</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Tríade dos 3 Posts Fixados de Conversão</h4>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-extrabold px-2.5 py-1 rounded-full bg-navy-800 text-gold-400">Fixado #1</span>
+                    <span class="text-xs font-bold text-slate-500">Carrossel</span>
+                </div>
+                <h5 class="text-base font-bold text-navy-950 mb-2">1) Opção 1: Quem Somos / Autoridade & Bastidores</h5>
+                <p class="text-xs text-slate-500 mb-4"><strong>Objetivo:</strong> Autoridade</p>
+                <div class="p-3 bg-white rounded-xl border border-slate-200 text-xs text-slate-700 whitespace-pre-line leading-relaxed max-h-48 overflow-y-auto no-scrollbar mb-4">
+                    ['Slide 1 (Headline): Chega de Soluções Amadoras: Entregamos **Odontologia Estética com Rigor Técnico e Garantia Real**', 'Slide 2: Nascemos para combater o amadorismo e entregar <u>soluções com rigor técnico e transparência</u>.', 'Slide 3: • Referência comprovada em Odontologia Estética • <u>Equipe 100% especializada</u> • Atendimento ágil e segu...
+                </div>
+            </div>
+            <div class="text-[11px] font-semibold text-brandblue-600 flex items-center gap-1">
+                <span>📌</span> Fixo no topo do feed para qualificar novos visitantes 24h
+            </div>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-extrabold px-2.5 py-1 rounded-full bg-navy-800 text-gold-400">Fixado #2</span>
+                    <span class="text-xs font-bold text-slate-500">Carrossel</span>
+                </div>
+                <h5 class="text-base font-bold text-navy-950 mb-2">2) Opção 2: Oferta Principal / Passo a Passo do Atendimento</h5>
+                <p class="text-xs text-slate-500 mb-4"><strong>Objetivo:</strong> Autoridade</p>
+                <div class="p-3 bg-white rounded-xl border border-slate-200 text-xs text-slate-700 whitespace-pre-line leading-relaxed max-h-48 overflow-y-auto no-scrollbar mb-4">
+                    ['Slide 1 (Headline): Como Funciona o Nosso Atendimento', 'Slide 2: Você entra em contato e nos explica a sua necessidade.', 'Slide 3: Executamos o serviço com <u>rigor técnico</u> e **garantia total**.', 'Slide 4 (CTA): Clique no link do **WhatsApp** e solicite seu **orçamento sem compromisso**!']...
+                </div>
+            </div>
+            <div class="text-[11px] font-semibold text-brandblue-600 flex items-center gap-1">
+                <span>📌</span> Fixo no topo do feed para qualificar novos visitantes 24h
+            </div>
+        </div>
+        
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-extrabold px-2.5 py-1 rounded-full bg-navy-800 text-gold-400">Fixado #3</span>
+                    <span class="text-xs font-bold text-slate-500">Carrossel</span>
+                </div>
+                <h5 class="text-base font-bold text-navy-950 mb-2">3) Opção 3: Prova Social & Casos de Sucesso</h5>
+                <p class="text-xs text-slate-500 mb-4"><strong>Objetivo:</strong> Autoridade</p>
+                <div class="p-3 bg-white rounded-xl border border-slate-200 text-xs text-slate-700 whitespace-pre-line leading-relaxed max-h-48 overflow-y-auto no-scrollbar mb-4">
+                    ['Slide 1 (Headline): Resultados Comprovados de Clientes', 'Slide 2: Clientes satisfeitos com <u>atendimento de excelência</u> e **zero dor de cabeça**.', 'Slide 3: Depoimentos reais de quem confiou no nosso trabalho.', 'Slide 4 (CTA): Toque no link da Bio e consulte nosso portfólio completo!']...
+                </div>
+            </div>
+            <div class="text-[11px] font-semibold text-brandblue-600 flex items-center gap-1">
+                <span>📌</span> Fixo no topo do feed para qualificar novos visitantes 24h
+            </div>
+        </div>
+        
+            </div>
+        </div>
+
+        <!-- 3. DESTAQUES ESSENCIAIS (P-S-E-C) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">⭐</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Framework P-S-E-C</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Destaques Estratégicos com Capas Otimizadas</h4>
+                </div>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-500 mb-6">Roteiro planejado para guiar o visitante pelo funil: Conhecer a empresa → Entender os serviços → Ver resultados → Agendar no WhatsApp.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between mb-1">
+                <span class="text-sm font-bold text-navy-900">1) ⭐ COMECE AQUI</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">5 stories</span>
+            </div>
+            <p class="text-xs text-slate-500">Conversão direta</p>
+        </div>
+        
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between mb-1">
+                <span class="text-sm font-bold text-navy-900">2) 💼 SERVIÇOS</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">5 stories</span>
+            </div>
+            <p class="text-xs text-slate-500">Conversão direta</p>
+        </div>
+        
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between mb-1">
+                <span class="text-sm font-bold text-navy-900">3) 🏆 RESULTADOS</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">5 stories</span>
+            </div>
+            <p class="text-xs text-slate-500">Conversão direta</p>
+        </div>
+        
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between mb-1">
+                <span class="text-sm font-bold text-navy-900">4) ❓ DÚVIDAS / FAQ</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">5 stories</span>
+            </div>
+            <p class="text-xs text-slate-500">Conversão direta</p>
+        </div>
+        
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between mb-1">
+                <span class="text-sm font-bold text-navy-900">5) 📍 LOCALIZAÇÃO / ATENDIMENTO</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">5 stories</span>
+            </div>
+            <p class="text-xs text-slate-500">Conversão direta</p>
+        </div>
+        
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex items-center justify-between mb-1">
+                <span class="text-sm font-bold text-navy-900">6) 🧱 BASTIDORES / PROCESSO</span>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">5 stories</span>
+            </div>
+            <p class="text-xs text-slate-500">Conversão direta</p>
+        </div>
+        
+            </div>
+        </div>
+
+        <!-- 4. CHECKLIST 15 PONTOS DE SEO -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">🔍</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">SEO & Ranqueamento</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Checklist dos 15 Pontos de SEO do Perfil</h4>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs text-slate-700">
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 1. Nome de usuário limpo (@)</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 2. Nome de exibição com nicho + cidade</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 3. Foto de perfil profissional em alta luz</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 4. Categoria do perfil calibrada</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 5. Bio cirúrgica com menos de 110 chars</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 6. Proposta de valor clara na linha 1</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 7. Chamada direta para o WhatsApp</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 8. Link único rastreável com UTMs</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 9. Tríade dos 3 posts fixados ativos</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 10. Destaques essenciais P-S-E-C</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 11. Capas dos destaques legíveis no mobile</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 12. Botão de ação oficial ativado</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 13. Endereço comercial cadastrado</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 14. Feed com fotos reais e humanizadas</div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> 15. Palavras-chave nas legendas dos posts</div>
+            </div>
+        </div>
+    </div>
+    
     </div>
     
     <div id="tab-meta" class="tab-content hidden space-y-12 animate-fade-in">
@@ -371,6 +1108,179 @@
         
             </div>
         </div>
+
+        <!-- ENTREGÁVEL ESTRATÉGICO 04 LOGO ABAIXO -->
+        
+    <div class="space-y-10 mt-12 pt-10 border-t border-slate-200">
+        <!-- HEADER DA SEÇÃO -->
+        <div class="border-l-4 border-gold-500 pl-4 py-1">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-gold-600">Entregável 04 • Campanhas Meta Ads</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-navy-950 font-heading mt-1">(4) Lista de Copies Estratégicas para Anúncios Instagram</h3>
+            <p class="text-slate-600 text-sm sm:text-base mt-1 max-w-3xl">
+                Roteiros completos de copies validadas em frameworks de resposta direta (QPA-CTA, AIDA, PAS) prontas para rodar no Feed, Stories e Reels com alto CTR e início de conversas no WhatsApp.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-black px-3 py-1 rounded-full bg-gold-100 text-gold-800 uppercase tracking-wider">QPA-CTA (Fundo de Funil)</span>
+                    <span class="text-xs font-bold text-slate-400">Recomendado: Feed 4:5 ou Story 9:16</span>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-navy-950 mb-3">Framework 01: Pergunta Frontal & Solução Direta</h4>
+                
+                <!-- Gancho -->
+                <div class="p-4 rounded-xl bg-slate-50 border-l-4 border-gold-500 mb-4">
+                    <span class="text-[10px] font-extrabold uppercase text-gold-700 tracking-wider block mb-1">🎯 Gancho de Parada de Scroll (0 a 3s)</span>
+                    <p class="text-sm font-bold text-navy-900 leading-snug">"Você ainda adia cuidar da sua necessidade em Odontologia Estética por medo de tratamentos complexos?"</p>
+                </div>
+
+                <!-- Corpo -->
+                <div class="text-xs sm:text-sm text-slate-700 whitespace-pre-line leading-relaxed mb-6">
+                    Na Clínica Odonto Prime, desenvolvemos um protocolo humanizado e previsível para quem busca excelência em Campinas - SP.
+
+✓ Atendimento com hora marcada e sem atrasos
+✓ Diagnóstico claro e transparente desde a 1ª visita
+✓ Suporte contínuo via WhatsApp
+
+Chega de dúvidas ou incertezas.
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="pt-4 border-t border-slate-100">
+                <a href="https://wa.me/5511910071284?text=Ol%C3%A1!%20Vi%20a%20Copy%20de%20An%C3%BAncio%20da%20Clínica%20Odonto%20Prime%20e%20quero%20testar%20essa%20campanha." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition">
+                    <span>📲</span> <span>Falar com Especialista no WhatsApp</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-black px-3 py-1 rounded-full bg-gold-100 text-gold-800 uppercase tracking-wider">AIDA (Atenção, Interesse, Desejo, Ação)</span>
+                    <span class="text-xs font-bold text-slate-400">Recomendado: Carrossel ou Story 9:16</span>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-navy-950 mb-3">Framework 02: Desejo & Transformação</h4>
+                
+                <!-- Gancho -->
+                <div class="p-4 rounded-xl bg-slate-50 border-l-4 border-gold-500 mb-4">
+                    <span class="text-[10px] font-extrabold uppercase text-gold-700 tracking-wider block mb-1">🎯 Gancho de Parada de Scroll (0 a 3s)</span>
+                    <p class="text-sm font-bold text-navy-900 leading-snug">"O padrão de qualidade que você sempre buscou em Odontologia Estética bem perto de você em Campinas - SP."</p>
+                </div>
+
+                <!-- Corpo -->
+                <div class="text-xs sm:text-sm text-slate-700 whitespace-pre-line leading-relaxed mb-6">
+                    Se você valoriza pontualidade, atendimento de alto padrão e profissionais dedicados, a Clínica Odonto Prime foi pensada exatamente para o seu perfil.
+
+Combinamos tecnologia atualizada com um acolhimento que coloca a sua tranquilidade em primeiro lugar.
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="pt-4 border-t border-slate-100">
+                <a href="https://wa.me/5511910071284?text=Ol%C3%A1!%20Vi%20a%20Copy%20de%20An%C3%BAncio%20da%20Clínica%20Odonto%20Prime%20e%20quero%20testar%20essa%20campanha." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition">
+                    <span>📲</span> <span>Agendar Avaliação pelo WhatsApp</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-black px-3 py-1 rounded-full bg-gold-100 text-gold-800 uppercase tracking-wider">PAS (Problema, Agitação, Solução)</span>
+                    <span class="text-xs font-bold text-slate-400">Recomendado: Feed 4:5 (Modelo Split ❌ vs ✅)</span>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-navy-950 mb-3">Framework 03: Alívio da Frustração</h4>
+                
+                <!-- Gancho -->
+                <div class="p-4 rounded-xl bg-slate-50 border-l-4 border-gold-500 mb-4">
+                    <span class="text-[10px] font-extrabold uppercase text-gold-700 tracking-wider block mb-1">🎯 Gancho de Parada de Scroll (0 a 3s)</span>
+                    <p class="text-sm font-bold text-navy-900 leading-snug">"Cansado de atendimentos frios e orçamentos que mudam a cada conversa?"</p>
+                </div>
+
+                <!-- Corpo -->
+                <div class="text-xs sm:text-sm text-slate-700 whitespace-pre-line leading-relaxed mb-6">
+                    A falta de clareza e o atendimento impessoal são as maiores queixas de quem busca Odontologia Estética na nossa região.
+
+Na Clínica Odonto Prime, você recebe um planejamento fechado, didático e sem surpresas. Tudo explicado passo a passo antes de iniciar qualquer procedimento.
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="pt-4 border-t border-slate-100">
+                <a href="https://wa.me/5511910071284?text=Ol%C3%A1!%20Vi%20a%20Copy%20de%20An%C3%BAncio%20da%20Clínica%20Odonto%20Prime%20e%20quero%20testar%20essa%20campanha." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition">
+                    <span>📲</span> <span>Tirar Dúvidas com Nossa Equipe</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-black px-3 py-1 rounded-full bg-gold-100 text-gold-800 uppercase tracking-wider">Antes vs Depois (Contraste)</span>
+                    <span class="text-xs font-bold text-slate-400">Recomendado: Reels 10s ou Vídeo living canvas</span>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-navy-950 mb-3">Framework 04: Transformação & Contraste</h4>
+                
+                <!-- Gancho -->
+                <div class="p-4 rounded-xl bg-slate-50 border-l-4 border-gold-500 mb-4">
+                    <span class="text-[10px] font-extrabold uppercase text-gold-700 tracking-wider block mb-1">🎯 Gancho de Parada de Scroll (0 a 3s)</span>
+                    <p class="text-sm font-bold text-navy-900 leading-snug">"Como seria resolver a sua necessidade de forma definitiva e com total conforto?"</p>
+                </div>
+
+                <!-- Corpo -->
+                <div class="text-xs sm:text-sm text-slate-700 whitespace-pre-line leading-relaxed mb-6">
+                    De um lado: insegurança, dor de cabeça e tratamentos arrastados por meses.
+Do outro: acompanhamento dedicado, agilidade e a sensação de estar nas melhores mãos em Campinas - SP.
+
+Essa é a transformação que entregamos todos os dias na Clínica Odonto Prime.
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="pt-4 border-t border-slate-100">
+                <a href="https://wa.me/5511910071284?text=Ol%C3%A1!%20Vi%20a%20Copy%20de%20An%C3%BAncio%20da%20Clínica%20Odonto%20Prime%20e%20quero%20testar%20essa%20campanha." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition">
+                    <span>📲</span> <span>Quero Conhecer o Método</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-black px-3 py-1 rounded-full bg-gold-100 text-gold-800 uppercase tracking-wider">Quebra de Objeção (Segurança)</span>
+                    <span class="text-xs font-bold text-slate-400">Recomendado: Feed 4:5 (Modelo Editorial Sóbrio)</span>
+                </div>
+                <h4 class="text-lg sm:text-xl font-bold text-navy-950 mb-3">Framework 05: Transparência & Risco Zero</h4>
+                
+                <!-- Gancho -->
+                <div class="p-4 rounded-xl bg-slate-50 border-l-4 border-gold-500 mb-4">
+                    <span class="text-[10px] font-extrabold uppercase text-gold-700 tracking-wider block mb-1">🎯 Gancho de Parada de Scroll (0 a 3s)</span>
+                    <p class="text-sm font-bold text-navy-900 leading-snug">"'Será que vale a pena agendar uma consulta em Campinas - SP agora?'"</p>
+                </div>
+
+                <!-- Corpo -->
+                <div class="text-xs sm:text-sm text-slate-700 whitespace-pre-line leading-relaxed mb-6">
+                    Para que você tenha 100% de segurança, criamos um formato de avaliação transparente onde analisamos seu caso detalhadamente, sem qualquer compromisso de fechar na hora.
+
+Você sai da conversa sabendo exatamente o que precisa ser feito, prazos e custos.
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="pt-4 border-t border-slate-100">
+                <a href="https://wa.me/5511910071284?text=Ol%C3%A1!%20Vi%20a%20Copy%20de%20An%C3%BAncio%20da%20Clínica%20Odonto%20Prime%20e%20quero%20testar%20essa%20campanha." target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition">
+                    <span>📲</span> <span>Solicitar Horário Disponível</span>
+                </a>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
     </div>
     
     <div id="tab-gads" class="tab-content hidden space-y-8 animate-fade-in">
@@ -399,7 +1309,7 @@
                         </a>
                         <div class="text-xs text-green-700 mb-2">www.clinica-odonto-prime.com.br</div>
                         <p class="text-sm text-slate-600 line-clamp-3">
-                            A dor do 'medo de dor' é neutralizada pelo aliviador de 'sedação e anestesia sem dor'. Tratamentos previsíveis com menos visitas e sem dor. Clique e garanta seu horário.
+                            Ajudamos pessoas exigentes em Campinas - SP que buscam excelência em Odontologia Estética a conquistarem o melhor resultado com conforto, segurança e transparência. Tratamentos previsíveis com menos visitas e sem dor. Clique e garanta seu horário.
                         </p>
                         <!-- Sitelinks -->
                         <div class="mt-3 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-blue-700 text-sm font-semibold">
@@ -419,7 +1329,7 @@
                 </div>
             </div>
             
-            <!-- Keywords List -->
+            <!-- Keywords Summary Box -->
             <div class="bg-navy-950 p-8 rounded-3xl text-white shadow-2xl relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-10 opacity-5">
                     <svg class="w-48 h-48" fill="currentColor" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 14z"/></svg>
@@ -428,7 +1338,7 @@
                 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-300">
                     <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> [ odontologia estética campinas - sp ]</li>
                     <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> " especialista odontologia estética "</li>
-                    <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> [ preço odontologia estética ]</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> [ preco odontologia estética ]</li>
                     <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> " odontologia estética perto de mim "</li>
                     <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> [ agendar odontologia estética ]</li>
                     <li class="flex items-center gap-2"><span class="text-emerald-400 font-bold">✓</span> " melhor odontologia estética campinas - sp "</li>
@@ -438,6 +1348,113 @@
                 </div>
             </div>
         </div>
+
+        <!-- ENTREGÁVEL ESTRATÉGICO 05 LOGO ABAIXO -->
+        
+    <div class="space-y-10 mt-12 pt-10 border-t border-slate-200">
+        <!-- HEADER DA SEÇÃO -->
+        <div class="border-l-4 border-gold-500 pl-4 py-1">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-gold-600">Entregável 05 • Google Ads de Alta Intenção</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-navy-950 font-heading mt-1">(5) Palavras-Chave Sugeridas & Estrutura de Busca</h3>
+            <p class="text-slate-600 text-sm sm:text-base mt-1 max-w-3xl">
+                A estrutura técnica para capturar os clientes mais quentes da sua região: pessoas que estão com o problema na cabeça e pesquisando ativamente pela solução no Google.
+            </p>
+        </div>
+
+        <!-- 1. MATRIZ DE 30 PALAVRAS-CHAVE -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">30</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Fundo de Funil</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Matriz de 30 Palavras-Chave de Alta Intenção</h4>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-extrabold text-blue-700 uppercase tracking-wider">15 Palavras em Frase (" ")</span>
+                        <span class="text-[10px] text-slate-400">Variações naturais com intenção</span>
+                    </div>
+                    <ul class="space-y-1.5">
+                        <li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"odontologia estética em campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"melhor odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"especialista em odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"odontologia estética perto de mim"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"clinica de odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"agendar odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"consulta odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"tratamento de odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"valor de odontologia estética em campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"preco odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"onde fazer odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"avaliacao odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"atendimento odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"horario marcado odontologia estética campinas - sp"</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>"consultorio de odontologia estética campinas - sp"</li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-extrabold text-emerald-700 uppercase tracking-wider">15 Palavras Exatas ([ ])</span>
+                        <span class="text-[10px] text-slate-400">Foco cirúrgico e menor CPA</span>
+                    </div>
+                    <ul class="space-y-1.5">
+                        <li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[clinica odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[especialista odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[consultorio odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[preco odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[valor odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[agendamento odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[avaliacao odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[melhor odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[doutor odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[tratamento odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[consulta odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[odontologia estética em campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[atendimento odontologia estética campinas - sp]</li><li class='p-2 bg-slate-50 rounded-lg border border-slate-200 text-xs font-mono text-slate-800'>[procedimento odontologia estética campinas - sp]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. RSA (ANÚNCIO RESPONSIVO DE PESQUISA) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-10 h-10 rounded-2xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-lg shadow">✍️</span>
+                <div>
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-navy-800">Criativo de Busca</span>
+                    <h4 class="text-xl sm:text-2xl font-black text-navy-950 font-heading">Estrutura RSA (15 Títulos & 4 Descrições)</h4>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-3">
+                    <span class="text-xs font-extrabold text-slate-700 uppercase tracking-wider block">15 Títulos Persuasivos (&le; 30 Caracteres)</span>
+                    <ul class="space-y-1.5">
+                        <li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Clínica Odonto Prime | Especialistas</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Palavra-Chave</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Odontologia Estética em Campinas - SP</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Localidade</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Atendimento com Hora Marcada</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Diferencial</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Agende sua Avaliação Hoje</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Chamada de Ação</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Estrutura Completa e Moderna</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Autoridade</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Profissionais Qualificados</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Autoridade</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Tratamentos sem Burocracia</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Diferencial</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Conforto e Segurança Total</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Benefício</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Fale Direto no WhatsApp</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Chamada de Ação</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Referência em Campinas - SP</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Localidade</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Atendimento Humanizado</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Benefício</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Previsibilidade de Custos</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Diferencial</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Diagnóstico Transparente</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Benefício</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Tire suas Dúvidas Agora</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Chamada de Ação</span></li><li class='flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-xs'><span class='font-semibold text-slate-800'>Sua Melhor Escolha na Região</span> <span class='text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold'>Autoridade</span></li>
+                    </ul>
+                </div>
+                <div class="space-y-3">
+                    <span class="text-xs font-extrabold text-slate-700 uppercase tracking-wider block">4 Descrições Completas (&le; 90 Caracteres)</span>
+                    <ul class="space-y-2.5">
+                        <li class='p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed font-medium'>"Procurando por Odontologia Estética em Campinas - SP? Conheça a Clínica Odonto Prime. Atendimento personalizado e seguro."</li><li class='p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed font-medium'>"Estrutura moderna, equipe qualificada e processos sem dor. Agende sua avaliação hoje mesmo."</li><li class='p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed font-medium'>"Elimine a insegurança e resolva sua necessidade com quem é referência na região de Campinas - SP."</li><li class='p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed font-medium'>"Canal direto de agendamento via WhatsApp. Toque e fale agora com a nossa equipe especializada."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. EXTENSÕES & BLINDAGEM DE NEGATIVAS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-2xl">🔗</span>
+                    <div>
+                        <span class="text-xs font-bold text-navy-800 uppercase">Domínio da SERP</span>
+                        <h5 class="text-lg font-bold text-navy-950">Extensões de Sitelinks & Destaques</h5>
+                    </div>
+                </div>
+                <ul class="space-y-2 text-xs text-slate-700">
+                    <li class="p-2 bg-slate-50 rounded-lg"><strong>Sitelink 1:</strong> Agende sua Avaliação (Fale no WhatsApp)</li>
+                    <li class="p-2 bg-slate-50 rounded-lg"><strong>Sitelink 2:</strong> Conheça a Estrutura (Tecnologia e Conforto)</li>
+                    <li class="p-2 bg-slate-50 rounded-lg"><strong>Sitelink 3:</strong> Equipe de Especialistas (Anos de Experiência)</li>
+                    <li class="p-2 bg-slate-50 rounded-lg"><strong>Sitelink 4:</strong> Localização & Acesso (Fácil Estacionamento)</li>
+                    <li class="p-2 bg-slate-50 rounded-lg"><strong>Callouts:</strong> Atendimento com Hora Marcada • Sem Espera • Suporte VIP</li>
+                </ul>
+            </div>
+
+            <div class="bg-navy-950 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-navy-800">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-2xl text-rose-400">🛡️</span>
+                    <div>
+                        <span class="text-xs font-bold text-rose-400 uppercase tracking-wider">Zero Desperdício</span>
+                        <h5 class="text-lg font-bold text-white">Blindagem de Termos Negativos</h5>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                    Aplicamos a lista mestra de <strong>39 termos tóxicos a nível de conta</strong> mais as <strong>7 listas temáticas compartilhadas</strong> para garantir que você nunca pague por cliques curiosos.
+                </p>
+                <div class="p-3 bg-white/10 rounded-xl text-xs text-slate-200 space-y-1">
+                    <span class="font-bold text-gold-400 block">Exemplos Bloqueados:</span>
+                    grátis, gratuito, sus, curso, estágio, emprego, pdf, reclamação, concurso, como fazer, sindicato, baixar.
+                </div>
+            </div>
+        </div>
+    </div>
+    
     </div>
     
     <div id="tab-landingpage" class="tab-content hidden space-y-8 animate-fade-in">
@@ -449,7 +1466,7 @@
         <div class="max-w-[400px] mx-auto bg-black rounded-[2.5rem] border-[12px] border-slate-900 shadow-2xl relative overflow-hidden" style="height: 700px;">
             <!-- Notch -->
             <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-xl z-20"></div>
-            <!-- Iframe para a LP real gerada ou placeholder -->
+            <!-- Iframe para a LP real gerada ou fallback -->
             <iframe src="/clinica-odonto-prime/landingpage/index.html" class="w-full h-full bg-white z-10 relative" frameborder="0"></iframe>
             <!-- Aviso se a LP não foi compilada ainda (fallback) -->
             <div class="absolute inset-0 z-0 bg-slate-100 flex flex-col items-center justify-center p-8 text-center pointer-events-none">
@@ -458,16 +1475,180 @@
                 <p class="text-sm text-slate-500">O design final e a copy interativa serão injetados aqui via iframe.</p>
             </div>
         </div>
+
+        <!-- ENTREGÁVEL ESTRATÉGICO 06 LOGO ABAIXO -->
+        
+    <div class="space-y-10 mt-12 pt-10 border-t border-slate-200">
+        <!-- HEADER DA SEÇÃO -->
+        <div class="border-l-4 border-gold-500 pl-4 py-1">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-gold-600">Entregável 06 • Conversão Web</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-navy-950 font-heading mt-1">(6) Copy Completa da Landing Page (7 Dobras de Alta Conversão)</h3>
+            <p class="text-slate-600 text-sm sm:text-base mt-1 max-w-3xl">
+                A rota de conversão persuasiva desenhada para transformar cliques em chamadas diretas no seu WhatsApp em menos de 60 segundos.
+            </p>
+        </div>
+
+        <!-- DOBRA 1: HERO SECTION -->
+        <div class="bg-navy-950 text-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-navy-800">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-gold-500 text-navy-950 uppercase tracking-wider">Dobra 01 • Hero Section</span>
+                <span class="text-xs text-slate-400">Acima da dobra (Primeiros 5 segundos)</span>
+            </div>
+            <div class="max-w-3xl space-y-4">
+                <span class="text-xs font-bold text-gold-400 uppercase tracking-widest block">Atendimento Especializado em Campinas - SP</span>
+                <h4 class="text-2xl sm:text-3xl md:text-4xl font-black font-heading leading-tight text-white">
+                    "Conquiste o resultado que você sempre quis com o método exclusivo da Clínica Odonto Prime"
+                </h4>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    Atendimento personalizado, tecnologia moderna e acompanhamento de ponta para você ter total segurança e tranquilidade.
+                </p>
+                <div class="pt-4 flex flex-wrap items-center gap-4">
+                    <a href="https://wa.me/5511910071284?text=Ol%C3%A1!%20Vi%20a%20Landing%20Page%20da%20Clínica%20Odonto%20Prime%20e%20quero%20agendar." target="_blank" class="bg-emerald-500 hover:bg-emerald-400 text-navy-950 font-black px-6 py-3.5 rounded-xl shadow-lg transition flex items-center gap-2 text-sm">
+                        <span>📲</span> <span>Falar com Especialista no WhatsApp</span>
+                    </a>
+                    <span class="text-xs text-slate-400">★★★★★ 5.0 (Mais de 100 avaliações no Google)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOBRA 2 & 3: CREDIBILIDADE & PROBLEMA -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-blue-100 text-blue-800 uppercase tracking-wider block w-max mb-4">Dobra 02 • Credibilidade</span>
+                <h5 class="text-lg font-bold text-navy-950 mb-3">Barra de Autoridade & Números</h5>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> <strong>Estrutura Própria:</strong> Consultórios equipados e confortáveis</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> <strong>Atendimento Pontual:</strong> Sem filas ou esperas desnecessárias</li>
+                    <li class="flex items-center gap-2"><span class="text-emerald-500 font-bold">✓</span> <strong>Localização Nobre:</strong> Fácil acesso e conveniência em Campinas - SP</li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-rose-100 text-rose-800 uppercase tracking-wider block w-max mb-4">Dobra 03 • Agitação da Dor</span>
+                <h5 class="text-lg font-bold text-navy-950 mb-3">Identificação dos Problemas Comuns</h5>
+                <div class="space-y-2.5">
+                    
+        <div class="p-4 bg-rose-50/70 border border-rose-200 rounded-xl">
+            <span class="text-xs font-bold text-rose-900 block mb-1">✕ Atendimento frio e impessoal</span>
+            <p class="text-xs text-rose-800">Profissionais com pressa que mal olham nos olhos e não explicam o tratamento.</p>
+        </div>
+        
+        <div class="p-4 bg-rose-50/70 border border-rose-200 rounded-xl">
+            <span class="text-xs font-bold text-rose-900 block mb-1">✕ Preços imprevisíveis</span>
+            <p class="text-xs text-rose-800">Orçamentos que mudam no meio do caminho sem justificativa clara.</p>
+        </div>
+        
+        <div class="p-4 bg-rose-50/70 border border-rose-200 rounded-xl">
+            <span class="text-xs font-bold text-rose-900 block mb-1">✕ Procedimentos dolorosos</span>
+            <p class="text-xs text-rose-800">Falta de acolhimento e tecnologia para garantir o conforto do paciente.</p>
+        </div>
+        
+                </div>
+            </div>
+        </div>
+
+        <!-- DOBRA 4: SOLUÇÃO EM 3 PASSOS -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <span class="text-xs font-black px-3 py-1 rounded-full bg-gold-100 text-gold-800 uppercase tracking-wider block w-max mb-4">Dobra 04 • Método Descomplicado</span>
+            <h5 class="text-xl font-bold text-navy-950 mb-4">Como Funciona o Atendimento em 3 Passos</h5>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+        <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col justify-between">
+            <div>
+                <span class="w-8 h-8 rounded-xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-sm mb-3">01</span>
+                <h5 class="text-sm font-bold text-navy-950 mb-1">Primeiro Contato no WhatsApp</h5>
+                <p class="text-xs text-slate-600 leading-relaxed">None</p>
+            </div>
+        </div>
+        
+        <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col justify-between">
+            <div>
+                <span class="w-8 h-8 rounded-xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-sm mb-3">02</span>
+                <h5 class="text-sm font-bold text-navy-950 mb-1">Avaliação Personalizada</h5>
+                <p class="text-xs text-slate-600 leading-relaxed">None</p>
+            </div>
+        </div>
+        
+        <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col justify-between">
+            <div>
+                <span class="w-8 h-8 rounded-xl bg-navy-800 text-gold-400 font-extrabold flex items-center justify-center text-sm mb-3">03</span>
+                <h5 class="text-sm font-bold text-navy-950 mb-1">Execução com Excelência</h5>
+                <p class="text-xs text-slate-600 leading-relaxed">None</p>
+            </div>
+        </div>
+        
+            </div>
+        </div>
+
+        <!-- DOBRA 5 & 6: FILTRO ICP & BENEFÍCIOS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-purple-100 text-purple-800 uppercase tracking-wider block w-max mb-4">Dobra 05 • Filtro ICP</span>
+                <h5 class="text-lg font-bold text-navy-950 mb-3">Para Quem É vs Para Quem Não É</h5>
+                <div class="space-y-3 text-xs">
+                    <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-emerald-900">
+                        <strong>✓ Para quem é:</strong> Pessoas que priorizam qualidade, acolhimento, pontualidade e segurança técnica.
+                    </div>
+                    <div class="p-3 bg-rose-50 rounded-xl border border-rose-200 text-rose-900">
+                        <strong>✕ Para quem NÃO é:</strong> Quem busca soluções amadoras, leilão de menor preço ou tratamentos sem garantia.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+                <span class="text-xs font-black px-3 py-1 rounded-full bg-brandblue-100 text-brandblue-800 uppercase tracking-wider block w-max mb-4">Dobra 06 • Benefícios</span>
+                <h5 class="text-lg font-bold text-navy-950 mb-3">Diferenciais Exclusivos</h5>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+                    <li class="flex items-start gap-2"><span class="text-gold-500 font-bold">★</span> Protocolos atualizados com tecnologia moderna</li>
+                    <li class="flex items-start gap-2"><span class="text-gold-500 font-bold">★</span> Atendimento humanizado e sem dor</li>
+                    <li class="flex items-start gap-2"><span class="text-gold-500 font-bold">★</span> Suporte pós-procedimento direto no WhatsApp</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- DOBRA 7: FAQ & CTA FINAL -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <span class="text-xs font-black px-3 py-1 rounded-full bg-gold-100 text-gold-800 uppercase tracking-wider block w-max mb-4">Dobra 07 • FAQ & Quebra de Objeções</span>
+            <h5 class="text-xl font-bold text-navy-950 mb-4">Perguntas Frequentes (FAQ)</h5>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+            <span class="text-xs font-bold text-navy-900 block mb-1">❓ Como faço para agendar um horário ou tirar dúvidas?</span>
+            <p class="text-xs text-slate-600 leading-relaxed">Basta clicar em qualquer botão de WhatsApp desta página. Nossa equipe responderá em poucos minutos.</p>
+        </div>
+        
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+            <span class="text-xs font-bold text-navy-900 block mb-1">❓ Qual o valor da avaliação/serviço?</span>
+            <p class="text-xs text-slate-600 leading-relaxed">Os valores dependem da especificidade de cada caso. No WhatsApp informamos todas as condições e formas de pagamento facilitadas.</p>
+        </div>
+        
+        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl">
+            <span class="text-xs font-bold text-navy-900 block mb-1">❓ Onde vocês estão localizados?</span>
+            <p class="text-xs text-slate-600 leading-relaxed">Estamos localizados em Campinas - SP com estacionamento e fácil acesso.</p>
+        </div>
+        
+            </div>
+            <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 text-center">
+                <h6 class="text-base font-bold text-navy-950 mb-2">Ainda tem dúvidas sobre o seu atendimento?</h6>
+                <p class="text-xs sm:text-sm text-slate-600 mb-4">Fale agora com a nossa equipe no WhatsApp e agende seu horário com tranquilidade.</p>
+                <a href="https://wa.me/5511910071284?text=Ol%C3%A1!%20Quero%20tirar%20d%C3%BAvidas%20sobre%20a%20Clínica%20Odonto%20Prime." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold px-6 py-3 rounded-xl shadow-md text-xs sm:text-sm transition">
+                    <span>📲</span> <span>Chamar no WhatsApp Agora</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
     </div>
     
     </main>
 
-    <!-- FOOTER COM GATILHO DE ESCASSEZ -->
+    <!-- FOOTER COM GATILHO DE CONVERSÃO -->
     <footer class="bg-white border-t border-slate-200 py-10 mt-auto">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h3 class="text-xl font-bold text-navy-900 mb-4">Quer acessar os arquivos originais e a estratégia completa?</h3>
+            <h3 class="text-xl font-bold text-navy-900 mb-2">Quer colocar todo esse ecossistema digital para rodar na sua empresa?</h3>
+            <p class="text-sm text-slate-600 mb-6">Todos os arquivos de alta resolução, copies diagramadas e campanhas já estão estruturados.</p>
             <button onclick="document.getElementById('modal-conversao').classList.remove('hidden')" class="bg-gradient-to-r from-gold-500 to-amber-400 hover:from-gold-400 hover:to-amber-300 text-navy-950 font-black px-8 py-4 rounded-2xl shadow-xl hover:shadow-gold-500/30 transition transform hover:-translate-y-0.5 active:scale-95 inline-flex items-center gap-2">
-                🔒 Liberar Acesso aos Arquivos
+                🔒 Liberar Acesso aos Arquivos Originais
             </button>
         </div>
     </footer>
@@ -484,7 +1665,6 @@
                 🟢 Agendar Reunião no WhatsApp
             </a>
             
-            <!-- Link minimalista de fallback/reciprocidade -->
             <a href="assets/" class="text-[10px] uppercase font-bold text-slate-400 hover:text-slate-600 underline underline-offset-4">Apenas baixar os arquivos (sem reunião)</a>
         </div>
     </div>
@@ -511,8 +1691,11 @@
 
                 // Ativa conteudo
                 const tabId = btn.getAttribute('data-tab');
-                document.getElementById(tabId).classList.remove('hidden');
-                document.getElementById(tabId).classList.add('block');
+                const targetContent = document.getElementById(tabId);
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                    targetContent.classList.add('block');
+                }
             });
         });
     </script>
