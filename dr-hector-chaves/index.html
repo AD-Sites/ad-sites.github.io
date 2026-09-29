@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Hector Chaves | Atendimento Especializado</title>
+  <meta name="description" content="Fale diretamente com a equipe da Dr. Hector Chaves pelo WhatsApp e tire suas dúvidas.">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#141E57',
+            secondary: '#0F172A',
+            accent: '#25D366',
+            whatsapp: '#25D366',
+            whatsappHover: '#20BA5A',
+            darkBg: '#0F172A',
+            cardBg: '#1E293B',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .pulse-subtle {
+      animation: pulseCustom 2.5s infinite;
+    }
+    @keyframes pulseCustom {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+  </style>
+
+  <!-- DataLayer & GTM Header Snippet (se configurado) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function trackWhatsApp(origem) {
+      window.dataLayer.push({
+        'event': 'click_whatsapp',
+        'origem_cta': origem,
+        'url': window.location.href
+      });
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-emerald-500 selection:text-white">
+
+  <!-- TOP BAR DE ALERTA/URGÊNCIA -->
+  <header class="bg-slate-900 text-slate-200 text-xs sm:text-sm py-2 px-4 text-center font-medium border-b border-slate-800">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+      <span>Atendimento com horários limitados para esta semana.</span>
+    </div>
+  </header>
+
+  <!-- NAVEGAÇÃO / LOGO SIMPLES -->
+  <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-slate-100 py-3 px-4 sm:px-8">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="font-extrabold text-xl sm:text-2xl text-slate-900 tracking-tight flex items-center gap-2">
+        <span class="text-primary">Dr. Hector Chaves</span>
+      </div>
+      <a href="https://wa.me/5549988922280?text=Olá,%20Dr.%20Hector!%20Gostaria%20de%20agendar%20uma%20avaliação%20estética%20para%20o%20meu%20sorriso." target="_blank" rel="noopener noreferrer" onclick="trackWhatsApp('navbar_topo')"
+         class="hidden sm:inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsappHover text-white px-5 py-2.5 rounded-full font-semibold text-sm shadow-sm transition-all hover:scale-105 active:scale-95">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-5.805 1.554zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span>Falar no WhatsApp</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- 01. SEÇÃO HERO / DOBRA 1 -->
+  <section class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 pt-12 pb-16 sm:pt-20 sm:pb-24 px-4 sm:px-8 border-b border-slate-200/60 overflow-hidden">
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      
+      <!-- Badge de Nicho / Localização -->
+      <div class="inline-flex items-center gap-2 bg-primary/10 text-primary border border-primary/20 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-primary"></span>
+        <span>Atendimento Premium em sua região</span>
+      </div>
+
+      <!-- Headline Principal -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+        Conquiste o resultado que você sempre quis com o método exclusivo da Dr. Hector Chaves
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-base sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Atendimento personalizado, tecnologia moderna e acompanhamento de ponta para você ter total segurança e tranquilidade.
+      </p>
+
+      <!-- CTA Principal WhatsApp -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+        <a href="https://wa.me/5549988922280?text=Olá,%20Dr.%20Hector!%20Gostaria%20de%20agendar%20uma%20avaliação%20estética%20para%20o%20meu%20sorriso." target="_blank" rel="noopener noreferrer" onclick="trackWhatsApp('hero_principal')"
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-whatsapp hover:bg-whatsappHover text-white px-8 py-4 sm:py-5 rounded-2xl font-bold text-lg shadow-lg shadow-emerald-500/25 transition-all transform hover:-translate-y-1 active:scale-95 pulse-subtle">
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-5.805 1.554zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Falar com Especialista no WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Micro Prova Social -->
+      <div class="mt-6 flex items-center justify-center gap-2 text-xs sm:text-sm text-slate-500">
+        <div class="flex text-amber-400">★★★★★</div>
+        <span class="font-medium text-slate-700">Mais de 150 avaliações 5 estrelas</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02. BARRA DE CREDIBILIDADE & NÚMEROS -->
+  <section class="bg-white py-10 px-4 sm:px-8 border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="p-4 rounded-xl bg-slate-50 border border-slate-100"><div class="text-2xl sm:text-3xl font-extrabold text-primary">+3.500</div><div class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Clientes Atendidos</div></div>
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-100"><div class="text-2xl sm:text-3xl font-extrabold text-primary">Nota 5.0</div><div class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Avaliações no Google</div></div>
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-100"><div class="text-2xl sm:text-3xl font-extrabold text-primary">100%</div><div class="text-xs sm:text-sm text-slate-500 font-medium mt-1">Atendimento Humanizado</div></div>
+<div class="p-4 rounded-xl bg-slate-50 border border-slate-100"><div class="text-2xl sm:text-3xl font-extrabold text-primary">10+ Anos</div><div class="text-xs sm:text-sm text-slate-500 font-medium mt-1">De Experiência no Mercado</div></div>
+    </div>
+  </section>
+
+  <!-- 03. SEÇÃO: O PROBLEMA / VOCÊ SE IDENTIFICA? -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-slate-100/70">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-rose-600 font-bold text-xs sm:text-sm uppercase tracking-wider">Identificação do Problema</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">Você já passou por alguma dessas situações?</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm flex items-start gap-3"><span class="text-rose-500 font-bold">✕</span><p class="text-slate-700 text-sm font-medium">Dificuldade em encontrar profissionais de confiança que realmente entregam o combinado.</p></div>
+<div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm flex items-start gap-3"><span class="text-rose-500 font-bold">✕</span><p class="text-slate-700 text-sm font-medium">Orçamentos confusos e falta de clareza sobre as etapas do serviço.</p></div>
+<div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm flex items-start gap-3"><span class="text-rose-500 font-bold">✕</span><p class="text-slate-700 text-sm font-medium">Medo de investir tempo e dinheiro em soluções que não duram.</p></div>
+<div class="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm flex items-start gap-3"><span class="text-rose-500 font-bold">✕</span><p class="text-slate-700 text-sm font-medium">Atendimento demorado e impessoal que não tira suas principais dúvidas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. SEÇÃO: COMO FUNCIONA (O MECANISMO EM 3 PASSOS) -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-primary font-bold text-xs sm:text-sm uppercase tracking-wider">Método e Processo</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">Como funciona o nosso atendimento?</h2>
+        <p class="text-slate-600 max-w-xl mx-auto mt-3 text-sm sm:text-base">Processo simples, transparente e sem burocracia do início ao fim.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-50 border border-slate-200/60 p-6 rounded-2xl relative"><div class="w-10 h-10 rounded-full bg-primary text-white font-black flex items-center justify-center text-lg mb-4">1</div><h3 class="font-bold text-lg text-slate-900 mb-2">Primeiro Contato no WhatsApp</h3><p class="text-slate-600 text-sm leading-relaxed">Você clica no botão, conversa diretamente com nossa equipe e tira suas dúvidas iniciais.</p></div>
+<div class="bg-slate-50 border border-slate-200/60 p-6 rounded-2xl relative"><div class="w-10 h-10 rounded-full bg-primary text-white font-black flex items-center justify-center text-lg mb-4">2</div><h3 class="font-bold text-lg text-slate-900 mb-2">Avaliação Personalizada</h3><p class="text-slate-600 text-sm leading-relaxed">Analisamos detalhadamente a sua necessidade para traçar o melhor plano de ação.</p></div>
+<div class="bg-slate-50 border border-slate-200/60 p-6 rounded-2xl relative"><div class="w-10 h-10 rounded-full bg-primary text-white font-black flex items-center justify-center text-lg mb-4">3</div><h3 class="font-bold text-lg text-slate-900 mb-2">Execução com Excelência</h3><p class="text-slate-600 text-sm leading-relaxed">Você recebe o atendimento completo com acompanhamento humanizado e garantia de qualidade.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. SEÇÃO: PARA QUEM É VS PARA QUEM NÃO É -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-slate-50 border-y border-slate-200/60">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Este atendimento é ideal para o seu perfil?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Para quem é -->
+        <div class="bg-emerald-50/60 border border-emerald-200/80 rounded-2xl p-6 sm:p-8">
+          <h3 class="text-lg sm:text-xl font-bold text-emerald-900 flex items-center gap-2 mb-4">
+            <span class="text-xl">✅</span> É perfeito para você que:
+          </h3>
+          <ul class="space-y-3 text-slate-700 text-sm sm:text-base">
+            <li class="flex items-start gap-2"><span>•</span><span>Quem prioriza qualidade, durabilidade e segurança comprovada.</span></li>
+<li class="flex items-start gap-2"><span>•</span><span>Quem quer falar diretamente com especialistas sem intermediários.</span></li>
+<li class="flex items-start gap-2"><span>•</span><span>Quem valoriza pontualidade e transparência nos custos.</span></li>
+          </ul>
+        </div>
+
+        <!-- Para quem não é -->
+        <div class="bg-rose-50/60 border border-rose-200/80 rounded-2xl p-6 sm:p-8">
+          <h3 class="text-lg sm:text-xl font-bold text-rose-900 flex items-center gap-2 mb-4">
+            <span class="text-xl">❌</span> Não é indicado se você:
+          </h3>
+          <ul class="space-y-3 text-slate-700 text-sm sm:text-base">
+            <li class="flex items-start gap-2"><span>•</span><span>Quem busca atalhos milagrosos sem compromisso com a qualidade.</span></li>
+<li class="flex items-start gap-2"><span>•</span><span>Quem prefere soluções caseiras sem respaldo técnico profissional.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. SEÇÃO: BENEFÍCIOS & DIFERENCIAIS -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-primary font-bold text-xs sm:text-sm uppercase tracking-wider">Diferenciais Exclusivos</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-2">Por que escolher a Dr. Hector Chaves?</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-slate-200/80 hover:border-primary/40 hover:shadow-md transition-all bg-white"><div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">✦</div><h3 class="font-bold text-base text-slate-900 mb-1">Atendimento Ágil</h3><p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Resposta rápida no WhatsApp sem filas ou esperas desnecessárias.</p></div>
+<div class="p-6 rounded-2xl border border-slate-200/80 hover:border-primary/40 hover:shadow-md transition-all bg-white"><div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">✦</div><h3 class="font-bold text-base text-slate-900 mb-1">Equipe Especializada</h3><p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Profissionais altamente capacitados e em constante atualização.</p></div>
+<div class="p-6 rounded-2xl border border-slate-200/80 hover:border-primary/40 hover:shadow-md transition-all bg-white"><div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">✦</div><h3 class="font-bold text-base text-slate-900 mb-1">Tecnologia de Ponta</h3><p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Estrutura moderna e equipamentos de última geração.</p></div>
+<div class="p-6 rounded-2xl border border-slate-200/80 hover:border-primary/40 hover:shadow-md transition-all bg-white"><div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">✦</div><h3 class="font-bold text-base text-slate-900 mb-1">Previsibilidade e Clareza</h3><p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Sem taxas ocultas. Você sabe exatamente o que está contratando.</p></div>
+<div class="p-6 rounded-2xl border border-slate-200/80 hover:border-primary/40 hover:shadow-md transition-all bg-white"><div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">✦</div><h3 class="font-bold text-base text-slate-900 mb-1">Localização Acessível</h3><p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Fácil acesso e comodidade para você em sua região.</p></div>
+<div class="p-6 rounded-2xl border border-slate-200/80 hover:border-primary/40 hover:shadow-md transition-all bg-white"><div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold mb-4">✦</div><h3 class="font-bold text-base text-slate-900 mb-1">Garantia de Satisfação</h3><p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Compromisso real com a sua satisfação e bem-estar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07. SEÇÃO: PROVA SOCIAL / DEPOIMENTOS -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-slate-900 text-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-emerald-400 font-bold text-xs sm:text-sm uppercase tracking-wider">Histórias Reais</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-2">O que nossos clientes dizem sobre nós</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl"><div class="text-amber-400 text-sm mb-3">★★★★★</div><p class="text-slate-300 text-xs sm:text-sm italic mb-4">"Atendimento impecável! Tiraram todas as minhas dúvidas no WhatsApp antes de eu ir até o local. Super recomendo."</p><div class="font-bold text-sm text-white">Mariana S.</div><div class="text-xs text-slate-400">Avaliação no Google</div></div>
+<div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl"><div class="text-amber-400 text-sm mb-3">★★★★★</div><p class="text-slate-300 text-xs sm:text-sm italic mb-4">"Profissionais extremamente qualificados. O resultado superou as minhas expectativas. Muito pontuais."</p><div class="font-bold text-sm text-white">Carlos E.</div><div class="text-xs text-slate-400">Avaliação no Google</div></div>
+<div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl"><div class="text-amber-400 text-sm mb-3">★★★★★</div><p class="text-slate-300 text-xs sm:text-sm italic mb-4">"Ambiente acolhedor e tecnologia de primeira. Toda a equipe é nota 10 no atendimento."</p><div class="font-bold text-sm text-white">Patrícia M.</div><div class="text-xs text-slate-400">Avaliação no Google</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08. SEÇÃO: O ESPECIALISTA / A EMPRESA -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div class="w-full md:w-1/3 flex justify-center">
+        <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-3xl bg-slate-200 border-4 border-slate-100 shadow-xl overflow-hidden flex items-center justify-center text-slate-400 text-5xl font-bold">
+          DR
+        </div>
+      </div>
+      <div class="w-full md:w-2/3 text-center md:text-left">
+        <span class="text-primary font-bold text-xs sm:text-sm uppercase tracking-wider">Tradição e Excelência</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 mb-4">Sobre a Dr. Hector Chaves</h2>
+        <p class="text-slate-600 leading-relaxed text-sm sm:text-base mb-6">
+          A Dr. Hector Chaves é especializada em oferecer soluções de alto padrão com atendimento humanizado, pontualidade e transparência para cada cliente.
+        </p>
+        <div class="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 bg-slate-100 px-4 py-2 rounded-lg">
+          <span>🔒 Registro Profissional / Certificação: Atendimento Regulamentado e Verificado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09. SEÇÃO: CTA DE FECHAMENTO (OFERTA) -->
+  <section class="py-16 sm:py-20 px-4 sm:px-8 bg-gradient-to-r from-primary to-slate-900 text-white text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-4xl font-extrabold mb-4">Pronto para ter o melhor atendimento?</h2>
+      <p class="text-slate-200 text-sm sm:text-lg mb-8 max-w-xl mx-auto">Clique no botão abaixo para conversar diretamente com nossa equipe no WhatsApp agora mesmo.</p>
+      
+      <a href="https://wa.me/5549988922280?text=Olá,%20Dr.%20Hector!%20Gostaria%20de%20agendar%20uma%20avaliação%20estética%20para%20o%20meu%20sorriso." target="_blank" rel="noopener noreferrer" onclick="trackWhatsApp('cta_final_rodape')"
+         class="inline-flex items-center justify-center gap-3 bg-whatsapp hover:bg-whatsappHover text-white px-8 py-5 rounded-2xl font-bold text-lg shadow-2xl transition-all transform hover:scale-105 active:scale-95 pulse-subtle">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-5.805 1.554zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        <span>Chamar no WhatsApp Agora</span>
+      </a>
+      
+      <p class="text-xs text-slate-300 mt-4">⚡ Resposta imediata durante o horário comercial.</p>
+    </div>
+  </section>
+
+  <!-- 11. SEÇÃO: FAQ (PERGUNTAS FREQUENTES) -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 bg-slate-50 border-t border-slate-200/60">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900">Perguntas Frequentes</h2>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Tire suas dúvidas antes de falar conosco.</p>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-white p-5 rounded-2xl border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden cursor-pointer"><summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base"><span class="flex items-center gap-2"><span>❓</span> Como faço para agendar um horário ou tirar dúvidas?</span><span class="ml-4 flex-shrink-0 transition duration-300 group-open:-rotate-180">▼</span></summary><p class="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">Basta clicar em qualquer botão de WhatsApp desta página. Nossa equipe responderá em poucos minutos.</p></details>
+<details class="group bg-white p-5 rounded-2xl border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden cursor-pointer"><summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base"><span class="flex items-center gap-2"><span>❓</span> Qual o valor da avaliação/serviço?</span><span class="ml-4 flex-shrink-0 transition duration-300 group-open:-rotate-180">▼</span></summary><p class="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">Os valores dependem da especificidade de cada caso. No WhatsApp informamos todas as condições e formas de pagamento facilitadas.</p></details>
+<details class="group bg-white p-5 rounded-2xl border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden cursor-pointer"><summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base"><span class="flex items-center gap-2"><span>❓</span> Onde vocês estão localizados?</span><span class="ml-4 flex-shrink-0 transition duration-300 group-open:-rotate-180">▼</span></summary><p class="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">Estamos localizados em sua região com estacionamento e fácil acesso.</p></details>
+<details class="group bg-white p-5 rounded-2xl border border-slate-200/80 [&_summary::-webkit-details-marker]:hidden cursor-pointer"><summary class="flex items-center justify-between font-bold text-slate-900 text-sm sm:text-base"><span class="flex items-center gap-2"><span>❓</span> Quais as formas de pagamento aceitas?</span><span class="ml-4 flex-shrink-0 transition duration-300 group-open:-rotate-180">▼</span></summary><p class="mt-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">Aceitamos cartões de crédito (com parcelamento), PIX, boleto e condições especiais.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. RODAPÉ INSTITUCIONAL -->
+  <footer class="bg-slate-900 text-slate-400 py-12 px-4 sm:px-8 text-center text-xs border-t border-slate-800">
+    <div class="max-w-5xl mx-auto space-y-4">
+      <div class="font-bold text-base text-white">Dr. Hector Chaves</div>
+      <p>Atendimento Presencial e Online • CNPJ: 00.000.000/0001-00</p>
+      <p class="text-slate-500">
+        Este site não possui vínculo institucional com o WhatsApp Inc. ou Meta Platforms Inc.
+      </p>
+      <p class="text-slate-600">
+        © <span id="anoAtual"></span> Dr. Hector Chaves. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DE WHATSAPP (FIXO MOBILE E DESKTOP) -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/5549988922280?text=Olá,%20Dr.%20Hector!%20Gostaria%20de%20agendar%20uma%20avaliação%20estética%20para%20o%20meu%20sorriso." target="_blank" rel="noopener noreferrer" onclick="trackWhatsApp('botao_flutuante')" aria-label="Falar no WhatsApp"
+       class="flex items-center gap-3 bg-whatsapp hover:bg-whatsappHover text-white px-5 py-3.5 rounded-full font-bold shadow-2xl transition-all transform hover:scale-110 active:scale-95 group">
+      <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-5.805 1.554zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+      <span class="hidden sm:inline font-semibold text-sm">Fale no WhatsApp</span>
+    </a>
+  </div>
+
+  <script>
+    document.getElementById('anoAtual').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
