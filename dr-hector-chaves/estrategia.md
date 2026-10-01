@@ -168,14 +168,27 @@ Este material constrói a ponte direta entre **Dr. Hector Chaves** e seus client
 
 ---
 
-## 🎨 5. Bônus: Manual da Marca
+## 🎨 5. Bônus: Manual da Marca (Brand Style Guide & Regra 60-30-10)
 
-- **Paleta de Cores Recomendada:**
-  - Primária: `#0A2540`
-  - Secundária: `#1E3A8A`
-  - Destaque/CTA: `#06B6D4`
-  - Fundo Geral: `#08101E`
-- **Tipografia:** Plus Jakarta Sans, sans-serif (Títulos) / Inter, sans-serif (Textos)
+- **Distribuição Visual Recomendada (Regra 60-30-10):**
+  - **Fundo de Leitura (60%):** Gelo Soft (`#F8FAFC`) — Espaço negativo, conforto visual e acolhimento
+  - **Primária Estrutural (30%):** Navy Profundo Dental (`#0A2540`) — Autoridade clínica, títulos e solidez
+  - **Destaque / Acento (10%):** Ciano Diamante (`#06B6D4`) — Pontos focais, inovação e botões de alta conversão
+  - **Secundária de Profundidade:** Azul Royal Estético (`#1E3A8A`) — Degradês, subníveis e acentos
+  - **Botão de Ação Direta:** Verde Sucesso (`#25D366`) — Ícone oficial e CTA de WhatsApp
+
+- **Psicologia Cromática:** O Navy Profundo Dental (#0A2540) ancora a autoridade médica e a sofisticação de procedimentos high-ticket sem ostentação vazia. O Ciano Diamante (#06B6D4) introduz a ideia de precisão milimétrica, tecnologia e assepsia do ambiente clínico, enquanto o Gelo Soft (#F8FAFC) atua como base relaxante que reduz o estresse da consulta e valoriza a estética natural dos sorrisos.
+- **Racional Tipográfico:** A família Plus Jakarta Sans nos títulos traz geometria moderna e elegância contemporânea com alto impacto em dispositivos móveis, sem a rigidez fria das fontes tradicionais. O Inter no corpo de texto assegura máxima legibilidade em legendas, laudos e descrições de tratamentos, oferecendo leitura fluida e confortável.
+
+- **Tipografia Oficial:**
+  - **Títulos & Headlines:** `Plus Jakarta Sans, sans-serif`
+  - **Corpo de Texto:** `Inter, sans-serif`
+
+- **Demonstração Prática: 3 Harmonizações Principais de Marca:**
+  1. **Clean Editorial (Modo Claro):** Fundo `#F8FAFC`, Título `#0A2540`, Subtítulo `#1E3A8A`, Texto `#0F172A`, Botão `#06B6D4`. (Aplicação: Landing Pages, sites e apresentações)
+  2. **Dark Luxury (Alto Contraste):** Fundo `#0A2540`, Título `#F8FAFC`, Subtítulo `#06B6D4`, Texto `#CBD5E1`, Botão `#06B6D4`. (Aplicação: Anúncios 4:5 no Instagram Feed/Stories e capas)
+  3. **Conversão Direta (WhatsApp):** Fundo `#1E3A8A`, Título `#FFFFFF`, Subtítulo `#06B6D4`, Botão `#25D366` com ícone oficial. (Aplicação: Fundo de funil e fechamento)
+
 - **Tom de Voz:** Especialista e Acolhedor, Seguro e Tranquilizador, Didático e Acessível
 - **Diretrizes de Comunicação:**
   - ✅ **Do's:**
@@ -191,7 +204,14 @@ Este material constrói a ponte direta entre **Dr. Hector Chaves** e seus client
 
 ---
 
-## 🚀 6. Próximos Passos & Plano de Implementação
+## 💬 6. Test Drive & Prova Social Humanizada (WhatsApp & Google Reviews — ADR-120)
+
+- **Depoimento WhatsApp:** "Amiga, você não tem noção de como ficou lindo! Fiz as minhas facetas em resina com o Dr. Hector Chaves em Joaçaba e o resultado superou tudo. Ficou super natural, sem parecer aqueles dentes brancos artificiais, sabe? E o melhor de tudo: foi sem dor e sem desgastar meus dentes, a equipe é muito cuidadosa e atenciosa. Tô sorrindo à toa aqui!"
+- **Depoimento Google Maps (5 Estrelas):** "Experiência maravilhosa do início ao fim! Eu tinha muito receio de fazer facetas e ficar com aspecto artificial ou sentir sensibilidade, mas o Dr. Hector me acolheu com total paciência e explicou cada etapa da estratificação à mão. O resultado final ficou super harmônico com os traços do meu rosto, devolvendo minha vontade de sorrir. Pontualidade, ambiente impecável e equipe nota 10. Recomendo de olhos fechados em Joaçaba e Chapecó!"
+
+---
+
+## 🚀 7. Próximos Passos & Plano de Implementação
 
 Etapa 1: Alinhamento Estratégico e Apresentação Executiva do Plano 3Ps para Dr. Hector Chaves.
 Etapa 2: Implementação da Blindagem e Otimização dos 4 Canais (Bio IG <110c, LP WhatsApp rápida, GMN 17 Pontos, Script WPP).
