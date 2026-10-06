@@ -1,0 +1,401 @@
+/**
+ * Wert Offcanvas Menu — estilos do painel no front-end.
+ *
+ * As cores/largura vêm de variáveis CSS injetadas inline (ver Frontend::dynamic_css).
+ * Identidade Wert: rosa #ED0061, preto #1E1E1E, fonte Ubuntu.
+ */
+
+.wofc-root {
+	--wofc-ease: cubic-bezier(.4, 0, .2, 1);
+	position: fixed;
+	inset: 0;
+	z-index: 999990;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+.wofc-root.is-open {
+	visibility: visible;
+	pointer-events: auto;
+}
+
+/* Overlay escuro */
+.wofc-overlay {
+	position: absolute;
+	inset: 0;
+	background: var(--wofc-overlay, rgba(30, 30, 30, .55));
+	opacity: 0;
+	transition: opacity .3s var(--wofc-ease);
+}
+
+.wofc-root.is-open .wofc-overlay {
+	opacity: 1;
+}
+
+/* Painel deslizante */
+.wofc-panel {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: var(--wofc-width, 320px);
+	max-width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: var(--wofc-bg-extra, #fff);
+	box-shadow: 0 0 40px rgba(30, 30, 30, .25);
+	transform: var(--wofc-hidden, translateX(100%));
+	transition: transform .32s var(--wofc-ease);
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	font-family: var(--wofc-font, 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif);
+}
+
+.wofc-root.is-open .wofc-panel {
+	transform: translateX(0);
+}
+
+/* Fullscreen: entra de cima com fade */
+.wofc--full .wofc-panel {
+	transform: translateY(-12px);
+	opacity: 0;
+	transition: transform .3s var(--wofc-ease), opacity .3s var(--wofc-ease);
+}
+
+.wofc--full.is-open .wofc-panel {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/* ====================================================================
+ * Header (logo centralizada + botão fechar)
+ * ================================================================== */
+
+.wofc-header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 72px;
+	padding: var(--wofc-header-pad-t, 16px) var(--wofc-header-pad-r, 56px) var(--wofc-header-pad-b, 16px) var(--wofc-header-pad-l, 56px);
+	margin: var(--wofc-header-mar-t, 0) var(--wofc-header-mar-r, 0) var(--wofc-header-mar-b, 0) var(--wofc-header-mar-l, 0);
+	background: var(--wofc-bg-header, #1E1E1E);
+	color: var(--wofc-color-header, #fff);
+	border-bottom: var(--wofc-header-divider-w, 0) solid var(--wofc-header-divider-color, transparent);
+}
+
+.wofc-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 100%;
+}
+
+.wofc-logo__link,
+.wofc-logo__text {
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+	color: inherit;
+}
+
+.wofc-logo__img {
+	display: block;
+	height: var(--wofc-logo-h, 40px);
+	width: auto;
+	max-width: 100%;
+}
+
+.wofc-logo__text {
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--wofc-color-header, #fff);
+}
+
+.wofc-close {
+	position: absolute;
+	top: 50%;
+	right: 14px;
+	transform: translateY(-50%);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: calc(var(--wofc-close-size, 24px) + 14px);
+	height: calc(var(--wofc-close-size, 24px) + 14px);
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	color: var(--wofc-color-header, #fff);
+	cursor: pointer;
+	transition: background .15s, color .15s, transform .15s;
+}
+
+.wofc-close:hover {
+	background: rgba(255, 255, 255, .12);
+	color: var(--wofc-accent, #ED0061);
+}
+
+.wofc-close:active {
+	transform: translateY(-50%) scale(.92);
+}
+
+.wofc-close .dashicons {
+	font-size: var(--wofc-close-size, 24px);
+	width: var(--wofc-close-size, 24px);
+	height: var(--wofc-close-size, 24px);
+	line-height: var(--wofc-close-size, 24px);
+}
+
+/* ====================================================================
+ * Menu principal (herda fundo do header)
+ * ================================================================== */
+
+.wofc-nav {
+	background: var(--wofc-bg-header, #1E1E1E);
+	color: var(--wofc-color-header, #fff);
+	padding: 6px 0 18px;
+	margin: var(--wofc-menu-mar-t, 0) var(--wofc-menu-mar-r, 0) var(--wofc-menu-mar-b, 0) var(--wofc-menu-mar-l, 0);
+}
+
+.wofc-menu,
+.wofc-menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.wofc-menu li {
+	margin: 0;
+}
+
+.wofc-menu a {
+	display: block;
+	padding: var(--wofc-menu-item-pad-t, 13px) var(--wofc-menu-item-pad-r, 24px) var(--wofc-menu-item-pad-b, 13px) var(--wofc-menu-item-pad-l, 24px);
+	color: var(--wofc-color-header, #fff);
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	border-bottom: var(--wofc-menu-border-w, 1px) solid var(--wofc-menu-border-color, rgba(255, 255, 255, .07));
+	transition: background .15s, color .15s, padding-left .15s;
+}
+
+.wofc-menu a:hover,
+.wofc-menu .current-menu-item > a,
+.wofc-menu .current_page_item > a {
+	background: rgba(255, 255, 255, .06);
+	color: var(--wofc-accent, #ED0061);
+	padding-left: 30px;
+}
+
+/* Itens com submenu: link e botão-seta na mesma linha */
+.wofc-menu .menu-item-has-children {
+	position: relative;
+}
+
+.wofc-menu .menu-item-has-children > a {
+	/* abre espaço para o botão da seta não cobrir o texto (sobrescreve o padding-right configurável) */
+	padding-right: 56px;
+}
+
+/* Botão de toggle (seta) */
+.wofc-submenu-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 52px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background: transparent;
+	color: var(--wofc-color-header, #fff);
+	cursor: pointer;
+	transition: background .15s, color .15s;
+}
+
+.wofc-submenu-toggle:hover {
+	color: var(--wofc-accent, #ED0061);
+}
+
+/* Dois ícones no DOM (fechado/aberto); só um fica visível por vez,
+   conforme o item de menu está ou não com a classe is-open. */
+.wofc-submenu-toggle__icon {
+	font-size: var(--wofc-arrow-h, 20px);
+	width: var(--wofc-arrow-h, 20px);
+	height: var(--wofc-arrow-h, 20px);
+	line-height: var(--wofc-arrow-h, 20px);
+}
+
+.wofc-submenu-toggle__svg {
+	display: block;
+	height: var(--wofc-arrow-h, 20px);
+	width: auto;
+}
+
+.wofc-submenu-toggle__icon--open,
+.wofc-submenu-toggle__svg--open {
+	display: none;
+}
+
+.menu-item-has-children.is-open > .wofc-submenu-toggle .wofc-submenu-toggle__icon--closed,
+.menu-item-has-children.is-open > .wofc-submenu-toggle .wofc-submenu-toggle__svg--closed {
+	display: none;
+}
+
+.menu-item-has-children.is-open > .wofc-submenu-toggle .wofc-submenu-toggle__icon--open {
+	display: inline-flex;
+}
+
+.menu-item-has-children.is-open > .wofc-submenu-toggle .wofc-submenu-toggle__svg--open {
+	display: block;
+}
+
+/* Submenus: recuo e tipografia */
+.wofc-menu .sub-menu a {
+	padding-left: 42px;
+	font-size: 15px;
+	font-weight: 400;
+	opacity: .9;
+}
+
+.wofc-menu .sub-menu .sub-menu a {
+	padding-left: 58px;
+}
+
+/* ----- Modo ACCORDION: submenu recolhido, abre no toque ----- */
+.wofc-nav--accordion .sub-menu {
+	overflow: hidden;
+	max-height: 0;
+	transition: max-height .3s ease;
+}
+
+.wofc-nav--accordion .menu-item-has-children.is-open > .sub-menu {
+	/* max-height grande o suficiente; o valor real é o conteúdo */
+	max-height: 1500px;
+}
+
+.wofc-nav--accordion .menu-item-has-children > .sub-menu {
+	/* max-height grande o suficiente; o valor real é o conteúdo */
+	justify-content: normal !important;
+}
+
+/* ----- Modo OPEN: tudo expandido, sem seta interativa ----- */
+.wofc-nav--open .sub-menu {
+	max-height: none;
+}
+
+.wofc-nav--open .wofc-submenu-toggle {
+	display: none;
+}
+
+.wofc-empty {
+	padding: 18px 24px;
+	color: var(--wofc-color-header, #fff);
+	opacity: .7;
+	font-size: 14px;
+}
+
+/* ====================================================================
+ * Divisória entre menu e links extras
+ * ================================================================== */
+
+.wofc-divider {
+	height: 0;
+	border: 0;
+	border-top: 3px solid var(--wofc-accent, #ED0061);
+}
+
+/* ====================================================================
+ * Links extras (com ícone)
+ * ================================================================== */
+
+.wofc-extra {
+	flex: 1 0 auto;
+	background: var(--wofc-bg-extra, #fff);
+	color: var(--wofc-color-extra, #1E1E1E);
+	padding: 10px 0 24px;
+	margin: var(--wofc-links-mar-t, 0) var(--wofc-links-mar-r, 0) var(--wofc-links-mar-b, 0) var(--wofc-links-mar-l, 0);
+}
+
+.wofc-extra__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.wofc-extra__link {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: var(--wofc-links-item-pad-t, 13px) var(--wofc-links-item-pad-r, 24px) var(--wofc-links-item-pad-b, 13px) var(--wofc-links-item-pad-l, 24px);
+	color: var(--wofc-color-extra, #1E1E1E);
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: 500;
+	border-bottom: var(--wofc-links-border-w, 0) solid var(--wofc-links-border-color, transparent);
+	transition: background .15s, color .15s;
+}
+
+.wofc-extra__link:hover {
+	background: rgba(0, 0, 0, .04);
+	color: var(--wofc-accent, #ED0061);
+}
+
+.wofc-extra__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	flex: 0 0 24px;
+	color: var(--wofc-accent, #ED0061);
+}
+
+.wofc-extra__icon.dashicons {
+	font-size: 22px;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+}
+
+.wofc-extra__icon-img {
+	display: block;
+	width: 24px;
+	height: 24px;
+	object-fit: contain;
+}
+
+.wofc-extra__label {
+	flex: 1 1 auto;
+}
+
+/* ====================================================================
+ * Botão de gatilho do shortcode [wert_offcanvas_toggle]
+ * ================================================================== */
+
+.wofc-trigger {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 12px;
+	border: 0;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+}
+
+.wofc-trigger .dashicons {
+	font-size: 28px;
+	width: 28px;
+	height: 28px;
+	line-height: 28px;
+}
+
+/* Trava o scroll do body quando aberto */
+body.wofc-open {
+	overflow: hidden;
+}
