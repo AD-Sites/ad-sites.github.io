@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Batech Informática | Reparo e Manutenção Urgente de Notebooks e Computadores em Vitória da Conquista</title>
+  <meta name="description" content="Assistência técnica especializada em Vitória da Conquista - BA. Reparo urgente de notebooks, computadores e nobreaks, formatação, upgrade SSD e placa-mãe. Nota 4.9 no Google. Fale com um técnico!">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:title" content="Batech Informática | Reparo Urgente de Notebooks e Computadores">
+  <meta property="og:description" content="Seu notebook ou PC parou? Recupere sua máquina com rapidez, transparência e sem perder seus arquivos no Centro de Vitória da Conquista.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+  <!-- Google Fonts: Outfit (Headings com força e modernidade) + Plus Jakarta Sans (Texto limpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET & VARIÁVEIS VISUAIS BATECH INFORMÁTICA */
+    :root {
+      --bg-dark-navy: #071326;
+      --bg-dark-surface: #0B192C;
+      --bg-dark-card: #11223A;
+      --bg-dark-card-hover: #162C4C;
+      --border-dark: rgba(0, 168, 255, 0.15);
+      --border-dark-hover: rgba(0, 168, 255, 0.4);
+
+      --color-primary-blue: #0E59D1;
+      --color-cyan-electric: #00A8FF;
+      --color-cyan-glow: rgba(0, 168, 255, 0.35);
+      --color-orange-urgency: #FF6B00;
+      --color-orange-light: #FF8533;
+      --color-orange-glow: rgba(255, 107, 0, 0.35);
+
+      --color-wpp-green: #25D366;
+      --color-wpp-green-hover: #1EBE5D;
+      --color-wpp-glow: rgba(37, 211, 102, 0.35);
+
+      --text-white: #FFFFFF;
+      --text-gray-light: #E2E8F0;
+      --text-gray-muted: #94A3B8;
+      --text-gray-dark: #64748B;
+
+      --bg-light-section: #F8FAFC;
+      --bg-light-card: #FFFFFF;
+      --text-light-dark: #0F172A;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+      --shadow-glow: 0 0 25px rgba(0, 168, 255, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark-navy);
+      color: var(--text-gray-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* CONTAINER PADRÃO */
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* TOP BAR DE URGÊNCIA */
+    .top-bar-alert {
+      background: linear-gradient(90deg, #990000 0%, #D32F2F 30%, #FF6B00 100%);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .top-bar-pulse {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #FFF;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      animation: pulse-dot 1.5s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8); }
+      70% { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+    }
+
+    /* NAVBAR HEADER */
+    .header-nav {
+      background: rgba(7, 19, 38, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 168, 255, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      padding: 14px 0;
+    }
+
+    .header-nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-symbol {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #0E59D1 0%, #00A8FF 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 1.6rem;
+      color: #FFFFFF;
+      box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-name span {
+      color: var(--color-cyan-electric);
+    }
+
+    .brand-tagline {
+      font-size: 0.72rem;
+      color: var(--text-gray-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-contact-block {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-phone-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-gray-light);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .nav-phone-link:hover {
+      color: var(--color-cyan-electric);
+    }
+
+    .nav-btn-wpp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--color-wpp-green);
+      color: #FFFFFF;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 14px var(--color-wpp-glow);
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .nav-btn-wpp:hover {
+      background-color: var(--color-wpp-green-hover);
+      transform: translateY(-2px);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      position: relative;
+      padding: 70px 0 60px;
+      background: radial-gradient(circle at 50% 20%, rgba(14, 89, 209, 0.18) 0%, rgba(7, 19, 38, 0.95) 70%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge-urgent {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 107, 0, 0.12);
+      border: 1px solid var(--color-orange-urgency);
+      color: #FFA45A;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 20px;
+    }
+
+    .hero-headline {
+      font-size: 2.85rem;
+      font-weight: 800;
+      line-height: 1.15;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .hero-headline span.highlight-orange {
+      color: var(--color-orange-urgency);
+      position: relative;
+    }
+
+    .hero-headline span.highlight-cyan {
+      color: var(--color-cyan-electric);
+    }
+
+    .hero-subheadline {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: #CBD5E1;
+      margin-bottom: 30px;
+      max-width: 620px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .btn-main-wpp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+      color: #FFFFFF;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 800;
+      padding: 18px 36px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-align: center;
+      width: fit-content;
+      max-width: 100%;
+    }
+
+    .btn-main-wpp:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+      background: linear-gradient(135deg, #2ae06d 0%, #22c963 100%);
+    }
+
+    .btn-main-wpp svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    .hero-microproofs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: var(--text-gray-muted);
+      align-items: center;
+    }
+
+    .microproof-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .microproof-item svg {
+      color: var(--color-cyan-electric);
+    }
+
+    /* CARD HERO DE DIAGNÓSTICO EXPRESS */
+    .hero-diagnostic-card {
+      background: var(--bg-dark-surface);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-card), var(--shadow-glow);
+      position: relative;
+    }
+
+    .diagnostic-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    .diagnostic-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .diagnostic-card-title svg {
+      color: var(--color-orange-urgency);
+    }
+
+    .badge-status-online {
+      background: rgba(37, 211, 102, 0.15);
+      color: #25D366;
+      border: 1px solid rgba(37, 211, 102, 0.4);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .diagnostic-checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .diagnostic-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: #E2E8F0;
+    }
+
+    .diagnostic-item-icon {
+      background: rgba(0, 168, 255, 0.15);
+      color: var(--color-cyan-electric);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .diagnostic-alert-box {
+      background: rgba(255, 107, 0, 0.08);
+      border-left: 3px solid var(--color-orange-urgency);
+      padding: 12px 14px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.85rem;
+      color: #FED7AA;
+      margin-bottom: 20px;
+    }
+
+    .diagnostic-alert-box strong {
+      color: #FFA45A;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .card-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: linear-gradient(135deg, #0E59D1 0%, #00A8FF 100%);
+      color: #FFFFFF;
+      font-weight: 700;
+      padding: 14px;
+      border-radius: var(--radius-md);
+      font-size: 0.98rem;
+      transition: opacity 0.2s;
+    }
+
+    .card-action-btn:hover {
+      opacity: 0.92;
+    }
+
+    /* BARRA DE CREDIBILIDADE / MARCAS */
+    .credibility-bar {
+      background-color: var(--bg-dark-surface);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 30px 0;
+    }
+
+    .credibility-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .cred-stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--color-cyan-electric);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .cred-stat-num span {
+      color: var(--color-orange-urgency);
+    }
+
+    .cred-stat-label {
+      font-size: 0.82rem;
+      color: var(--text-gray-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .brands-strip {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+      color: var(--text-gray-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .brand-badge {
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      color: #94A3B8;
+    }
+
+    /* AGITAÇÃO DA DOR */
+    .section-pain {
+      padding: 80px 0;
+      background: var(--bg-dark-navy);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .section-tag {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-cyan-electric);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-tag.urgent-tag {
+      color: var(--color-orange-urgency);
+    }
+
+    .section-title {
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-gray-muted);
+      line-height: 1.6;
+    }
+
+    .pain-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .pain-card {
+      background: var(--bg-dark-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .pain-card:hover {
+      border-color: rgba(255, 107, 0, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .pain-card-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 107, 0, 0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-orange-urgency);
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+    }
+
+    .pain-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .pain-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-gray-muted);
+      line-height: 1.55;
+    }
+
+    /* O MÉTODO BATECH EM 3 PASSOS */
+    .section-steps {
+      padding: 80px 0;
+      background: var(--bg-dark-surface);
+      border-top: 1px solid rgba(0, 168, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 168, 255, 0.1);
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      position: relative;
+    }
+
+    .step-card {
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 34px 26px;
+      position: relative;
+      transition: all 0.25s ease;
+    }
+
+    .step-card:hover {
+      border-color: var(--color-cyan-electric);
+      transform: translateY(-5px);
+    }
+
+    .step-number {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: rgba(0, 168, 255, 0.18);
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      line-height: 1;
+    }
+
+    .step-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-cyan-electric);
+      background: rgba(0, 168, 255, 0.12);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 18px;
+    }
+
+    .step-title {
+      font-size: 1.28rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .step-desc {
+      font-size: 0.93rem;
+      color: #CBD5E1;
+      line-height: 1.6;
+    }
+
+    /* SERVIÇOS ESPECIALIZADOS */
+    .section-services {
+      padding: 90px 0;
+      background: var(--bg-dark-navy);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 26px;
+    }
+
+    .service-card {
+      background: var(--bg-dark-surface);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service-card:hover {
+      border-color: var(--color-cyan-electric);
+      box-shadow: 0 10px 30px rgba(0, 168, 255, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .service-top {
+      margin-bottom: 20px;
+    }
+
+    .service-icon-wrap {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(14, 89, 209, 0.2) 0%, rgba(0, 168, 255, 0.2) 100%);
+      border: 1px solid rgba(0, 168, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-cyan-electric);
+      margin-bottom: 18px;
+    }
+
+    .service-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-orange-urgency);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .service-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 0.92rem;
+      color: #94A3B8;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .service-items-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #CBD5E1;
+      margin-bottom: 22px;
+    }
+
+    .service-items-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-items-list li svg {
+      color: var(--color-cyan-electric);
+      flex-shrink: 0;
+    }
+
+    .service-link-wpp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-cyan-electric);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: gap 0.2s;
+    }
+
+    .service-link-wpp:hover {
+      gap: 12px;
+      color: #FFFFFF;
+    }
+
+    /* TABELA COMPARATIVA: AMADORA VS BATECH */
+    .section-comparison {
+      padding: 80px 0;
+      background: var(--bg-dark-surface);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .comparison-table-wrapper {
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+
+    .table-header-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      padding: 20px 24px;
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .table-col-criterion {
+      color: var(--text-gray-muted);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+
+    .table-col-bad {
+      color: #EF4444;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .table-col-good {
+      color: var(--color-cyan-electric);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .table-row-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      padding: 18px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.92rem;
+      align-items: center;
+    }
+
+    .table-row-grid:last-child {
+      border-bottom: none;
+    }
+
+    .table-row-grid:nth-child(even) {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .criterion-name {
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .bad-text {
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .good-text {
+      color: #E2E8F0;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .good-text svg {
+      color: #22C55E;
+      flex-shrink: 0;
+    }
+
+    .bad-text svg {
+      color: #EF4444;
+      flex-shrink: 0;
+    }
+
+    /* FILTRO DE ICP: PARA QUEM É VS PARA QUEM NÃO É */
+    .section-icp {
+      padding: 80px 0;
+      background: var(--bg-dark-navy);
+    }
+
+    .icp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .icp-card {
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      border: 1px solid;
+    }
+
+    .icp-card.for-you {
+      background: rgba(34, 197, 94, 0.04);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .icp-card.not-for-you {
+      background: rgba(239, 68, 68, 0.04);
+      border-color: rgba(239, 68, 68, 0.25);
+    }
+
+    .icp-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .icp-card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .icp-card.for-you .icp-card-title {
+      color: #4ADE80;
+    }
+
+    .icp-card.not-for-you .icp-card-title {
+      color: #F87171;
+    }
+
+    .icp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .icp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #CBD5E1;
+    }
+
+    .icp-list li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* PROVA SOCIAL / GOOGLE REVIEWS */
+    .section-reviews {
+      padding: 90px 0;
+      background: var(--bg-dark-surface);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .google-badge-summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      margin-bottom: 20px;
+    }
+
+    .stars-row {
+      color: #F59E0B;
+      display: flex;
+      gap: 2px;
+    }
+
+    .reviews-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .review-card {
+      background: var(--bg-dark-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 168, 255, 0.3);
+    }
+
+    .review-text {
+      font-size: 0.95rem;
+      color: #E2E8F0;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .reviewer-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 14px;
+    }
+
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .reviewer-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0E59D1 0%, #00A8FF 100%);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .reviewer-name {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .review-tag {
+      font-size: 0.72rem;
+      color: var(--text-gray-muted);
+    }
+
+    .google-check-icon {
+      color: #4285F4;
+      font-size: 0.8rem;
+    }
+
+    /* LOCALIZAÇÃO E CONTATOS */
+    .section-location {
+      padding: 80px 0;
+      background: var(--bg-dark-navy);
+    }
+
+    .location-box-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      background: var(--bg-dark-surface);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      align-items: center;
+    }
+
+    .location-info h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    .location-info p {
+      color: var(--text-gray-muted);
+      margin-bottom: 24px;
+      font-size: 0.98rem;
+    }
+
+    .location-details-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .location-detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: #E2E8F0;
+    }
+
+    .location-detail-item svg {
+      color: var(--color-cyan-electric);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .location-map-card {
+      background: var(--bg-dark-card);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .map-placeholder-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(0, 168, 255, 0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: var(--color-cyan-electric);
+    }
+
+    .map-badge-center {
+      display: inline-block;
+      background: rgba(255, 107, 0, 0.15);
+      border: 1px solid var(--color-orange-urgency);
+      color: #FFA45A;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .btn-maps-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+      font-weight: 700;
+      padding: 12px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      margin-top: 16px;
+      transition: all 0.2s;
+    }
+
+    .btn-maps-link:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--color-cyan-electric);
+    }
+
+    /* FAQ (PERGUNTAS FREQUENTES EM ACORDEÃO) */
+    .section-faq {
+      padding: 80px 0;
+      background: var(--bg-dark-surface);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .faq-container {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--bg-dark-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .faq-item.active {
+      border-color: var(--color-cyan-electric);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      color: #FFFFFF;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .faq-question svg {
+      transition: transform 0.3s ease;
+      color: var(--color-cyan-electric);
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 24px;
+      color: #CBD5E1;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 24px 22px;
+    }
+
+    /* BLOCO FINAL DE CONVITE & OFERTA */
+    .section-final-cta {
+      padding: 90px 0;
+      background: radial-gradient(circle at 50% 50%, rgba(14, 89, 209, 0.25) 0%, rgba(7, 19, 38, 0.98) 80%);
+      text-align: center;
+    }
+
+    .final-cta-card {
+      background: var(--bg-dark-surface);
+      border: 1px solid var(--border-dark-hover);
+      border-radius: var(--radius-lg);
+      padding: 50px 30px;
+      max-width: 860px;
+      margin: 0 auto;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 168, 255, 0.2);
+    }
+
+    .final-cta-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .final-cta-subtitle {
+      font-size: 1.15rem;
+      color: #CBD5E1;
+      margin-bottom: 32px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FOOTER */
+    .main-footer {
+      background: #040B16;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 50px 0 30px;
+      font-size: 0.85rem;
+      color: var(--text-gray-dark);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand h4 {
+      color: #FFFFFF;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      color: var(--text-gray-muted);
+      line-height: 1.6;
+      max-width: 360px;
+    }
+
+    .footer-col h5 {
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      color: var(--text-gray-muted);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-cyan-electric);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* BOTÃO FLUTUANTE DE WHATSAPP MOBILE */
+    .floating-wpp-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 12px 20px 12px 14px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: float-pulse 2.5s infinite;
+    }
+
+    .floating-wpp-btn:hover {
+      transform: scale(1.06);
+      background: #20BA5A;
+      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.7);
+    }
+
+    .floating-wpp-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .floating-wpp-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: #FFFFFF;
+    }
+
+    .floating-wpp-badge {
+      position: absolute;
+      top: -6px;
+      left: 10px;
+      background: #FF3B30;
+      color: #FFFFFF;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.02em;
+      border: 2px solid #071326;
+    }
+
+    @keyframes float-pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* RESPONSIVIDADE MOBILE-FIRST */
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-headline {
+        font-size: 2.2rem;
+      }
+      .credibility-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      .icp-grid {
+        grid-template-columns: 1fr;
+      }
+      .location-box-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .table-header-grid, .table-row-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .nav-contact-block .nav-phone-link {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-headline {
+        font-size: 1.85rem;
+      }
+      .btn-main-wpp {
+        width: 100%;
+        font-size: 1.05rem;
+        padding: 16px 20px;
+      }
+      .floating-wpp-btn span {
+        display: none;
+      }
+      .floating-wpp-btn {
+        padding: 14px;
+        bottom: 18px;
+        right: 18px;
+      }
+      .credibility-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .cred-stat-num {
+        font-size: 1.6rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+
+  <!-- Google Tag Manager / Analytics Snippet -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function dispararConversaoWhatsApp(origem) {
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          'event': 'click_whatsapp',
+          'origem_conversao': origem || 'botao_geral',
+          'timestamp': new Date().toISOString()
+        });
+      }
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- 00. TOP BAR DE ALERTA E URGÊNCIA -->
+  <div class="top-bar-alert">
+    <span class="top-bar-pulse"></span>
+    <span>⚡ Atendimento Prioritário em Vitória da Conquista | Não Fique Sem Trabalhar ou Estudar!</span>
+  </div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="header-nav">
+    <div class="container">
+      <div class="brand-logo-wrap">
+        <div class="brand-symbol">B</div>
+        <div class="brand-text">
+          <div class="brand-name">BA<span>tech</span></div>
+          <div class="brand-tagline">Informática & Assistência</div>
+        </div>
+      </div>
+
+      <div class="nav-contact-block">
+        <a href="tel:7734225949" class="nav-phone-link" title="Ligue para nossa loja física">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (77) 3422-5949
+        </a>
+        <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20preciso%20de%20ajuda%20urgente%20com%20meu%20computador%2Fnotebook." 
+           class="nav-btn-wpp" 
+           target="_blank" 
+           onclick="dispararConversaoWhatsApp('header_nav');">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
+          Chamar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 01. HERO / DOBRA 1 -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="badge-urgent">
+            <span>🚨</span> Manutenção & Conserto com Urgência
+          </div>
+
+          <h1 class="hero-headline">
+            Seu Computador ou Notebook <span class="highlight-orange">Parou?</span><br>
+            Nós Recuperamos com <span class="highlight-cyan">Rapidez e Segurança.</span>
+          </h1>
+
+          <p class="hero-subheadline">
+            Diagnóstico preciso para quem não pode perder dias de trabalho, estudos ou vendas. Formatação sem perda de arquivos, conserto de placa, upgrade turbo e manutenção preventiva no <strong>Centro de Vitória da Conquista</strong>.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20preciso%20de%20ajuda%20urgente%20com%20meu%20computador%2Fnotebook." 
+               class="btn-main-wpp" 
+               target="_blank" 
+               onclick="dispararConversaoWhatsApp('hero_cta_principal');">
+              <svg viewBox="0 0 24 24"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
+              <span>FALAR COM TÉCNICO NO WHATSAPP</span>
+            </a>
+          </div>
+
+          <div class="hero-microproofs">
+            <div class="microproof-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <span><strong>4.9 Estrelas</strong> no Google (+125 avaliações)</span>
+            </div>
+            <div class="microproof-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              <span>Resposta em poucos minutos</span>
+            </div>
+            <div class="microproof-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Backup e sigilo total dos dados</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD DE DIAGNÓSTICO EM TEMPO REAL -->
+        <div class="hero-diagnostic-card">
+          <div class="diagnostic-card-header">
+            <div class="diagnostic-card-title">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Triagem de Emergência
+            </div>
+            <div class="badge-status-online">
+              <span class="top-bar-pulse" style="background:#25D366;"></span>
+              Bancada Ativa
+            </div>
+          </div>
+
+          <ul class="diagnostic-checklist">
+            <li class="diagnostic-item">
+              <span class="diagnostic-item-icon">✓</span>
+              <span><strong>Notebook não liga ou não carrega:</strong> Testes em jack DC, fonte e reguladores.</span>
+            </li>
+            <li class="diagnostic-item">
+              <span class="diagnostic-item-icon">✓</span>
+              <span><strong>Travando ou tela azul:</strong> Diagnóstico de HD/SSD, memória RAM e sistema.</span>
+            </li>
+            <li class="diagnostic-item">
+              <span class="diagnostic-item-icon">✓</span>
+              <span><strong>Formatação sem sustos:</strong> Todos os seus documentos e fotos protegidos.</span>
+            </li>
+            <li class="diagnostic-item">
+              <span class="diagnostic-item-icon">✓</span>
+              <span><strong>Aquecimento e barulho:</strong> Limpeza térmica profunda e troca de pasta.</span>
+            </li>
+          </ul>
+
+          <div class="diagnostic-alert-box">
+            <strong>⚠️ "Aqui seu equipamento não é receita pronta!"</strong>
+            Não cobramos por trocas desnecessárias de peças. Encontramos a causa raiz exata com ferramentas e testes dedicados.
+          </div>
+
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Meu%20computador%2Fnotebook%20est%C3%A1%20com%20defeito%20e%20preciso%20de%20um%20diagn%C3%B3stico." 
+             class="card-action-btn" 
+             target="_blank" 
+             onclick="dispararConversaoWhatsApp('card_triagem_hero');">
+            <span>Pedir Diagnóstico Agora</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. BARRA DE CREDIBILIDADE & NÚMEROS -->
+  <section class="credibility-bar">
+    <div class="container">
+      <div class="credibility-grid">
+        <div class="cred-item">
+          <div class="cred-stat-num">4.9<span>★</span></div>
+          <div class="cred-stat-label">+125 Avaliações no Google</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-stat-num">100%</div>
+          <div class="cred-stat-label">Segurança com seus Arquivos</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-stat-num">Centro</div>
+          <div class="cred-stat-label">Vitória da Conquista - BA</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-stat-num">90<span>dias</span></div>
+          <div class="cred-stat-label">Garantia nos Serviços</div>
+        </div>
+      </div>
+
+      <div class="brands-strip">
+        <span>Marcas atendidas:</span>
+        <span class="brand-badge">Dell</span>
+        <span class="brand-badge">Lenovo</span>
+        <span class="brand-badge">HP</span>
+        <span class="brand-badge">Acer</span>
+        <span class="brand-badge">Asus</span>
+        <span class="brand-badge">Apple / MacBook</span>
+        <span class="brand-badge">Samsung</span>
+        <span class="brand-badge">PCs Gamers & All-in-One</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. O PROBLEMA / AGITAÇÃO DA DOR -->
+  <section class="section-pain">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag urgent-tag">Você se identifica com isso?</span>
+        <h2 class="section-title">A Dor de Ficar com o Computador Parado Quando Você Mais Precisa</h2>
+        <p class="section-subtitle">
+          Sabemos o desespero de ter relatórios para entregar, reuniões online, estudos ou clientes para atender e a máquina simplesmente não responder.
+        </p>
+      </div>
+
+      <div class="pain-cards-grid">
+        <div class="pain-card">
+          <div class="pain-card-icon">⚡</div>
+          <h3 class="pain-card-title">Notebook Não Liga ou Desliga Sozinho</h3>
+          <p class="pain-card-desc">
+            Você aperta o botão de ligar e nada acontece, ou o aparelho apaga do nada bem no meio do seu trabalho, gerando prejuízo imediato.
+          </p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-card-icon">🐢</div>
+          <h3 class="pain-card-title">Lentidão Extrema e Travamento</h3>
+          <p class="pain-card-desc">
+            Passa 10 minutos para iniciar o Windows, o navegador trava e o ponteiro do mouse congela. Uma rotina cansativa que destrói sua produtividade.
+          </p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-card-icon">📁</div>
+          <h3 class="pain-card-title">Medo de Perder Fotos e Documentos</h3>
+          <p class="pain-card-desc">
+            A insegurança de entregar a máquina para um desconhecido e ele formatar tudo sem fazer backup, apagando anos de memórias e trabalhos.
+          </p>
+        </div>
+
+        <div class="pain-card">
+          <div class="pain-card-icon">⌛</div>
+          <h3 class="pain-card-title">Promessas de "Amanhã Tá Pronto"</h3>
+          <p class="pain-card-desc">
+            Assistências que pegam seu computador, não dão satisfação e deixam você duas semanas sem notícias e sem solução.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. O MÉTODO BATECH EM 3 PASSOS (TRANSPARÊNCIA TOTAL) -->
+  <section class="section-steps">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Transparência do Início ao Fim</span>
+        <h2 class="section-title">Como Funciona a Solução Rápida da Batech</h2>
+        <p class="section-subtitle">
+          Sem enrolação e sem surpresas na conta. Você sabe exatamente o que está acontecendo com seu computador.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-number">01</span>
+          <span class="step-badge">Etapa 1</span>
+          <h3 class="step-title">Contato e Pré-Diagnóstico</h3>
+          <p class="step-desc">
+            Você nos chama no WhatsApp, descreve o que está acontecendo e nossa equipe já te orienta sobre os possíveis cenários e o melhor horário para trazer na loja.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">02</span>
+          <span class="step-badge">Etapa 2</span>
+          <h3 class="step-title">Avaliação Técnica em Bancada</h3>
+          <p class="step-desc">
+            Testamos os componentes reais com equipamentos de medição. Identificamos a causa raiz sem "achismos" e passamos o orçamento claro antes de qualquer reparo.
+          </p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">03</span>
+          <span class="step-badge">Etapa 3</span>
+          <h3 class="step-title">Execução Ágil & Testes Rigorosos</h3>
+          <p class="step-desc">
+            Realizamos o conserto, instalamos as peças necessárias, testamos o estresse do sistema e você retira sua máquina 100% pronta com garantia legal.
+          </p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Quero%20fazer%20o%20pr%C3%A9-diagn%C3%B3stico%20do%20meu%20equipamento." 
+           class="btn-main-wpp" 
+           target="_blank" 
+           onclick="dispararConversaoWhatsApp('cta_meio_passos');">
+          <svg viewBox="0 0 24 24"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
+          <span>QUERO AGILIDADE NO MEU REPARO</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. SERVIÇOS ESPECIALIZADOS -->
+  <section class="section-services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">O que nós resolvemos</span>
+        <h2 class="section-title">Especialistas em Manutenção & Reparo</h2>
+        <p class="section-subtitle">
+          Soluções completas para notebooks de todas as marcas, computadores desktops, PCs de alto desempenho e nobreaks.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Serviço 1 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="service-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <span class="service-tag">Urgência em Notebooks</span>
+            <h3 class="service-title">Reparo de Notebooks</h3>
+            <p class="service-desc">
+              Troca de telas quebradas, substituição de teclados, troca de conector de carga (DC Jack que não carrega), reparo em carcaças e dobradiças rachadas.
+            </p>
+            <ul class="service-items-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Não liga ou não carrega</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Tela piscando, com listras ou preta</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Reparo na placa-mãe</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Preciso%20de%20reparo%20no%20meu%20notebook." class="service-link-wpp" target="_blank" onclick="dispararConversaoWhatsApp('card_servico_notebook');">
+            <span>Consultar conserto de notebook</span> &rarr;
+          </a>
+        </div>
+
+        <!-- Serviço 2 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="service-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <span class="service-tag">Arquivos 100% Salvos</span>
+            <h3 class="service-title">Formatação com Backup Blindado</h3>
+            <p class="service-desc">
+              Instalação limpa do Windows e sistemas operacionais, remoção de vírus e malwares, com garantia de salvamento de todas as suas fotos e documentos.
+            </p>
+            <ul class="service-items-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Backup completo antes de formatar</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Instalação de drivers oficiais atualizados</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Programas essenciais configurados</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Preciso%20formatar%20meu%20computador%20com%20backup." class="service-link-wpp" target="_blank" onclick="dispararConversaoWhatsApp('card_servico_formatacao');">
+            <span>Consultar formatação rápida</span> &rarr;
+          </a>
+        </div>
+
+        <!-- Serviço 3 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="service-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <span class="service-tag">Até 10x Mais Rápido</span>
+            <h3 class="service-title">Upgrade Turbo: SSD e RAM</h3>
+            <p class="service-desc">
+              Substitua o HD mecânico antigo por um SSD ultrarrápido e aumente a memória RAM. Seu computador antigo volta a ligar em 15 segundos e não trava mais.
+            </p>
+            <ul class="service-items-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Clonagem de disco sem perder programas</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> SSD NVMe e SATA de alta durabilidade</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Muito mais barato do que comprar outro PC</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Quero%20fazer%20um%20upgrade%20de%20SSD%20e%20mem%C3%B3ria%20no%20meu%20PC%2Fnotebook." class="service-link-wpp" target="_blank" onclick="dispararConversaoWhatsApp('card_servico_upgrade');">
+            <span>Consultar upgrade de SSD</span> &rarr;
+          </a>
+        </div>
+
+        <!-- Serviço 4 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="service-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span class="service-tag">Fim do Aquecimento</span>
+            <h3 class="service-title">Limpeza Preventiva & Pasta Térmica</h3>
+            <p class="service-desc">
+              Desobstrução do cooler e dissipador, limpeza interna profunda e aplicação de pasta térmica de alta condutividade para proteger o processador.
+            </p>
+            <ul class="service-items-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Elimina ruídos altos de ventoinha</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Evita queima precoce da placa-mãe</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Queda drástica na temperatura</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Meu%20computador%20est%C3%A1%20esquentando%20muito%20e%20preciso%20de%20uma%20limpeza." class="service-link-wpp" target="_blank" onclick="dispararConversaoWhatsApp('card_servico_limpeza');">
+            <span>Consultar limpeza térmica</span> &rarr;
+          </a>
+        </div>
+
+        <!-- Serviço 5 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="service-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            </div>
+            <span class="service-tag">Alta Performance & Trabalho</span>
+            <h3 class="service-title">Computadores & PCs Gamers</h3>
+            <p class="service-desc">
+              Montagem personalizada, teste de fontes reais, substituição de placas de vídeo e placas-mãe para escritórios, consultórios e gamers.
+            </p>
+            <ul class="service-items-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Troca e diagnóstico de fonte queimada</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Montagem com cable management limpo</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Manutenção corretiva e preventiva</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Preciso%20de%20manuten%C3%A7%C3%A3o%20no%20meu%20computador%20desktop." class="service-link-wpp" target="_blank" onclick="dispararConversaoWhatsApp('card_servico_desktop');">
+            <span>Consultar reparo de computador</span> &rarr;
+          </a>
+        </div>
+
+        <!-- Serviço 6 -->
+        <div class="service-card">
+          <div class="service-top">
+            <div class="service-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="6" width="18" height="12" rx="2"/><line x1="23" y1="13" x2="23" y2="11"/><line x1="7" y1="10" x2="7" y2="14"/><line x1="11" y1="12" x2="15" y2="12"/></svg>
+            </div>
+            <span class="service-tag">Proteção Elétrica</span>
+            <h3 class="service-title">Reparo de Nobreaks</h3>
+            <p class="service-desc">
+              Seu nobreak apita, desliga com facilidade ou não segura a carga quando cai a energia? Fazemos a revisão e substituição de baterias com testes de autonomia.
+            </p>
+            <ul class="service-items-list">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Troca de baterias seladas novas</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Revisão de circuitos internos e fusíveis</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Proteção garantida para seus dados</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Preciso%20de%20reparo%20ou%20troca%20de%20bateria%20no%20meu%20nobreak." class="service-link-wpp" target="_blank" onclick="dispararConversaoWhatsApp('card_servico_nobreak');">
+            <span>Consultar conserto de nobreak</span> &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. TABELA COMPARATIVA (ASSISTÊNCIA COMUM VS BATECH) -->
+  <section class="section-comparison">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">A Diferença na Prática</span>
+        <h2 class="section-title">Por Que Nossos Clientes Confiam na Batech</h2>
+        <p class="section-subtitle">
+          Veja por que não vale a pena arriscar seus equipamentos e arquivos com curiosos.
+        </p>
+      </div>
+
+      <div class="comparison-table-wrapper">
+        <div class="table-header-grid">
+          <div class="table-col-criterion">Critério de Avaliação</div>
+          <div class="table-col-bad">❌ Assistências Comuns</div>
+          <div class="table-col-good">✅ Padrão Batech Informática</div>
+        </div>
+
+        <div class="table-row-grid">
+          <div class="criterion-name">Velocidade no Diagnóstico</div>
+          <div class="bad-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Demora dias apenas para olhar
+          </div>
+          <div class="good-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Triagem ágil com retorno prioritário
+          </div>
+        </div>
+
+        <div class="table-row-grid">
+          <div class="criterion-name">Transparência nas Peças</div>
+          <div class="bad-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Condenam peças boas para cobrar mais
+          </div>
+          <div class="good-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Sem receita pronta: só troca o necessário
+          </div>
+        </div>
+
+        <div class="table-row-grid">
+          <div class="criterion-name">Segurança dos seus Dados</div>
+          <div class="bad-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Formatam sem avisar e perdem tudo
+          </div>
+          <div class="good-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Backup blindado antes de qualquer ação
+          </div>
+        </div>
+
+        <div class="table-row-grid">
+          <div class="criterion-name">Localização e Estrutura</div>
+          <div class="bad-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Locais improvisados e de difícil acesso
+          </div>
+          <div class="good-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Loja física no Centro de Vitória da Conquista
+          </div>
+        </div>
+
+        <div class="table-row-grid">
+          <div class="criterion-name">Reputação Real Comprovada</div>
+          <div class="bad-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Poucas avaliações ou muitas reclamações
+          </div>
+          <div class="good-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Nota 4.9⭐ com mais de 125 avaliações no Google
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07. PARA QUEM É VS PARA QUEM NÃO É (FILTRO DE ICP) -->
+  <section class="section-icp">
+    <div class="container">
+      <div class="icp-grid">
+        <div class="icp-card for-you">
+          <div class="icp-card-header">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3 class="icp-card-title">A Batech é para você que:</h3>
+          </div>
+          <ul class="icp-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Usa o notebook ou PC para <strong>trabalhar, estudar ou faturar</strong> e não pode ficar dias parado.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Exige <strong>segurança absoluta dos seus dados</strong> (fotos de família, notas fiscais, planilhas e projetos).</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Quer ser atendido por <strong>técnicos honestos</strong>, que explicam o defeito real sem enrolar.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Valoriza a comodidade de uma loja física bem localizada no Centro da cidade.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="icp-card not-for-you">
+          <div class="icp-card-header">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            <h3 class="icp-card-title">NÃO é para você que:</h3>
+          </div>
+          <ul class="icp-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Prefere arriscar seus dados e peças com soluções caseiras e tutoriais duvidosos da internet.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Não se importa se o técnico demorar semanas para te dar um retorno sobre o seu computador.</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Busca "gambiarras provisórias" em vez de um reparo duradouro e com garantia formal.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08. PROVA SOCIAL & REVIEWS REAIS DO GOOGLE -->
+  <section class="section-reviews">
+    <div class="container">
+      <div class="section-header">
+        <div class="google-badge-summary">
+          <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+          <div class="stars-row">★★★★★</div>
+          <span style="font-weight: 800; color: #FFF;">4.9 de 5 Estrelas no Google (+125 avaliações)</span>
+        </div>
+        <h2 class="section-title">O Que Quem Já Consertou na Batech Diz</h2>
+        <p class="section-subtitle">
+          A melhor prova da nossa honestidade e agilidade vem de quem confiou o computador conosco em Vitória da Conquista.
+        </p>
+      </div>
+
+      <div class="reviews-cards-grid">
+        <div class="review-card">
+          <div class="stars-row" style="margin-bottom:12px;">★★★★★</div>
+          <p class="review-text">
+            "Excelente atendimento! Levei meu notebook que tinha sido condenado em outra assistência técnica. O pessoal da Batech fez os testes com calma, encontrou o problema real na placa e resolveu muito rápido. Super honestos!"
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">MS</div>
+              <div>
+                <div class="reviewer-name">Marcos Silva</div>
+                <div class="review-tag">Vitória da Conquista • Google Review</div>
+              </div>
+            </div>
+            <span class="google-check-icon">✓ Verificado</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars-row" style="margin-bottom:12px;">★★★★★</div>
+          <p class="review-text">
+            "Fizeram o upgrade de SSD e formatação no meu notebook de trabalho. Ficou surreal de rápido, liga em menos de 10 segundos! E o mais importante: todos os meus arquivos ficaram 100% intactos. Recomendo demais!"
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">AL</div>
+              <div>
+                <div class="reviewer-name">Ana Lúcia Ferreira</div>
+                <div class="review-tag">Vitória da Conquista • Google Review</div>
+              </div>
+            </div>
+            <span class="google-check-icon">✓ Verificado</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars-row" style="margin-bottom:12px;">★★★★★</div>
+          <p class="review-text">
+            "Atendimento de primeira qualidade. Levei meu PC Gamer que não estava dando vídeo e o técnico me explicou exatamente o que era antes de fazer o serviço. Preço justo e rapidez impressionante."
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">RG</div>
+              <div>
+                <div class="reviewer-name">Rodrigo Gusmão</div>
+                <div class="review-tag">Vitória da Conquista • Google Review</div>
+              </div>
+            </div>
+            <span class="google-check-icon">✓ Verificado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09. LOCALIZAÇÃO E CONTATOS FÍSICOS -->
+  <section class="section-location" id="localizacao">
+    <div class="container">
+      <div class="location-box-grid">
+        <div class="location-info">
+          <span class="section-tag">Onde Estamos</span>
+          <h3>Loja Física no Centro de Vitória da Conquista</h3>
+          <p>
+            Fácil acesso para você deixar e retirar seu equipamento com segurança e comodidade.
+          </p>
+
+          <ul class="location-details-list">
+            <li class="location-detail-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Endereço:</strong><br>
+                Rua Salgado Filho, nº 146, Centro - Vitória da Conquista - BA, CEP 45000-180
+              </div>
+            </li>
+            <li class="location-detail-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <strong>Horário de Funcionamento:</strong><br>
+                Segunda a Sexta: 08:00 às 18:00 | Sábado: 08:00 às 12:00
+              </div>
+            </li>
+            <li class="location-detail-item">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <strong>Telefones de Atendimento:</strong><br>
+                WhatsApp: (77) 98811-4035 | Fixo: (77) 3422-5949
+              </div>
+            </li>
+          </ul>
+
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Gostaria%20de%20saber%20a%20localiza%C3%A7%C3%A3o%20exata%20para%20levar%20meu%20equipamento." 
+             class="btn-main-wpp" 
+             target="_blank" 
+             onclick="dispararConversaoWhatsApp('location_cta_wpp');">
+            <span>Trazer Meu Equipamento Hoje</span>
+          </a>
+        </div>
+
+        <div class="location-map-card">
+          <div class="map-placeholder-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+          </div>
+          <span class="map-badge-center">Ponto Central</span>
+          <h4 style="color:#FFF; font-size:1.3rem; margin-bottom: 8px;">Batech Informática</h4>
+          <p style="color:var(--text-gray-muted); font-size:0.9rem; margin-bottom: 14px;">
+            Rua Salgado Filho, 146 - Centro<br>Vitória da Conquista - BA
+          </p>
+          <a href="https://maps.google.com/?q=Batech+Informática+Vitória+da+Conquista" 
+             target="_blank" 
+             class="btn-maps-link">
+            <span>Abrir no Google Maps / Waze</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ - PERGUNTAS FREQUENTES -->
+  <section class="section-faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tire Suas Dúvidas</span>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <p class="section-subtitle">
+          Tudo o que você precisa saber antes de trazer seu notebook ou computador.
+        </p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Quanto tempo leva para diagnosticar o defeito?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Para a maioria dos casos com urgência, nossa triagem inicial é feita rapidamente no mesmo dia ou em até 24 horas úteis. Casos de placa-mãe mais complexos exigem medições elétricas precisas, mas você sempre será avisado do prazo exato com transparência.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Vou perder minhas fotos, documentos e programas ao formatar?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Não! Na Batech, a segurança dos seus dados é prioridade número um. Realizamos o backup completo de fotos, documentos, planilhas e arquivos importantes antes de qualquer procedimento de restauração ou formatação.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Vale a pena consertar ou é melhor comprar outro notebook?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Na imensa maioria das vezes, um upgrade de SSD, ampliação de memória RAM e uma limpeza preventiva deixam o computador muito mais rápido que modelos novos básicos de entrada, custando uma fração do valor de uma máquina nova. Se não compensar, somos 100% sinceros com você.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Vocês oferecem garantia nos serviços e peças?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Sim! Todos os nossos reparos e peças instaladas possuem garantia legal de 90 dias com emissão de comprovante do serviço realizado.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Vocês atendem quais marcas de notebooks e computadores?</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Atendemos todas as principais marcas do mercado: Dell, Lenovo, HP, Acer, Asus, Apple (MacBook), Samsung, Positivo, além de computadores desktop montados, All-in-One e PCs Gamers de alta performance.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. BLOCO FINAL DE CONVITE & CTA FORTE -->
+  <section class="section-final-cta">
+    <div class="container">
+      <div class="final-cta-card">
+        <span class="badge-urgent">⚡ Não Fique Parado</span>
+        <h2 class="final-cta-title">
+          Recupere Seu Computador Hoje Mesmo com Quem Entende do Assunto.
+        </h2>
+        <p class="final-cta-subtitle">
+          Clique no botão abaixo, tire suas dúvidas diretamente com nossa equipe no WhatsApp e agilize o reparo da sua máquina.
+        </p>
+
+        <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20preciso%20de%20ajuda%20urgente%20com%20meu%20computador%2Fnotebook." 
+           class="btn-main-wpp" 
+           target="_blank" 
+           onclick="dispararConversaoWhatsApp('cta_fechamento_final');" 
+           style="margin: 0 auto;">
+          <svg viewBox="0 0 24 24"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
+          <span>FALAR NO WHATSAPP COM URGÊNCIA</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. RODAPÉ INSTITUCIONAL -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Batech Informática</h4>
+          <p>
+            Tecnologia que conecta, soluções que transformam. Assistência técnica especializada em notebooks, computadores e nobreaks em Vitória da Conquista - BA.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Serviços</h5>
+          <ul class="footer-links">
+            <li><a href="https://wa.me/5577988114035?text=Preciso%20de%20reparo%20de%20notebook">Reparo de Notebooks</a></li>
+            <li><a href="https://wa.me/5577988114035?text=Preciso%20de%20formata%C3%A7%C3%A3o">Formatação & Backup</a></li>
+            <li><a href="https://wa.me/5577988114035?text=Preciso%20de%20upgrade%20SSD">Upgrade Turbo de SSD</a></li>
+            <li><a href="https://wa.me/5577988114035?text=Preciso%20de%20limpeza%20t%C3%A9rmica">Limpeza Preventiva</a></li>
+            <li><a href="https://wa.me/5577988114035?text=Preciso%20de%20conserto%20de%20nobreak">Reparo de Nobreaks</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Atendimento & Contato</h5>
+          <ul class="footer-links">
+            <li>WhatsApp: (77) 98811-4035</li>
+            <li>Telefone: (77) 3422-5949</li>
+            <li>Rua Salgado Filho, 146 - Centro</li>
+            <li>Vitória da Conquista - BA</li>
+            <li><a href="https://www.instagram.com/batechinformatica/" target="_blank">Instagram: @batechinformatica</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Batech Informática. Todos os direitos reservados.
+        </div>
+        <div>
+          Assistência Técnica Especializada em Informática • Vitória da Conquista - BA
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DE WHATSAPP FIXO MOBILE/DESKTOP -->
+  <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Vim%20pelo%20Google%20e%20preciso%20de%20ajuda%20urgente%20com%20meu%20computador%2Fnotebook." 
+     class="floating-wpp-btn" 
+     target="_blank" 
+     aria-label="Atendimento Urgente pelo WhatsApp" 
+     onclick="dispararConversaoWhatsApp('botao_flutuante_wpp');">
+    <span class="floating-wpp-badge">ONLINE</span>
+    <div class="floating-wpp-icon">
+      <svg viewBox="0 0 24 24"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
+    </div>
+    <span>Atendimento WhatsApp</span>
+  </a>
+
+  <!-- INTERATIVIDADE FAQ EM JS PURO -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Fecha outros itens
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+          }
+        });
+
+        // Alterna o item atual
+        item.classList.toggle('active', !isActive);
+      });
+    });
+  </script>
+
+</body>
+</html>
