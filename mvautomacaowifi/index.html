@@ -1258,26 +1258,6 @@ de solicitar a avaliação?</h2>				</div>
 			</div>
 			<script>
 				( () => {
-					const trackJoinchat = () => {
-						window.dataLayer = window.dataLayer || [];
-						window.dataLayer.push({
-							event: 'whatsapp_floating_click',
-							event_category: 'WhatsApp',
-							event_action: 'Clique Botao Flutuante',
-							event_label: 'https://wa.me/5511915918463'
-						});
-					};
-					document.addEventListener( 'DOMContentLoaded', () => {
-						document.addEventListener( 'joinchat:open', trackJoinchat );
-						const btn = document.querySelector( '.joinchat__button' );
-						if ( btn ) {
-							btn.addEventListener( 'click', trackJoinchat );
-						}
-					} );
-				} )();
-			</script>
-			<script>
-				( () => {
 					const lazyloadRunObserver = () => {
 						const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
 						const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
