@@ -1696,15 +1696,109 @@ Venha tomar um café conosco ou chame no WhatsApp!</p>
         
                 </div>
                 
-                <!-- Grid (Falso) -->
-                <div class="grid grid-cols-3 gap-0.5 mt-0.5 pb-10">
-                    <div class="aspect-square bg-zinc-800 flex items-center justify-center text-4xl opacity-50">📸</div>
-                    <div class="aspect-square bg-zinc-900 flex items-center justify-center text-4xl opacity-50">🎬</div>
-                    <div class="aspect-square bg-zinc-800 flex items-center justify-center text-4xl opacity-50">📸</div>
-                    <div class="aspect-square bg-zinc-900 flex items-center justify-center text-4xl opacity-50">🎬</div>
-                    <div class="aspect-square bg-zinc-800 flex items-center justify-center text-4xl opacity-50">📸</div>
-                    <div class="aspect-square bg-zinc-900 flex items-center justify-center text-4xl opacity-50">🎬</div>
+                <!-- Grid Feed com Capas da Tríade de Fixados (ADR-130) -->
+                
+    <!-- Grid Feed com Capas da Tríade de Fixados (ADR-130) -->
+    <div class="grid grid-cols-3 gap-0.5 mt-0.5 pb-10">
+        
+        <div class="aspect-square relative overflow-hidden bg-zinc-950 border border-white/5 flex flex-col justify-between p-2 select-none group" style="background: linear-gradient(145deg, #070D24 0%, #0A254099 100%);">
+            <img src="assets/capa_fixado_1_quem_somos.png" alt="QUEM SOMOS" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/60 pointer-events-none z-10"></div>
+            
+            <!-- Topo do Card: Carrossel + Pin Fixado -->
+            <div class="relative z-20 flex justify-between items-center w-full">
+                <span class="text-[7px] font-black uppercase px-1 py-0.5 rounded tracking-wider shadow-sm" style="background: #06B6D433; border: 1px solid #06B6D4; color: #06B6D4;">QUEM SOMOS</span>
+                <div class="flex items-center gap-1">
+                    <span class="bg-black/60 backdrop-blur-sm p-1 rounded-full text-white"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 3 3 3-3 3"/><path d="m15 3 3 3-3 3"/></svg></span>
+                    <span class="bg-black/60 backdrop-blur-sm p-1 rounded-full text-white" title="Post Fixado"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg></span>
                 </div>
+            </div>
+            
+            <!-- Base do Card: Título Legível -->
+            <div class="relative z-20 mt-auto pt-1">
+                <p class="text-[9px] font-extrabold text-white leading-tight drop-shadow-md line-clamp-2">Sorriso Natural Sem Desgaste: Facetas ...</p>
+            </div>
+        </div>
+        
+        <div class="aspect-square relative overflow-hidden bg-zinc-950 border border-white/5 flex flex-col justify-between p-2 select-none group" style="background: linear-gradient(145deg, #070D24 0%, #0A254099 100%);">
+            <img src="assets/capa_fixado_2_comparativo.png" alt="COMPARATIVO" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/60 pointer-events-none z-10"></div>
+            
+            <!-- Topo do Card: Carrossel + Pin Fixado -->
+            <div class="relative z-20 flex justify-between items-center w-full">
+                <span class="text-[7px] font-black uppercase px-1 py-0.5 rounded tracking-wider shadow-sm" style="background: #06B6D433; border: 1px solid #06B6D4; color: #06B6D4;">COMPARATIVO</span>
+                <div class="flex items-center gap-1">
+                    <span class="bg-black/60 backdrop-blur-sm p-1 rounded-full text-white"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 3 3 3-3 3"/><path d="m15 3 3 3-3 3"/></svg></span>
+                    <span class="bg-black/60 backdrop-blur-sm p-1 rounded-full text-white" title="Post Fixado"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg></span>
+                </div>
+            </div>
+            
+            <!-- Base do Card: Título Legível -->
+            <div class="relative z-20 mt-auto pt-1">
+                <p class="text-[9px] font-extrabold text-white leading-tight drop-shadow-md line-clamp-2">Por Que Resinas Feitas à Mão com o Dr....</p>
+            </div>
+        </div>
+        
+        <div class="aspect-square relative overflow-hidden bg-zinc-950 border border-white/5 flex flex-col justify-between p-2 select-none group" style="background: linear-gradient(145deg, #070D24 0%, #0A254099 100%);">
+            <img src="assets/capa_fixado_3_chamada_direta.png" alt="CHAMADA DIRETA" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-300 group-hover:scale-105" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/60 pointer-events-none z-10"></div>
+            
+            <!-- Topo do Card: Carrossel + Pin Fixado -->
+            <div class="relative z-20 flex justify-between items-center w-full">
+                <span class="text-[7px] font-black uppercase px-1 py-0.5 rounded tracking-wider shadow-sm" style="background: #06B6D433; border: 1px solid #06B6D4; color: #06B6D4;">CHAMADA DIRETA</span>
+                <div class="flex items-center gap-1">
+                    <span class="bg-black/60 backdrop-blur-sm p-1 rounded-full text-white"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 3 3 3-3 3"/><path d="m15 3 3 3-3 3"/></svg></span>
+                    <span class="bg-black/60 backdrop-blur-sm p-1 rounded-full text-white" title="Post Fixado"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></svg></span>
+                </div>
+            </div>
+            
+            <!-- Base do Card: Título Legível -->
+            <div class="relative z-20 mt-auto pt-1">
+                <p class="text-[9px] font-extrabold text-white leading-tight drop-shadow-md line-clamp-2">Quer Conquistar Seu Sorriso Novo?</p>
+            </div>
+        </div>
+        
+        <div class="aspect-square relative overflow-hidden bg-zinc-950 border border-white/5 flex flex-col justify-between p-2 select-none group" style="background: linear-gradient(145deg, #070D24 0%, #1E3A8A66 100%);">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/50 pointer-events-none z-10"></div>
+            
+            <div class="relative z-20 flex justify-between items-center w-full">
+                <span class="text-[7px] font-bold uppercase px-1 py-0.5 rounded tracking-wider bg-white/10 text-zinc-300 border border-white/15">RESULTADOS</span>
+                <span class="bg-black/60 backdrop-blur-sm p-1 rounded-full text-white"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 3 3 3-3 3"/><path d="m15 3 3 3-3 3"/></svg></span>
+            </div>
+            
+            <div class="relative z-20 mt-auto pt-1">
+                <p class="text-[9px] font-bold text-zinc-200 leading-tight drop-shadow-sm line-clamp-2">Casos Reais & Sorrisos</p>
+            </div>
+        </div>
+        
+        <div class="aspect-square relative overflow-hidden bg-zinc-950 border border-white/5 flex flex-col justify-between p-2 select-none group" style="background: linear-gradient(145deg, #0A254088 0%, #070D24 100%);">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/50 pointer-events-none z-10"></div>
+            
+            <div class="relative z-20 flex justify-between items-center w-full">
+                <span class="text-[7px] font-bold uppercase px-1 py-0.5 rounded tracking-wider bg-white/10 text-zinc-300 border border-white/15">BASTIDORES</span>
+                <span class="bg-black/60 backdrop-blur-sm p-1 rounded-full text-white"><svg width="10" height="10" viewBox="0 0 24 24" fill="#FFFFFF"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg></span>
+            </div>
+            
+            <div class="relative z-20 mt-auto pt-1">
+                <p class="text-[9px] font-bold text-zinc-200 leading-tight drop-shadow-sm line-clamp-2">Método & Rigor Artístico</p>
+            </div>
+        </div>
+        
+        <div class="aspect-square relative overflow-hidden bg-zinc-950 border border-white/5 flex flex-col justify-between p-2 select-none group" style="background: linear-gradient(145deg, #070D24 0%, #06B6D433 100%);">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/50 pointer-events-none z-10"></div>
+            
+            <div class="relative z-20 flex justify-between items-center w-full">
+                <span class="text-[7px] font-bold uppercase px-1 py-0.5 rounded tracking-wider bg-white/10 text-zinc-300 border border-white/15">DÚVIDAS</span>
+                <span class="bg-black/60 backdrop-blur-sm p-1 rounded-full text-white"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="m9 3 3 3-3 3"/><path d="m15 3 3 3-3 3"/></svg></span>
+            </div>
+            
+            <div class="relative z-20 mt-auto pt-1">
+                <p class="text-[9px] font-bold text-zinc-200 leading-tight drop-shadow-sm line-clamp-2">Mitos vs Verdades</p>
+            </div>
+        </div>
+        
+    </div>
+    
             </div>
         </div>
 
