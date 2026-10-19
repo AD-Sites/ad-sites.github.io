@@ -1378,24 +1378,31 @@
   </style>
 
   <script>
-    // Função universal de disparo de conversão GTM
-    function dispararConversaoWhatsApp(origem, msgCustom) {
+    // Função universal de disparo de conversão GTM (Dual-Dispatch: click_whatsapp + whatsapp_click)
+    function trackWppClick(origem, msgCustom) {
       var baseText = msgCustom ? encodeURIComponent(msgCustom) : encodeURIComponent("Olá! Vim pelo Google e gostaria de um orçamento rápido.");
       var targetUrl = "https://wa.me/5577988114035?text=" + baseText;
 
-      if (typeof window.dataLayer !== 'undefined') {
-        window.dataLayer.push({
-          'event': 'whatsapp_click',
-          'click_location': origem,
-          'target_url': targetUrl
-        });
-      }
-      return targetUrl;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'click_whatsapp',
+        'click_location': origem,
+        'target_url': targetUrl
+      });
+      window.dataLayer.push({
+        'event': 'whatsapp_click',
+        'click_location': origem,
+        'target_url': targetUrl
+      });
+      return true;
     }
 
+    // Fallback retrocompatível
     function abrirWhatsApp(origem, msgCustom) {
-      var url = dispararConversaoWhatsApp(origem, msgCustom);
-      window.open(url, '_blank');
+      trackWppClick(origem, msgCustom);
+      var baseText = msgCustom ? encodeURIComponent(msgCustom) : encodeURIComponent("Olá! Vim pelo Google e gostaria de um orçamento rápido.");
+      var targetUrl = "https://wa.me/5577988114035?text=" + baseText;
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
     }
   </script>
 </head>
@@ -1428,9 +1435,11 @@
             <span class="pulse-dot"></span>
             Atendimento Aberto
           </div>
-          <a href="javascript:void(0)" 
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20Batech%20Centro." 
              class="btn-header-wpp"
-             onclick="abrirWhatsApp('header_top', 'Olá! Gostaria de falar com um especialista da Batech Centro.')">
+             target="_blank"
+             rel="noopener noreferrer"
+             onclick="trackWppClick('header_top', 'Olá! Gostaria de falar com um especialista da Batech Centro.')">
             <svg viewBox="0 0 24 24"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
             <span>SOLICITAR ORÇAMENTO</span>
           </a>
@@ -1460,9 +1469,11 @@
             Atendimento especializado para notebooks, computadores e PCs gamer, com ponto comercial físico no Centro de Vitória da Conquista, avaliações reais no Google, agilidade de bancada e retorno rápido.
           </p>
 
-          <a href="javascript:void(0)" 
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Meu%20equipamento%20parou%20e%20preciso%20de%20um%20or%C3%A7amento%20r%C3%A1pido." 
              class="btn-cta-main"
-             onclick="abrirWhatsApp('cta_hero_main', 'Olá! Meu equipamento parou e preciso de um orçamento rápido.')">
+             target="_blank"
+             rel="noopener noreferrer"
+             onclick="trackWppClick('cta_hero_main', 'Olá! Meu equipamento parou e preciso de um orçamento rápido.')">
             <svg viewBox="0 0 24 24"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
             <span>SOLICITAR ORÇAMENTO ➔</span>
           </a>
@@ -1608,9 +1619,11 @@
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Diagnóstico de fonte e aquecimento</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Otimização e upgrade de velocidade</li>
             </ul>
-            <a href="javascript:void(0)" 
+            <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20meu%20computador%20All-in-One." 
                class="btn-card-action"
-               onclick="abrirWhatsApp('card_all_in_one', 'Olá! Gostaria de um orçamento para meu computador All-in-One.')">
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="trackWppClick('card_all_in_one', 'Olá! Gostaria de um orçamento para meu computador All-in-One.')">
               <span>ORÇAMENTO RÁPIDO ➔</span>
             </a>
           </div>
@@ -1628,9 +1641,11 @@
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Troca de telas, baterias e teclados</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Solução para carcaças e dobradiças</li>
             </ul>
-            <a href="javascript:void(0)" 
+            <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20meu%20Notebook." 
                class="btn-card-action"
-               onclick="abrirWhatsApp('card_notebook', 'Olá! Gostaria de um orçamento para meu Notebook.')">
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="trackWppClick('card_notebook', 'Olá! Gostaria de um orçamento para meu Notebook.')">
               <span>ORÇAMENTO RÁPIDO ➔</span>
             </a>
           </div>
@@ -1648,9 +1663,11 @@
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Substituição de fontes e componentes</li>
               <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Limpeza preventiva e pasta térmica</li>
             </ul>
-            <a href="javascript:void(0)" 
+            <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20meu%20Computador%20Desktop." 
                class="btn-card-action"
-               onclick="abrirWhatsApp('card_desktop', 'Olá! Gostaria de um orçamento para meu Computador Desktop.')">
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="trackWppClick('card_desktop', 'Olá! Gostaria de um orçamento para meu Computador Desktop.')">
               <span>ORÇAMENTO RÁPIDO ➔</span>
             </a>
           </div>
@@ -1735,9 +1752,11 @@
             Processo ágil, sem enrolação e com comunicação direta pelo WhatsApp para você acompanhar cada etapa do seu atendimento.
           </p>
 
-          <a href="javascript:void(0)" 
+          <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Gostaria%20de%20iniciar%20o%20atendimento%20do%20meu%20computador%20em%204%20passos." 
              class="btn-cta-main"
-             onclick="abrirWhatsApp('cta_steps_left', 'Olá! Gostaria de iniciar o atendimento do meu computador em 4 passos.')">
+             target="_blank"
+             rel="noopener noreferrer"
+             onclick="trackWppClick('cta_steps_left', 'Olá! Gostaria de iniciar o atendimento do meu computador em 4 passos.')">
             <svg viewBox="0 0 24 24"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
             <span>SOLICITAR ORÇAMENTO ➔</span>
           </a>
@@ -1859,9 +1878,11 @@
           Chame a Batech agora, receba o orçamento no WhatsApp e resolva seu equipamento com garantia, agilidade e nota 4.9 no Google.
         </p>
 
-        <a href="javascript:void(0)" 
+        <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Preciso%20de%20atendimento%20urgente%20para%20o%20meu%20computador." 
            class="btn-cta-banner-final"
-           onclick="abrirWhatsApp('cta_banner_final', 'Olá! Preciso de atendimento urgente para o meu computador.')">
+           target="_blank"
+           rel="noopener noreferrer"
+           onclick="trackWppClick('cta_banner_final', 'Olá! Preciso de atendimento urgente para o meu computador.')">
           <svg viewBox="0 0 24 24"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
           <span>SOLICITAR ORÇAMENTO NO WHATSAPP ➔</span>
         </a>
@@ -1914,9 +1935,14 @@
   </footer>
 
   <!-- BOTAO FLUTUANTE WHATSAPP -->
-  <div class="wpp-floating-btn" onclick="abrirWhatsApp('floating_icon', 'Olá! Gostaria de um orçamento rápido pelo WhatsApp.')">
+  <a href="https://wa.me/5577988114035?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20r%C3%A1pido%20pelo%20WhatsApp." 
+     class="wpp-floating-btn" 
+     target="_blank" 
+     rel="noopener noreferrer"
+     onclick="trackWppClick('floating_icon', 'Olá! Gostaria de um orçamento rápido pelo WhatsApp.')"
+     aria-label="Falar no WhatsApp com a Batech Informática">
     <div class="tooltip">Falar no WhatsApp agora</div>
     <svg viewBox="0 0 24 24"><path d="M12.031 2C6.511 2 2.022 6.488 2.021 12.008c-.001 1.761.46 3.48 1.336 4.998L2 22l5.133-1.346a9.97 9.97 0 0 0 4.898 1.275h.004c5.518 0 10.007-4.488 10.008-10.008 0-2.673-1.041-5.186-2.932-7.076C17.218 3.053 14.706 2 12.031 2zm5.834 14.156c-.244.685-1.42 1.31-1.956 1.391-.502.076-1.155.108-3.714-.951-3.268-1.353-5.37-4.664-5.533-4.882-.163-.217-1.325-1.762-1.325-3.36 0-1.599.839-2.385 1.137-2.71.298-.325.651-.407.868-.407.217 0 .434.002.624.012.203.01.474-.077.742.566.271.651.922 2.251 1.003 2.414.081.163.136.353.027.569-.108.217-.163.353-.325.542-.163.19-.343.424-.489.569-.163.163-.334.339-.144.665.19.325.845 1.393 1.812 2.255 1.246 1.109 2.296 1.452 2.621 1.615.325.163.515.136.705-.082.19-.217.813-.949 1.03-1.275.217-.325.434-.271.732-.163.298.108 1.898.895 2.223 1.058.325.163.542.244.624.38.081.136.081.787-.163 1.472z"/></svg>
-  </div>
+  </a>
 </body>
 </html>
