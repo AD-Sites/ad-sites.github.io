@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Hector Chaves | Facetas em Resina & Odontologia Estética</title>
+  <meta name="description" content="Facetas em resina compostas feitas à mão sem desgaste excessivo. Atendimento personalizado e exclusivo em Joaçaba e Chapecó - SC. Agende sua avaliação.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dr. Hector Chaves | Facetas em Resina & Odontologia Estética">
+  <meta property="og:description" content="Conquiste o sorriso harmônico e natural que você sempre sonhou sem dor e sem desgastes invasivos.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Paleta Oficial 3Ps & Brand Manual (60-30-10) */
+      --bg-page: #F8FAFC;          /* 60% Fundo Leitura Gelo Soft */
+      --primary: #0A2540;          /* 30% Primária Estrutural Navy Profundo */
+      --primary-dark: #071326;     /* Navy Dark */
+      --secondary: #1E3A8A;        /* Azul Royal Estético */
+      --cyan: #06B6D4;             /* 10% Destaque Tecnológico Ciano Diamante */
+      --cyan-light: #E0F2FE;       /* Fundo suave ciano */
+      --cyan-glow: rgba(6, 182, 212, 0.25);
+      --gold: #E7C614;             /* Dourado Oficial */
+      --gold-dark: #D4AF37;
+      --green-wpp: #25D366;        /* WhatsApp Oficial */
+      --green-wpp-hover: #1EBE5D;
+      --text-dark: #0F172A;
+      --text-muted: #64748B;
+      --text-light: #F1F5F9;
+      --border-subtle: #E2E8F0;
+      --border-card: rgba(10, 37, 64, 0.08);
+      --card-bg: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 72px; /* espaço para o botão flutuante */
+    }
+
+    h1, h2, h3, h4, h5, h6, .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 580px; /* Otimizado tanto para mobile/iframe quanto para desktop */
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    /* TOP BAR / HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 0;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      box-shadow: 0 2px 8px rgba(10, 37, 64, 0.15);
+    }
+
+    .brand-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #ECFDF5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10B981;
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* HERO SECTION (DOBRA 01) */
+    .hero {
+      padding: 24px 0 28px;
+      background: radial-gradient(120% 80% at 50% 0%, #0A2540 0%, #071326 100%);
+      color: #FFFFFF;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+      box-shadow: 0 10px 25px rgba(10, 37, 64, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(6, 182, 212, 0.15);
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      color: var(--cyan);
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      line-height: 1.25;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span.highlight {
+      color: var(--cyan);
+      background: linear-gradient(120deg, #06B6D4 0%, #38BDF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.85rem;
+      color: #CBD5E1;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+      color: #071326;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: 0.92rem;
+      padding: 14px 20px;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+      transition: all 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cta-button:hover, .cta-button:active {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+    }
+
+    .social-proof-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.72rem;
+      color: #94A3B8;
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+    }
+
+    /* SEÇÕES COMUNS */
+    section {
+      padding: 28px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-pill {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .section-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* DOBRA 02: AUTORIDADE / CARDS */
+    .authority-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .authority-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 2px 8px rgba(10, 37, 64, 0.04);
+      transition: transform 0.2s;
+    }
+
+    .authority-card .icon {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .authority-card h4 {
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: var(--primary);
+    }
+
+    .authority-card p {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* DOBRA 03: PROBLEMA / AGITAÇÃO */
+    .problem-box {
+      background: #FFF1F2;
+      border: 1px solid #FECDD3;
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .problem-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .problem-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .problem-icon {
+      width: 22px;
+      height: 22px;
+      background: #FFE4E6;
+      color: #E11D48;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .problem-item h5 {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #9F1239;
+      margin-bottom: 2px;
+    }
+
+    .problem-item p {
+      font-size: 0.72rem;
+      color: #BE123C;
+      line-height: 1.35;
+    }
+
+    .solution-bridge {
+      margin-top: 16px;
+      background: #FFFFFF;
+      border: 1px solid #06B6D4;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 0.76rem;
+      color: var(--primary);
+      text-align: center;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.12);
+    }
+
+    /* DOBRA 04: 3 PASSOS */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      box-shadow: 0 2px 8px rgba(10, 37, 64, 0.04);
+      position: relative;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .step-content h4 {
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: var(--primary);
+    }
+
+    .step-content p {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* DOBRA 05: FILTRO ICP */
+    .icp-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .icp-card {
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 0.74rem;
+      line-height: 1.45;
+    }
+
+    .icp-yes {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      color: #14532D;
+    }
+
+    .icp-no {
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      color: #7F1D1D;
+    }
+
+    .icp-tag {
+      font-weight: 900;
+      font-size: 0.75rem;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* DOBRA 06: BENEFÍCIOS */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .benefit-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 0.78rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .benefit-icon {
+      color: var(--cyan);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* DOBRA 07: FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    details.faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 12px 14px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    details.faq-item[open] {
+      border-color: var(--cyan);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.1);
+    }
+
+    summary.faq-question {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary.faq-question::-webkit-details-marker {
+      display: none;
+    }
+
+    summary.faq-question::after {
+      content: "+";
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--cyan);
+      margin-left: 8px;
+    }
+
+    details[open] summary.faq-question::after {
+      content: "−";
+    }
+
+    .faq-answer {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* BOX FECHAMENTO / FINAL CTA */
+    .final-box {
+      margin-top: 24px;
+      background: radial-gradient(120% 80% at 50% 0%, #0A2540 0%, #071326 100%);
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 24px 18px;
+      text-align: center;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      box-shadow: 0 10px 30px rgba(10, 37, 64, 0.2);
+    }
+
+    .final-box h3 {
+      color: #FFFFFF;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .final-box p {
+      font-size: 0.78rem;
+      color: #CBD5E1;
+      margin-bottom: 16px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 24px;
+    }
+
+    /* BOTÃO FLUTUANTE DE WHATSAPP */
+    .wpp-float {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      z-index: 100;
+      background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+      color: #FFFFFF;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(37, 211, 102, 0.5);
+      border: 2px solid #FFFFFF;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .wpp-float:hover, .wpp-float:active {
+      transform: scale(1.08);
+    }
+
+    .wpp-float svg {
+      width: 28px;
+      height: 28px;
+      fill: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR / BRAND HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="brand-box">
+          <div class="brand-avatar">H</div>
+          <div>
+            <div class="brand-title">Dr. Hector Chaves</div>
+            <div class="brand-sub">Facetas em Resina • Joaçaba & Chapecó</div>
+          </div>
+        </div>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Online</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DOBRA 01: HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-tag">
+        <span>💎</span> Odontologia Estética de Precisão
+      </div>
+      <h1 class="hero-title">
+        Conquiste o sorriso harmônico e <span class="highlight">natural</span> que você sempre quis.
+      </h1>
+      <p class="hero-sub">
+        Facetas em resina composta feitas à mão, sem desgaste excessivo e sem dor. Atendimento exclusivo e personalizado em Joaçaba e Chapecó - SC.
+      </p>
+      
+      <a href="https://wa.me/5549988922280?text=Ol%C3%A1%2C%20Dr.%20Hector!%20Vi%20a%20Landing%20Page%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20est%C3%A9tica." target="_blank" class="cta-button">
+        <span>📲</span>
+        <span>Agendar Avaliação no WhatsApp</span>
+      </a>
+
+      <div class="social-proof-bar">
+        <span class="stars">★★★★★</span>
+        <span><strong>5.0</strong> no Google (100+ avaliações)</span>
+        <span>•</span>
+        <span>9+ Anos de Prática</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOBRA 02: CREDIBILIDADE & AUTORIDADE -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill" style="background: #E0F2FE; color: #0369A1;">Dobra 02 • Credibilidade</span>
+        <h2 class="section-title">Por que confiar no Dr. Hector?</h2>
+        <p class="section-desc">Excelência técnica e cuidado humanizado em cada detalhe.</p>
+      </div>
+
+      <div class="authority-grid">
+        <div class="authority-card">
+          <span class="icon">🏛️</span>
+          <h4>Estrutura Própria</h4>
+          <p>Consultórios modernos, climatizados e equipados em Joaçaba e Chapecó.</p>
+        </div>
+
+        <div class="authority-card">
+          <span class="icon">⏱️</span>
+          <h4>Atendimento Pontual</h4>
+          <p>Horários com dedicação exclusiva, sem filas ou esperas desnecessárias.</p>
+        </div>
+
+        <div class="authority-card">
+          <span class="icon">🎨</span>
+          <h4>Feito à Mão</h4>
+          <p>Escultura dental milimétrica preservando a anatomia biológica do dente.</p>
+        </div>
+
+        <div class="authority-card">
+          <span class="icon">🛡️</span>
+          <h4>Materiais Premium</h4>
+          <p>Resinas de padrão internacional com durabilidade e estabilidade de cor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOBRA 03: PROBLEMAS COMUNS (AGITAÇÃO DA DOR) -->
+  <section style="background: #F1F5F9; padding: 28px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill" style="background: #FFE4E6; color: #BE123C;">Dobra 03 • Conscientização</span>
+        <h2 class="section-title">Você se identifica com algum destes medos?</h2>
+        <p class="section-desc">O que impede a maioria das pessoas de transformar o sorriso:</p>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-item">
+          <div class="problem-icon">✕</div>
+          <div>
+            <h5>Medo do aspecto artificial</h5>
+            <p>Receio de ficar com dentes brancos demais, opacos ou desproporcionais ao formato do rosto.</p>
+          </div>
+        </div>
+
+        <div class="problem-item">
+          <div class="problem-icon">✕</div>
+          <div>
+            <h5>Trauma de desgaste dental agressivo</h5>
+            <p>Insegurança em desgastar a estrutura biológica de dentes sadios de forma irreversível.</p>
+          </div>
+        </div>
+
+        <div class="problem-item">
+          <div class="problem-icon">✕</div>
+          <div>
+            <h5>Atendimento frio e preços imprevisíveis</h5>
+            <p>Clínicas populares com tratamentos em esteira e orçamentos que mudam a cada consulta.</p>
+          </div>
+        </div>
+
+        <div class="solution-bridge">
+          ✨ <strong>O diferencial do Dr. Hector:</strong> Estratificação direta à mão que respeita a transparência do esmalte e a individualidade do seu rosto, sem traumas.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOBRA 04: MÉTODO EM 3 PASSOS -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill" style="background: #FEF3C7; color: #92400E;">Dobra 04 • O Método</span>
+        <h2 class="section-title">Como funciona a sua transformação</h2>
+        <p class="section-desc">Uma rota descomplicada para o seu novo sorriso:</p>
+      </div>
+
+      <div class="steps-list">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h4>Primeiro Contato no WhatsApp</h4>
+            <p>Nossa equipe acolhe seu caso, tira dúvidas iniciais e agenda seu horário com total comodidade.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h4>Avaliação Estética & Planejamento</h4>
+            <p>Análise minuciosa da anatomia do seu sorriso, fotografias e definição conjunta do tom e formato perfeitos.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h4>Escultura e Sorriso Renovado</h4>
+            <p>Aplicação direta da resina composta estratificada à mão, com conforto total, sem dor e resultado imediato.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOBRA 05: FILTRO ICP -->
+  <section style="background: #F8FAFC; padding-top: 10px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill" style="background: #F3E8FF; color: #6B21A8;">Dobra 05 • Filtro de Perfil</span>
+        <h2 class="section-title">Este tratamento é para você?</h2>
+      </div>
+
+      <div class="icp-container">
+        <div class="icp-card icp-yes">
+          <span class="icp-tag">✓ É PERFEITO PARA QUEM:</span>
+          Busca um sorriso elegante e natural, valoriza atendimento acolhedor, pontualidade e segurança biológica com materiais nobres.
+        </div>
+
+        <div class="icp-card icp-no">
+          <span class="icp-tag">✕ NÃO É INDICADO PARA QUEM:</span>
+          Procura procedimentos rápidos sem planejamento prévio, leilão de menores preços ou soluções caseiras sem garantia técnica.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOBRA 06: BENEFÍCIOS -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill" style="background: #E0E7FF; color: #3730A3;">Dobra 06 • Benefícios</span>
+        <h2 class="section-title">Diferenciais do Procedimento</h2>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-row">
+          <span class="benefit-icon">★</span>
+          <span>Preservação biológica máxima dos dentes naturais</span>
+        </div>
+        <div class="benefit-row">
+          <span class="benefit-icon">★</span>
+          <span>Atendimento 100% confortável, humanizado e sem dor</span>
+        </div>
+        <div class="benefit-row">
+          <span class="benefit-icon">★</span>
+          <span>Acompanhamento e suporte pós-procedimento contínuo</span>
+        </div>
+        <div class="benefit-row">
+          <span class="benefit-icon">★</span>
+          <span>Atendimento com unidades em Joaçaba e Chapecó - SC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOBRA 07: FAQ & QUEBRA DE OBJEÇÕES -->
+  <section style="background: #F1F5F9; padding: 28px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-pill" style="background: #FEF3C7; color: #92400E;">Dobra 07 • FAQ</span>
+        <h2 class="section-title">Dúvidas Frequentes</h2>
+        <p class="section-desc">Tudo o que você precisa saber antes de agendar:</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-question">As facetas em resina desgastam os dentes?</summary>
+          <div class="faq-answer">
+            Não! Uma das maiores vantagens da resina composta estratificada é ser minimamente invasiva, preservando a estrutura saudável do seu dente natural.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">O procedimento é doloroso?</summary>
+          <div class="faq-answer">
+            O tratamento é totalmente confortável e indolor. Utilizamos técnicas modernas e cuidado humanizado para garantir seu bem-estar completo durante todo o tempo.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Quanto tempo dura o resultado?</summary>
+          <div class="faq-answer">
+            Com as manutenções periódicas e hábitos de higiene adequados, as facetas em resina de alta qualidade mantêm brilho e estabilidade estética por muitos anos.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Onde são realizados os atendimentos?</summary>
+          <div class="faq-answer">
+            O Dr. Hector Chaves atende em consultórios preparados em Joaçaba e Chapecó - SC, com fácil acesso e estacionamento.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Como agendar minha avaliação?</summary>
+          <div class="faq-answer">
+            Basta clicar no botão abaixo para conversar diretamente com a recepção no WhatsApp e escolher o melhor dia e horário para você.
+          </div>
+        </details>
+      </div>
+
+      <!-- FINAL BOX CTA -->
+      <div class="final-box">
+        <h3>Pronto para sorrir sem medo?</h3>
+        <p>Dê o primeiro passo para renovar sua autoestima com um atendimento exclusivo.</p>
+        <a href="https://wa.me/5549988922280?text=Ol%C3%A1%2C%20Dr.%20Hector!%20Vi%20a%20Landing%20Page%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20est%C3%A9tica." target="_blank" class="cta-button">
+          <span>📲</span>
+          <span>Falar com o Dr. Hector no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p><strong>Dr. Hector Chaves</strong> • Odontologia Estética & Facetas em Resina</p>
+      <p>Joaçaba & Chapecó - Santa Catarina | WhatsApp: (49) 98892-2280</p>
+      <p style="margin-top: 6px; opacity: 0.7;">Todos os direitos reservados • Design de Alta Conversão</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/5549988922280?text=Ol%C3%A1%2C%20Dr.%20Hector!%20Vi%20a%20Landing%20Page%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20est%C3%A9tica." target="_blank" class="wpp-float" aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.41 1.56 1.56 2.41 3.63 2.41 5.83 0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24h-.18zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.76-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.03 2.61c.13.17 1.77 2.7 4.28 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.12-.23-.19-.48-.31z"/>
+    </svg>
+  </a>
+
+</body>
+</html>

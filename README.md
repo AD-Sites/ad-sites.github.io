@@ -14,6 +14,14 @@ Repositório central para hospedagem e publicação de landing pages e sites ins
 ad-sites.github.io/
 ├── index.html                   # Portal principal com índice dos sites ativos
 ├── .nojekyll                    # Impede que o Jekyll ignore arquivos com underline
+├── docs/                        # 📚 Documentação e Processos Agnósticos
+│   └── PROCESSO_AGNOSTICO_LANDING_PAGE_MOCKUP.md # Padrão de simulação mobile (ADR-135)
+├── dr-hector-chaves/            # Hotsite de Diagnóstico & Test Drive
+│   ├── index.html               # Hotsite SPA com as 6 abas estratégicas
+│   ├── estrategia.md            # Planejamento Estratégico 3Ps & Manual da Marca
+│   ├── assets/                  # Capas de posts fixados e destaques
+│   └── landingpage/             # 📱 Simulação da Landing Page de Alta Conversão
+│       └── index.html           # LP móvel com as 7 dobras (renderizada no mockup)
 ├── daniela-wernhart/            # Cliente: Daniela Wernhart (Psicologia)
 │   ├── index.html               # Página principal do site
 │   └── assets/                  # Imagens, CSS, fontes e ícones
