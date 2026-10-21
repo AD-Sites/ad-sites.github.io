@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   
-  <title>Psicoterapia para Homens | Daniela Wernhart – Atendimento Clínico Particular</title>
-  <meta name="description" content="Psicoterapia individual focada na realidade emocional do homem. Abordagem em TCC e Terapia do Esquema. Atendimento particular online com sigilo absoluto e discrição.">
-  <meta name="keywords" content="psicoterapia para homens, terapia masculina, psicóloga para homens, terapia online para homens, terapia cognitivo comportamental, terapia de esquemas, daniela wernhart">
+  <title>Psicoterapia para Homens | Daniela Wernhart – Atendimento Terapêutico Particular</title>
+  <meta name="description" content="Psicoterapia para homens com foco em desenvolvimento masculino e relacionamentos amorosos. Prática integrativa baseada em evidências (Análise do Comportamento, TCC e Terapia do Esquema). Atendimento online e particular.">
+  <meta name="keywords" content="psicoterapia para homens, terapia para homens, desenvolvimento masculino, relacionamentos amorosos, terapia cognitiva comportamental, terapia de esquemas, analise do comportamento, daniela wernhart">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ad-sites.github.io/daniela-wernhart-terapia/">
 
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ad-sites.github.io/daniela-wernhart-terapia/">
   <meta property="og:title" content="Psicoterapia para Homens | Daniela Wernhart">
-  <meta property="og:description" content="Um espaço seguro, discreto e baseado em evidências para o homem recuperar sua clareza, autonomia e equilíbrio emocional.">
+  <meta property="og:description" content="Desenvolvimento masculino e relacionamentos amorosos. Prática integrativa baseada em evidências em um ambiente de total sigilo, sem julgamentos ou doutrinas.">
   <meta property="og:image" content="assets/images/daniela-wernhart.jpg">
 
   <link rel="shortcut icon" href="assets/images/daniela-wernhart-1.jpg" type="image/x-icon">
@@ -64,24 +64,31 @@
   </script>
 
   <style>
+    /* ============================================================
+       PALETA MONOCROMÁTICA RIGOROSA (PRETO E BRANCO / CINZAS ESCUROS)
+    ============================================================ */
     :root {
-      --bg-dark: #080b11;
-      --bg-surface: #0f1523;
-      --bg-surface-elevated: #151d30;
+      --bg-dark: #0d0d0d;
+      --bg-surface: #151515;
+      --bg-surface-elevated: #1e1e1e;
+      --bg-surface-card: #181818;
       --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-focus: rgba(59, 130, 246, 0.4);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-subtle: #64748b;
-      --accent-blue: #3b82f6;
-      --accent-blue-hover: #2563eb;
-      --accent-blue-glow: rgba(59, 130, 246, 0.15);
+      --border-focus: rgba(255, 255, 255, 0.25);
+      --text-main: #f5f5f5;
+      --text-muted: #a3a3a3;
+      --text-subtle: #737373;
+      
+      --accent-white: #ffffff;
+      --accent-gray: #d4d4d4;
+      --accent-dark-btn: #262626;
+
       --whatsapp-green: #25d366;
-      --whatsapp-hover: #20ba59;
-      --whatsapp-glow: rgba(37, 211, 102, 0.25);
+      --whatsapp-hover: #1eb956;
+      --whatsapp-glow: rgba(37, 211, 102, 0.2);
+
       --radius-sm: 8px;
       --radius-md: 14px;
-      --radius-lg: 22px;
+      --radius-lg: 20px;
       --radius-full: 9999px;
       --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -114,25 +121,31 @@
 
     .container {
       width: 100%;
-      max-width: 1160px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 0 24px;
+    }
+
+    /* Imagens sempre em Preto e Branco */
+    img.bw-photo {
+      filter: grayscale(100%) contrast(106%);
+      transition: var(--transition);
+    }
+    img.bw-photo:hover {
+      filter: grayscale(100%) contrast(112%);
     }
 
     /* -------------------------------------------------------------
        NAVBAR
     -------------------------------------------------------------- */
     .navbar {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(8, 11, 17, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      z-index: 100;
+      background: rgba(13, 13, 13, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border-subtle);
-      padding: 16px 0;
       transition: var(--transition);
     }
 
@@ -140,20 +153,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 74px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .brand-avatar {
       width: 44px;
       height: 44px;
-      border-radius: var(--radius-full);
+      border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--border-subtle);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      filter: grayscale(100%);
     }
 
     .brand-info h2 {
@@ -164,11 +179,10 @@
     }
 
     .brand-info span {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--accent-blue);
-      letter-spacing: 0.05em;
+      font-size: 0.78rem;
+      color: var(--text-subtle);
       text-transform: uppercase;
+      letter-spacing: 0.05em;
       display: block;
     }
 
@@ -193,23 +207,22 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(37, 211, 102, 0.12);
-      color: var(--whatsapp-green);
-      border: 1px solid rgba(37, 211, 102, 0.3);
-      padding: 10px 18px;
+      background: var(--text-main);
+      color: #0d0d0d;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 20px;
       border-radius: var(--radius-full);
-      font-size: 0.85rem;
-      font-weight: 600;
       transition: var(--transition);
+      border: 1px solid #ffffff;
     }
 
     .nav-cta:hover {
-      background: var(--whatsapp-green);
-      color: #061c0f;
+      background: #e5e5e5;
       transform: translateY(-1px);
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 900px) {
       .nav-links { display: none; }
     }
 
@@ -217,61 +230,59 @@
        HERO (DOBRA 1)
     -------------------------------------------------------------- */
     .hero {
-      padding: 150px 0 90px;
+      padding: 72px 0 64px;
       position: relative;
-      background: radial-gradient(circle at 50% 15%, rgba(37, 99, 235, 0.08), transparent 60%);
+      background: radial-gradient(circle at 50% 0%, #1f1f1f 0%, #0d0d0d 65%);
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
       gap: 48px;
+      align-items: center;
     }
 
     .badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
       padding: 6px 14px;
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.25);
       border-radius: var(--radius-full);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-gray);
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #93c5fd;
       margin-bottom: 24px;
     }
 
     .badge-pill .dot {
       width: 7px;
       height: 7px;
-      background: var(--accent-blue);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-blue);
+      background: #ffffff;
     }
 
     .hero-title {
-      font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
       font-weight: 800;
       line-height: 1.15;
       letter-spacing: -0.03em;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       color: var(--text-main);
     }
 
     .hero-title span {
-      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #ffffff;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
     }
 
     .hero-desc {
-      font-size: 1.12rem;
-      line-height: 1.7;
+      font-size: 1.1rem;
       color: var(--text-muted);
+      line-height: 1.7;
       margin-bottom: 32px;
       max-width: 580px;
     }
@@ -280,23 +291,23 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
       margin-bottom: 36px;
     }
 
     .hero-checklist li {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-size: 0.95rem;
-      color: #cbd5e1;
+      color: var(--text-main);
       font-weight: 500;
     }
 
     .hero-checklist svg {
       width: 18px;
       height: 18px;
-      color: var(--accent-blue);
+      color: #ffffff;
       flex-shrink: 0;
     }
 
@@ -306,21 +317,21 @@
       justify-content: center;
       gap: 12px;
       background: var(--whatsapp-green);
-      color: #061c0f;
-      font-weight: 700;
-      font-size: 1.02rem;
-      padding: 18px 34px;
+      color: #041f0d;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 18px 36px;
       border-radius: var(--radius-full);
-      box-shadow: 0 8px 24px var(--whatsapp-glow);
+      box-shadow: 0 10px 30px var(--whatsapp-glow);
       transition: var(--transition);
-      cursor: pointer;
       border: none;
+      cursor: pointer;
     }
 
     .btn-wpp-primary:hover {
       background: var(--whatsapp-hover);
       transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 14px 38px rgba(37, 211, 102, 0.35);
     }
 
     .btn-wpp-primary svg {
@@ -332,13 +343,12 @@
     .micro-note {
       font-size: 0.8rem;
       color: var(--text-subtle);
-      margin-top: 12px;
+      margin-top: 14px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    /* CARD DA FOTO HERO */
     .hero-image-wrap {
       position: relative;
     }
@@ -346,11 +356,10 @@
     .image-card {
       position: relative;
       border-radius: var(--radius-lg);
-      padding: 8px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
       overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
     }
 
     .image-card img {
@@ -358,86 +367,81 @@
       height: 520px;
       object-fit: cover;
       object-position: top center;
-      border-radius: calc(var(--radius-lg) - 6px);
       display: block;
-      filter: contrast(1.03);
+      filter: grayscale(100%) contrast(106%);
     }
 
     .badge-card-floating {
       position: absolute;
-      bottom: 24px;
-      left: 24px;
-      right: 24px;
-      background: rgba(15, 21, 35, 0.85);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(18, 18, 18, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: var(--radius-md);
       padding: 16px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
     }
 
     .badge-card-floating .t-name {
-      font-size: 0.95rem;
       font-weight: 700;
+      font-size: 0.95rem;
       color: var(--text-main);
     }
 
     .badge-card-floating .t-spec {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
     }
 
-    .badge-card-floating .tag-online {
-      display: inline-flex;
+    .tag-online {
+      display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--whatsapp-green);
-      background: rgba(37, 211, 102, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
       padding: 4px 10px;
       border-radius: var(--radius-full);
-      white-space: nowrap;
+      font-size: 0.75rem;
+      font-weight: 600;
     }
 
     .tag-online .dot {
       width: 6px;
       height: 6px;
-      background: var(--whatsapp-green);
+      background: #ffffff;
       border-radius: 50%;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 900px) {
       .hero-grid {
         grid-template-columns: 1fr;
         gap: 40px;
       }
       .image-card img {
-        height: 440px;
-      }
-      .hero {
-        padding: 120px 0 60px;
+        height: 420px;
       }
     }
 
     /* -------------------------------------------------------------
-       TRUST BAR (MÉTRICAS / PILARES)
+       TRUST BAR
     -------------------------------------------------------------- */
     .trust-bar {
       border-top: 1px solid var(--border-subtle);
       border-bottom: 1px solid var(--border-subtle);
-      background: rgba(15, 21, 35, 0.4);
-      padding: 32px 0;
+      background: #111111;
+      padding: 24px 0;
     }
 
     .trust-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
 
     .trust-item {
@@ -447,49 +451,50 @@
     }
 
     .trust-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-md);
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.2);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-blue);
+      color: #ffffff;
       flex-shrink: 0;
     }
 
     .trust-icon svg {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
     }
 
     .trust-text h4 {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: var(--text-main);
     }
 
     .trust-text p {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-subtle);
     }
 
     @media (max-width: 768px) {
       .trust-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 24px;
       }
     }
 
     @media (max-width: 480px) {
       .trust-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
       }
     }
 
     /* -------------------------------------------------------------
-       SEÇÃO: O DIAGNÓSTICO (DORES)
+       SECTIONS BASE
     -------------------------------------------------------------- */
     .section-py {
       padding: 96px 0;
@@ -497,7 +502,7 @@
 
     .section-header {
       text-align: center;
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto 56px;
     }
 
@@ -506,284 +511,198 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent-blue);
+      color: var(--accent-gray);
       margin-bottom: 12px;
       display: inline-block;
+      border: 1px solid var(--border-subtle);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.03);
     }
 
     .section-title {
-      font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+      font-size: clamp(2rem, 3.4vw, 2.6rem);
       font-weight: 800;
       line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: 16px;
+      color: var(--text-main);
     }
 
     .section-subtitle {
       font-size: 1.05rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .cards-grid-4 {
+    /* -------------------------------------------------------------
+       DOBRA: O ESPAÇO (3 PILARES: SIGILO, SEM JULGAMENTOS, SEM DOUTRINAS)
+    -------------------------------------------------------------- */
+    .cards-grid-3 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    .card-problem {
-      background: var(--bg-surface);
+    .card-space {
+      background: var(--bg-surface-card);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 32px;
+      padding: 36px 30px;
       transition: var(--transition);
       position: relative;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
-    .card-problem::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--accent-blue);
-      opacity: 0.3;
-      transition: var(--transition);
-    }
-
-    .card-problem:hover {
-      border-color: rgba(59, 130, 246, 0.3);
+    .card-space:hover {
+      border-color: rgba(255, 255, 255, 0.22);
       transform: translateY(-3px);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
     }
 
-    .card-problem:hover::before {
-      opacity: 1;
-    }
-
-    .problem-icon {
-      width: 48px;
-      height: 48px;
+    .space-icon {
+      width: 50px;
+      height: 50px;
       border-radius: var(--radius-sm);
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #93c5fd;
-      margin-bottom: 20px;
+      color: #ffffff;
+      margin-bottom: 24px;
     }
 
-    .problem-icon svg {
+    .space-icon svg {
       width: 24px;
       height: 24px;
     }
 
-    .card-problem h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text-main);
-    }
-
-    .card-problem p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-    }
-
-    @media (max-width: 768px) {
-      .cards-grid-4 {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* -------------------------------------------------------------
-       MANIFESTO (ACOLHIMENTO COM DIGNIDADE)
-    -------------------------------------------------------------- */
-    .manifesto-banner {
-      background: linear-gradient(135deg, #0e1526 0%, #090e18 100%);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      border-radius: var(--radius-lg);
-      padding: 64px 48px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    }
-
-    .manifesto-banner::after {
-      content: "";
-      position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .manifesto-content {
-      max-width: 820px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .quote-badge {
-      display: inline-block;
-      font-size: 2.4rem;
-      color: var(--accent-blue);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .manifesto-quote {
-      font-size: clamp(1.4rem, 2.4vw, 1.85rem);
-      font-weight: 700;
-      line-height: 1.4;
-      color: var(--text-main);
-      margin-bottom: 24px;
-      letter-spacing: -0.01em;
-    }
-
-    .manifesto-sub {
-      font-size: 1.05rem;
-      color: #94a3b8;
-      line-height: 1.7;
-      margin-bottom: 36px;
-    }
-
-    /* -------------------------------------------------------------
-       MÉTODO (3 ETAPAS CLÍNICAS)
-    -------------------------------------------------------------- */
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .method-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 36px 28px;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .method-card:hover {
-      border-color: rgba(59, 130, 246, 0.35);
-      transform: translateY(-4px);
-    }
-
-    .step-number {
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--accent-blue);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .step-number::before {
-      content: "";
-      width: 20px;
-      height: 2px;
-      background: var(--accent-blue);
-    }
-
-    .method-card h3 {
+    .card-space h3 {
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 14px;
       color: var(--text-main);
     }
 
-    .method-card p {
+    .card-space p {
       font-size: 0.95rem;
       color: var(--text-muted);
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
-    @media (max-width: 860px) {
-      .method-grid {
+    @media (max-width: 900px) {
+      .cards-grid-3 {
         grid-template-columns: 1fr;
       }
     }
 
     /* -------------------------------------------------------------
-       QUALIFICAÇÃO: PARA QUEM É VS PARA QUEM NÃO É
+       MANIFESTO / BANNER
     -------------------------------------------------------------- */
-    .split-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+    .manifesto-banner {
+      background: #171717;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 56px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .split-card {
-      background: var(--bg-surface);
-      border-radius: var(--radius-md);
-      padding: 36px;
-      border: 1px solid var(--border-subtle);
+    .manifesto-content {
+      max-width: 760px;
+      margin: 0 auto;
     }
 
-    .split-card.positive {
-      border-top: 3px solid #10b981;
+    .quote-badge {
+      font-size: 3.5rem;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.2);
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: 8px;
     }
 
-    .split-card.negative {
-      border-top: 3px solid #ef4444;
-    }
-
-    .split-card h3 {
-      font-size: 1.25rem;
+    .manifesto-quote {
+      font-size: clamp(1.4rem, 2.4vw, 1.9rem);
       font-weight: 700;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+      color: var(--text-main);
     }
 
-    .split-card.positive h3 { color: #34d399; }
-    .split-card.negative h3 { color: #f87171; }
-
-    .split-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .split-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.95rem;
-      color: #cbd5e1;
-      line-height: 1.55;
-    }
-
-    .split-list svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-
-    .split-card.positive svg { color: #10b981; }
-    .split-card.negative svg { color: #ef4444; }
-
-    @media (max-width: 768px) {
-      .split-grid { grid-template-columns: 1fr; }
+    .manifesto-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
     }
 
     /* -------------------------------------------------------------
-       SOBRE A ESPECIALISTA
+       DOBRA: AS 3 LINHAS INTEGRADAS (BASEADO EM EVIDÊNCIAS)
+    -------------------------------------------------------------- */
+    .lines-section {
+      background: #111111;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .line-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .line-card:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      transform: translateY(-3px);
+    }
+
+    .line-card .line-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
+      margin-bottom: 12px;
+    }
+
+    .line-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .line-card .line-badge-spec {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .line-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* -------------------------------------------------------------
+       DOBRA: SOBRE A TERAPEUTA
     -------------------------------------------------------------- */
     .about-wrap {
       background: var(--bg-surface);
@@ -794,7 +713,7 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 320px 1fr;
+      grid-template-columns: 0.75fr 1.25fr;
       gap: 48px;
       align-items: center;
     }
@@ -803,50 +722,56 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       border: 1px solid var(--border-subtle);
+      background: #000;
     }
 
     .about-thumb img {
       width: 100%;
-      height: 380px;
+      height: 420px;
       object-fit: cover;
+      object-position: top center;
       display: block;
+      filter: grayscale(100%) contrast(106%);
     }
 
     .about-info h3 {
-      font-size: 1.8rem;
+      font-size: 2.1rem;
       font-weight: 800;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
       color: var(--text-main);
     }
 
     .about-subtitle {
       font-size: 0.95rem;
-      color: var(--accent-blue);
       font-weight: 600;
-      margin-bottom: 20px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      letter-spacing: 0.02em;
     }
 
     .about-bio {
       font-size: 1rem;
       color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 24px;
+      line-height: 1.75;
+      margin-bottom: 16px;
     }
 
     .about-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 24px;
     }
 
     .tag-badge {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-full);
       padding: 6px 14px;
+      border-radius: var(--radius-full);
       font-size: 0.8rem;
-      color: #cbd5e1;
       font-weight: 500;
+      color: var(--accent-gray);
     }
 
     @media (max-width: 860px) {
@@ -855,10 +780,62 @@
         gap: 32px;
       }
       .about-thumb img {
-        height: 320px;
+        height: 340px;
       }
       .about-wrap {
         padding: 32px 24px;
+      }
+    }
+
+    /* -------------------------------------------------------------
+       DOBRA: COMO FUNCIONA O ATENDIMENTO
+    -------------------------------------------------------------- */
+    .consult-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .consult-card {
+      background: var(--bg-surface-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 36px 30px;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .consult-card:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      transform: translateY(-3px);
+    }
+
+    .consult-number {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+
+    .consult-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .consult-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 860px) {
+      .consult-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -882,7 +859,7 @@
     }
 
     .faq-item.active {
-      border-color: rgba(59, 130, 246, 0.35);
+      border-color: rgba(255, 255, 255, 0.25);
     }
 
     .faq-question {
@@ -903,9 +880,11 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-blue);
+      color: #ffffff;
       transition: transform 0.3s ease;
       flex-shrink: 0;
+      font-size: 1.3rem;
+      font-weight: 300;
     }
 
     .faq-item.active .faq-icon {
@@ -919,7 +898,7 @@
       padding: 0 26px;
       color: var(--text-muted);
       font-size: 0.95rem;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     .faq-item.active .faq-answer {
@@ -931,12 +910,12 @@
        CTA FINAL (FECHAMENTO)
     -------------------------------------------------------------- */
     .cta-final-box {
-      background: radial-gradient(circle at 50% 0%, rgba(37, 211, 102, 0.12), transparent 70%), var(--bg-surface);
-      border: 1px solid rgba(37, 211, 102, 0.3);
+      background: #171717;
+      border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: var(--radius-lg);
       padding: 64px 32px;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
     }
 
     .cta-final-box h2 {
@@ -944,13 +923,15 @@
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 18px;
+      color: var(--text-main);
     }
 
     .cta-final-box p {
       font-size: 1.1rem;
       color: var(--text-muted);
-      max-width: 600px;
+      max-width: 620px;
       margin: 0 auto 36px;
+      line-height: 1.7;
     }
 
     /* -------------------------------------------------------------
@@ -958,34 +939,33 @@
     -------------------------------------------------------------- */
     .footer {
       border-top: 1px solid var(--border-subtle);
-      padding: 48px 0 32px;
-      background: #05070c;
+      background: #0d0d0d;
+      padding: 40px 0;
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 24px;
+      justify-content: space-between;
       flex-wrap: wrap;
+      gap: 20px;
     }
 
     .footer-brand h4 {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
+      margin-bottom: 4px;
       color: var(--text-main);
     }
 
     .footer-brand p {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--text-subtle);
-      margin-top: 4px;
     }
 
     .footer-links {
       display: flex;
-      align-items: center;
-      gap: 20px;
+      gap: 24px;
     }
 
     .footer-links a {
@@ -998,8 +978,18 @@
       color: var(--text-main);
     }
 
+    @media (max-width: 640px) {
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-links {
+        justify-content: center;
+      }
+    }
+
     /* -------------------------------------------------------------
-       BOTÃO FLUTUANTE DE WHATSAPP (MOBILE & DESKTOP)
+       BOTÃO FLUTUANTE DE WHATSAPP
     -------------------------------------------------------------- */
     .float-wpp {
       position: fixed;
@@ -1010,10 +1000,10 @@
       align-items: center;
       gap: 10px;
       background: var(--whatsapp-green);
-      color: #061c0f;
+      color: #041f0d;
       padding: 14px 22px;
       border-radius: var(--radius-full);
-      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
       font-weight: 700;
       font-size: 0.95rem;
       transition: var(--transition);
@@ -1022,7 +1012,8 @@
 
     .float-wpp:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 12px 36px rgba(37, 211, 102, 0.6);
+      box-shadow: 0 12px 36px rgba(37, 211, 102, 0.55);
+      background: var(--whatsapp-hover);
     }
 
     .float-wpp svg {
@@ -1048,20 +1039,20 @@
   <header class="navbar">
     <div class="container nav-inner">
       <div class="brand">
-        <img src="assets/images/daniela-wernhart-1.jpg" alt="Daniela Wernhart" class="brand-avatar">
+        <img src="assets/images/daniela-wernhart-1.jpg" alt="Daniela Wernhart" class="brand-avatar bw-photo">
         <div class="brand-info">
           <h2>Daniela Wernhart</h2>
           <span>Psicoterapia para Homens</span>
         </div>
       </div>
       <nav class="nav-links">
-        <a href="#diagnostico">Identificação</a>
-        <a href="#metodo">O Método</a>
-        <a href="#para-quem">Para Quem É</a>
-        <a href="#sobre">A Especialista</a>
+        <a href="#espaco">O Espaço</a>
+        <a href="#abordagens">As 3 Linhas</a>
+        <a href="#sobre">A Terapeuta</a>
+        <a href="#atendimento">Atendimento</a>
         <a href="#faq">Dúvidas</a>
       </nav>
-      <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20psicoterapia%20individual%20para%20homens." 
+      <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento%20terap%C3%AAutico%20para%20homens." 
          class="nav-cta" 
          target="_blank" 
          onclick="trackWhatsApp()">
@@ -1080,36 +1071,36 @@
         <div class="hero-content">
           <div class="badge-pill">
             <span class="dot"></span>
-            Psicoterapia Masculina Online • Atendimento Particular
+            Atendimento Terapêutico Online • Exclusivamente Particular
           </div>
           <h1 class="hero-title">
-            Recupere sua clareza, <span>autonomia e poder de se posicionar.</span>
+            Psicoterapia para Homens: <span>Desenvolvimento Masculino e Relacionamentos Amorosos.</span>
           </h1>
           <p class="hero-desc">
-            Psicoterapia clínica individual estruturada para a realidade emocional do homem contemporâneo. Baseada em evidências científicas (TCC e Terapia do Esquema), com total discrição, sigilo absoluto e sem julgamentos.
+            Um espaço seguro, neutro e confidencial para você desenvolver inteligência emocional, compreender seus comportamentos e construir relações conscientes e maduras. Prática integrativa baseada em evidências.
           </p>
           <ul class="hero-checklist">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              Sessões clínicas individuais de 50 minutos
+              Total sigilo e liberdade para falar sobre qualquer assunto
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              Atendimento 100% online para todo o Brasil e exterior
+              Livre de julgamentos morais, doutrinas religiosas ou políticas
             </li>
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
-              Contrato terapêutico com sigilo profissional rigoroso
+              Atendimento 100% online por videochamada particular
             </li>
           </ul>
           <div>
-            <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20psicoterapia%20individual%20para%20homens." 
+            <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento%20terap%C3%AAutico%20para%20homens." 
                class="btn-wpp-primary" 
                target="_blank" 
                onclick="trackWhatsApp()">
@@ -1126,11 +1117,11 @@
 
         <div class="hero-image-wrap">
           <div class="image-card">
-            <img src="assets/images/daniela-wernhart.jpg" alt="Daniela Wernhart - Psicoterapeuta especializada em homens">
+            <img src="assets/images/daniela-wernhart.jpg" alt="Daniela Wernhart - Psicoterapia para Homens" class="bw-photo">
             <div class="badge-card-floating">
               <div>
                 <div class="t-name">Daniela Wernhart</div>
-                <div class="t-spec">TCC & Terapia do Esquema</div>
+                <div class="t-spec">Terapeuta • Baseada em Evidências</div>
               </div>
               <div class="tag-online">
                 <span class="dot"></span>
@@ -1154,8 +1145,8 @@
             </svg>
           </div>
           <div class="trust-text">
-            <h4>100% Sigiloso</h4>
-            <p>Ética e discrição contratual</p>
+            <h4>Total Sigilo</h4>
+            <p>Privacidade e discrição absoluta</p>
           </div>
         </div>
         <div class="trust-item">
@@ -1167,7 +1158,7 @@
           </div>
           <div class="trust-text">
             <h4>Sessões de 50 Min</h4>
-            <p>Foco, método e direção</p>
+            <p>Espaço focado e individual</p>
           </div>
         </div>
         <div class="trust-item">
@@ -1178,8 +1169,8 @@
             </svg>
           </div>
           <div class="trust-text">
-            <h4>Base Científica</h4>
-            <p>TCC e Terapia do Esquema</p>
+            <h4>Baseada em Evidências</h4>
+            <p>3 abordagens integradas</p>
           </div>
         </div>
         <div class="trust-item">
@@ -1191,7 +1182,7 @@
             </svg>
           </div>
           <div class="trust-text">
-            <h4>Clínica Online</h4>
+            <h4>Atendimento Online</h4>
             <p>Conforto e flexibilidade</p>
           </div>
         </div>
@@ -1199,65 +1190,53 @@
     </div>
   </section>
 
-  <!-- O DIAGNÓSTICO (DORES) -->
-  <section class="section-py" id="diagnostico">
+  <!-- DOBRA: O ESPAÇO TERAPÊUTICO (SIGILO, SEM JULGAMENTOS, SEM DOUTRINAS) -->
+  <section class="section-py" id="espaco">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Identificação Clínica</span>
-        <h2 class="section-title">Com o que você tem lidado em silêncio?</h2>
+        <span class="section-tag">O Ambiente de Atendimento</span>
+        <h2 class="section-title">Um espaço de total confidencialidade e liberdade</h2>
         <p class="section-subtitle">
-          Muitos homens passam anos tolerando desgastes internos por acreditarem que precisam aguentar tudo sozinhos. Reconhecer esses padrões é o primeiro passo para mudar.
+          As consultas não são lugar para julgamentos morais, nem para doutrina religiosa ou política. Um ambiente seguro para você falar abertamente sobre qualquer assunto.
         </p>
       </div>
 
-      <div class="cards-grid-4">
-        <div class="card-problem">
-          <div class="problem-icon">
+      <div class="cards-grid-3">
+        <div class="card-space">
+          <div class="space-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"/>
               <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
             </svg>
           </div>
-          <h3>Dificuldade de se Posicionar</h3>
+          <h3>Livre de Julgamentos</h3>
           <p>
-            Você passa anos engolindo insatisfações e calando o que pensa para evitar conflitos, até perceber que se anulou por completo e perdeu sua voz nas relações afetivas e profissionais.
+            Suas experiências, dúvidas, falhas e sentimentos são ouvidos com respeito e empatia. Aqui não existe julgamento moral: o foco é compreender o que você está vivenciando e buscar caminhos saudáveis.
           </p>
         </div>
 
-        <div class="card-problem">
-          <div class="problem-icon">
+        <div class="card-space">
+          <div class="space-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+              <path d="M12 2v20M2 12h20"/>
             </svg>
           </div>
-          <h3>Sobrecarga e Autocobrança</h3>
+          <h3>Sem Doutrinas Religiosas ou Políticas</h3>
           <p>
-            A sensação crônica de ter que ser o pilar inabalável de tudo e de todos, sem nunca ter um espaço seguro para baixar a guarda, expor vulnerabilidades ou demonstrar cansaço.
+            Um atendimento com postura estritamente neutra e laica. Não há qualquer imposição de crenças, ideologias ou discursos prontos; o trabalho respeita integralmente a sua visão de mundo e individualidade.
           </p>
         </div>
 
-        <div class="card-problem">
-          <div class="problem-icon">
+        <div class="card-space">
+          <div class="space-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
             </svg>
           </div>
-          <h3>Relações Desgastantes ou Vazias</h3>
+          <h3>Total Sigilo e Discrição</h3>
           <p>
-            Ciclos amorosos que geram ansiedade e frustração, medo constante de rejeição ou abandono, ou a percepção incômoda de estar vivendo exclusivamente em função do outro.
-          </p>
-        </div>
-
-        <div class="card-problem">
-          <div class="problem-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-          </div>
-          <h3>Crise de Sentido e Propósito</h3>
-          <p>
-            Construir estabilidade material, mas sentir um vazio existencial profundo. A necessidade urgente de realinhar suas escolhas, reencontrar clareza e viver com autenticidade.
+            Privacidade absoluta em todas as sessões. Você tem a liberdade e a segurança necessárias para abordar qualquer tema da sua vida pessoal, íntima, profissional ou afetiva.
           </p>
         </div>
       </div>
@@ -1270,157 +1249,133 @@
       <div class="manifesto-content">
         <span class="quote-badge">“</span>
         <h2 class="manifesto-quote">
-          Aqui o homem é tratado com dignidade, acolhimento e método. Não é visto como vilão, nem infantilizado.
+          Aqui o homem encontra respeito, escuta qualificada e direcionamento prático para a sua realidade.
         </h2>
         <p class="manifesto-sub">
-          Criamos um ambiente clínico rigoroso, ético e seguro para você compreender a raiz dos seus esquemas emocionais, desarmar defesas destrutivas e assumir a direção da sua própria história.
+          Um atendimento focado no desenvolvimento pessoal e no amadurecimento dos relacionamentos amorosos, integrando conhecimento prático e acolhimento humano.
         </p>
-        <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20psicoterapia%20individual%20para%20homens." 
+        <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento%20terap%C3%AAutico%20para%20homens." 
            class="btn-wpp-primary" 
            target="_blank" 
            onclick="trackWhatsApp()">
           <svg viewBox="0 0 24 24">
             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.31a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.181 8.181 0 0 1 2.41 5.83c.01 4.54-3.69 8.25-8.2 8.25z"/>
           </svg>
-          FALE DIRETAMENTE COM A PSICOTERAPEUTA
+          FALE DIRETAMENTE NO WHATSAPP
         </a>
       </div>
     </div>
   </section>
 
-  <!-- O MÉTODO -->
-  <section class="section-py" id="metodo" style="background: rgba(15, 21, 35, 0.3); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+  <!-- DOBRA: AS 3 LINHAS INTEGRADAS (BASEADO EM EVIDÊNCIAS) -->
+  <section class="section-py lines-section" id="abordagens">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Abordagem Clínica</span>
-        <h2 class="section-title">Como funciona o processo terapêutico</h2>
+        <span class="section-tag">Fundamentação Técnica</span>
+        <h2 class="section-title">Prática integrativa baseada em evidências</h2>
         <p class="section-subtitle">
-          Um modelo estruturado com início, meio e evolução contínua, combinando TCC e Terapia do Esquema para intervenções precisas e profundas.
+          O trabalho une 3 linhas integradas reconhecidas na literatura, com especialização voltada para os relacionamentos amorosos e o desenvolvimento masculino:
         </p>
       </div>
 
-      <div class="method-grid">
-        <div class="method-card">
-          <div class="step-number">Etapa 01</div>
-          <h3>Avaliação & Alinhamento</h3>
+      <div class="cards-grid-3">
+        <div class="line-card">
+          <span class="line-tag">Linha 01</span>
+          <h3>Análise do Comportamento</h3>
           <p>
-            Mapeamos o seu momento atual, os conflitos prioritários e os objetivos da terapia. Criamos o contrato de confidencialidade e estabelecemos uma base sólida de confiança mútua.
+            Compreensão prática e funcional de como as suas atitudes, hábitos e respostas se formaram ao longo da vida, identificando o que mantém determinados comportamentos repetitivos e como construir novas formas de agir.
           </p>
         </div>
 
-        <div class="method-card">
-          <div class="step-number">Etapa 02</div>
-          <h3>Mapeamento de Esquemas</h3>
+        <div class="line-card">
+          <span class="line-tag">Linha 02</span>
+          <h3>TCC (Terapia Cognitivo-Comportamental)</h3>
           <p>
-            Identificamos as crenças nucleares e os padrões emocionais automáticos (medo de abandono, submissão, padrões inflexíveis) que geram autossabotagem e repetição de sofrimento.
+            Identificação de pensamentos automáticos e crenças sobre si mesmo, os outros e o futuro. Oferece clareza prática para lidar com momentos de tensão, ansiedade e tomada de decisões conscientes.
           </p>
         </div>
 
-        <div class="method-card">
-          <div class="step-number">Etapa 03</div>
-          <h3>Posicionamento & Autonomia</h3>
+        <div class="line-card">
+          <span class="line-tag">Linha 03</span>
+          <h3>Terapia do Esquema</h3>
+          <span class="line-badge-spec">Especialização em Relacionamentos Amorosos</span>
           <p>
-            Desenvolvimento prático de limites saudáveis, segurança na comunicação e capacidade de tomar decisões alinhadas aos seus valores, consolidando seu equilíbrio nas relações e na carreira.
+            Acesso aos padrões emocionais profundos construídos desde o início da vida que influenciam como você se conecta, reage e se posiciona afetivamente, ajudando a romper ciclos destrutivos e estabelecer vínculos saudáveis.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PARA QUEM É VS PARA QUEM NÃO É -->
-  <section class="section-py" id="para-quem">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Qualificação</span>
-        <h2 class="section-title">Este atendimento é indicado para você?</h2>
-        <p class="section-subtitle">
-          A clareza sobre o perfil de paciente garante que o processo atinja os mais altos índices de profundidade e eficácia clínica.
-        </p>
-      </div>
-
-      <div class="split-grid">
-        <div class="split-card positive">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            Para quem é este processo:
-          </h3>
-          <ul class="split-list">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Homens que buscam autoresponsabilidade e maturidade para lidar com suas questões emocionais.
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Quem deseja aprender a dizer não, impor limites e parar de se anular em relações desgastantes.
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Profissionais, líderes e empresários que valorizam discrição máxima, pontualidade e sigilo.
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Homens que buscam construir relações amorosas e familiares conscientes e saudáveis.
-            </li>
-          </ul>
-        </div>
-
-        <div class="split-card negative">
-          <h3>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="15" y1="9" x2="9" y2="15"/>
-              <line x1="9" y1="9" x2="15" y2="15"/>
-            </svg>
-            Para quem NÃO é indicado:
-          </h3>
-          <ul class="split-list">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              Quem procura fórmulas prontas, atalhos mágicos ou conselhos motivacionais rápidos de internet.
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              Pessoas que não estão dispostas a refletir com honestidade sobre os próprios padrões e escolhas.
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              Quem busca apenas validação externa para culpar terceiros sem assumir compromisso com a mudança.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE A ESPECIALISTA -->
+  <!-- SOBRE A TERAPEUTA -->
   <section class="section-py" id="sobre">
     <div class="container">
       <div class="about-wrap">
         <div class="about-grid">
           <div class="about-thumb">
-            <img src="assets/images/daniela-wernhart.jpg" alt="Daniela Wernhart - Terapeuta">
+            <img src="assets/images/daniela-wernhart.jpg" alt="Daniela Wernhart - Terapeuta" class="bw-photo">
           </div>
           <div class="about-info">
             <span class="section-tag">A Profissional</span>
             <h3>Daniela Wernhart</h3>
-            <div class="about-subtitle">Psicoterapeuta Clínica • Especialista em TCC & Esquemas</div>
+            <div class="about-subtitle">Terapeuta • Psicoterapia para Homens</div>
             <p class="about-bio">
-              Com formação sólida e atuação dedicada ao universo emocional masculino, Daniela desenvolveu uma metodologia clínica baseada em evidências que une o rigor técnico da Terapia Cognitivo-Comportamental à profundidade da Terapia do Esquema.
+              Atuo com psicoterapia individual para homens com foco no desenvolvimento masculino e nos desafios dos relacionamentos amorosos.
             </p>
-            <p class="about-bio" style="margin-bottom: 28px;">
-              Seu trabalho se diferencia pela capacidade de criar um ambiente livre de julgamentos morais, onde o homem é respeitado na sua singularidade e apoiado ativamente a desenvolver clareza, limites, firmeza emocional e propósito de vida.
+            <p class="about-bio">
+              Minha prática integrativa é inteiramente baseada em evidências, unindo os fundamentos da Análise do Comportamento, da Terapia Cognitivo-Comportamental (TCC) e da Terapia do Esquema, com especialização direcionada a dinâmicas afetivas e conjugais.
+            </p>
+            <p class="about-bio" style="margin-bottom: 24px;">
+              Cada sessão é conduzida em um ambiente neutro, seguro e de total sigilo, onde você tem a liberdade para falar sobre qualquer tema sem receio de julgamentos morais ou doutrinas.
             </p>
             <div class="about-tags">
-              <span class="tag-badge">Terapia Cognitivo-Comportamental</span>
+              <span class="tag-badge">Desenvolvimento Masculino</span>
+              <span class="tag-badge">Relacionamentos Amorosos</span>
+              <span class="tag-badge">Análise do Comportamento</span>
+              <span class="tag-badge">TCC</span>
               <span class="tag-badge">Terapia do Esquema</span>
-              <span class="tag-badge">Atendimento Clínico Online</span>
-              <span class="tag-badge">Sigilo Contratual</span>
-              <span class="tag-badge">Foco na Realidade Masculina</span>
+              <span class="tag-badge">Total Sigilo</span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOBRA: COMO FUNCIONA O ATENDIMENTO -->
+  <section class="section-py" id="atendimento" style="background: #111111; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Funcionamento</span>
+        <h2 class="section-title">Informações sobre as consultas</h2>
+        <p class="section-subtitle">
+          Atendimento estruturado de forma prática e acessível para homens em qualquer lugar do Brasil ou do exterior.
+        </p>
+      </div>
+
+      <div class="consult-grid">
+        <div class="consult-card">
+          <div class="consult-number">01. Formato</div>
+          <h3>100% Online</h3>
+          <p>
+            As sessões ocorrem por videochamada individual e criptografada, com total comodidade, privacidade e segurança, diretamente do seu espaço.
+          </p>
+        </div>
+
+        <div class="consult-card">
+          <div class="consult-number">02. Modalidade</div>
+          <h3>Somente Particular</h3>
+          <p>
+            Atendimento exclusivamente particular, sem vínculos com planos de saúde ou convênios médicos, permitindo um acompanhamento focado e personalizado.
+          </p>
+        </div>
+
+        <div class="consult-card">
+          <div class="consult-number">03. Duração</div>
+          <h3>Sessões de 50 Minutos</h3>
+          <p>
+            Encontros individuais semanais com tempo dedicado para aprofundar suas questões com foco, clareza e continuidade.
+          </p>
         </div>
       </div>
     </div>
@@ -1433,18 +1388,18 @@
         <span class="section-tag">Dúvidas Frequentes</span>
         <h2 class="section-title">Perguntas comuns sobre o atendimento</h2>
         <p class="section-subtitle">
-          Transparência completa sobre formato, confidencialidade e dinâmica das sessões.
+          Transparência sobre formato, sigilo e dinâmica das sessões.
         </p>
       </div>
 
       <div class="faq-container">
         <div class="faq-item">
           <div class="faq-question">
-            Como funciona a primeira sessão?
+            Como funciona a primeira consulta?
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            A primeira sessão é dedicada ao acolhimento inicial, compreensão das suas demandas prioritárias e alinhamento do contrato terapêutico. É o momento de entender sua história e traçar juntos o direcionamento do processo.
+            A primeira consulta é dedicada a conhecer a sua história, entender os pontos prioritários que você deseja trabalhar e apresentar como a prática integrativa pode ajudar na sua trajetória.
           </div>
         </div>
 
@@ -1454,37 +1409,47 @@
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Sim, totalmente. As sessões ocorrem por meio de plataformas com criptografia ponta a ponta e sob estrito sigilo profissional protegido pelo Código de Ética e contrato assinado.
+            Sim, totalmente. As sessões ocorrem por plataformas com criptografia ponta a ponta e sob rigoroso compromisso ético de sigilo e confidencialidade profissional.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            Qual a duração e a frequência dos encontros?
+            Qual é a forma de atendimento?
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Cada sessão tem duração de 50 minutos. A frequência recomendada costuma ser semanal, permitindo consistência no acompanhamento e aplicação prática das ferramentas no seu dia a dia.
+            O atendimento é realizado exclusivamente de forma particular e 100% online, garantindo dedicação personalizada, flexibilidade de horários e acompanhamento direto.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            É possível solicitar reembolso junto ao plano de saúde?
+            Como a psicoterapia ajuda nos relacionamentos amorosos?
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Sim. O atendimento é estritamente particular, mas é emitido recibo/nota com todos os dados profissionais necessários para você solicitar o reembolso ao seu plano de saúde, conforme as regras da sua operadora.
+            Através da Terapia do Esquema e da Análise do Comportamento, identificamos os padrões emocionais que se repetem nas suas relações, ajudando você a estabelecer limites, aprimorar a comunicação e construir vínculos mais saudáveis e maduros.
           </div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question">
-            Como faço para agendar meu primeiro horário?
+            As sessões têm alguma ligação religiosa ou política?
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-answer">
-            Basta clicar em qualquer um dos botões desta página para falar diretamente comigo no WhatsApp. Conversaremos sobre sua disponibilidade de horários e alinharemos a data da sua sessão inicial.
+            Não. As consultas são um ambiente totalmente laico, neutro e livre de qualquer doutrina religiosa ou posicionamento político. Você pode falar abertamente sobre qualquer assunto com total liberdade.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            Como faço para agendar um horário?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Basta clicar em qualquer botão do site para enviar uma mensagem diretamente no WhatsApp. Alinharemos os horários disponíveis e as orientações para o seu atendimento inicial.
           </div>
         </div>
       </div>
@@ -1494,22 +1459,22 @@
   <!-- CTA FINAL -->
   <section class="container" style="padding-bottom: 96px;">
     <div class="cta-final-box">
-      <h2>O seu realinhamento começa com uma decisão.</h2>
+      <h2>Dê o próximo passo para o seu desenvolvimento.</h2>
       <p>
-        Dê o primeiro passo para sair do ciclo de sobrecarga e anulação. Agende sua sessão inicial com total discrição e conforto online.
+        Inicie seu acompanhamento em um ambiente seguro, com total sigilo, foco nos seus relacionamentos e prática baseada em evidências.
       </p>
-      <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20psicoterapia%20individual%20para%20homens." 
+      <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento%20terap%C3%AAutico%20para%20homens." 
          class="btn-wpp-primary" 
          target="_blank" 
          onclick="trackWhatsApp()" 
-         style="font-size: 1.1rem; padding: 20px 42px;">
+         style="font-size: 1.05rem; padding: 20px 42px;">
         <svg viewBox="0 0 24 24">
           <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.49 0-2.95-.4-4.22-1.16l-.3-.18-3.13.82.84-3.05-.2-.31a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.181 8.181 0 0 1 2.41 5.83c.01 4.54-3.69 8.25-8.2 8.25z"/>
         </svg>
         CONVERSAR COM DANIELA NO WHATSAPP
       </a>
       <p class="micro-note" style="justify-content: center; margin-top: 16px;">
-        🔒 Atendimento particular individual • Total confidencialidade garantida
+        🔒 Atendimento particular individual • Total sigilo e privacidade garantidos
       </p>
     </div>
   </section>
@@ -1518,18 +1483,18 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <h4>Daniela Wernhart • Psicoterapia Clínica</h4>
-        <p>Atendimento online para homens • TCC & Terapia do Esquema • São Paulo - SP</p>
+        <h4>Daniela Wernhart • Psicoterapia para Homens</h4>
+        <p>Atendimento terapêutico online • Exclusivamente particular • Prática baseada em evidências</p>
       </div>
       <div class="footer-links">
-        <a href="https://www.instagram.com/danielawernhart/" target="_blank">Instagram (@daniela_wernhart)</a>
-        <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20psicoterapia%20individual%20para%20homens." target="_blank" onclick="trackWhatsApp()">WhatsApp Direto</a>
+        <a href="https://www.instagram.com/danielawernhart/" target="_blank">Instagram (@danielawernhart)</a>
+        <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento%20terap%C3%AAutico%20para%20homens." target="_blank" onclick="trackWhatsApp()">WhatsApp Direto</a>
       </div>
     </div>
   </footer>
 
   <!-- BOTÃO FLUTUANTE WHATSAPP -->
-  <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20a%20psicoterapia%20individual%20para%20homens." 
+  <a href="https://wa.me/5511952202633?text=Ol%C3%A1%2C%20Daniela.%20Vi%20seu%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20atendimento%20terap%C3%AAutico%20para%20homens." 
      class="float-wpp" 
      target="_blank" 
      onclick="trackWhatsApp()" 
